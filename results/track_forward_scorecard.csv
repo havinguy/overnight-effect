@@ -1,0 +1,17 @@
+metric,value
+boundary_frozen,2026-11-17
+n_forward_mondays,0
+n_skipped_hold_or_no_entry,1
+n_with_realized_net,0
+ref_full_sample_net_bp,6.42
+ref_2022_25_net_bp,3.55
+ref_breakeven_slip_bp_per_side,4.21
+ref_assumed_slip_bp_per_side,1.0
+check_hist_n_recomputed,453
+check_hist_net_mean_bp_recomputed,6.417753592689746
+n_realized_slip,0
+kill_rule_status,not yet evaluable (n=0; checkpoints at 30 and 100)
+mondays_remaining_to_30,30
+mondays_remaining_to_100,100
+mondays_remaining_to_235,235
+next_checkpoint,30 (30 to go)

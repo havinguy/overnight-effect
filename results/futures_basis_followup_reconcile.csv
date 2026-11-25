@@ -1,0 +1,29 @@
+year,step,n,mean_bp,t,section,date,idx_ON_bp,fut_ON_bp,fut_prior_day,idx_prior_day,night_label,idx_flag,idx_gap_calendar_days,fut_gap_calendar_days,note
+2023,1 full index nights (gate convention),249.0,9.863222425487287,4.629844475762452,waterfall,,,,,,,,,,
+2023,2 & futures bar exists on the date,237.0,10.211675581467308,4.602788964892266,waterfall,,,,,,,,,,
+2023,3 & futures night invested (roll F2M close exists),237.0,10.211675581467308,4.602788964892266,waterfall,,,,,,,,,,
+2023,4 & same prior trading day (decomposition sample),225.0,11.07520308621801,5.070545333323369,waterfall,,,,,,,,,,
+all,1 full index nights (gate convention),1993.0,5.703740945212499,5.259438887335943,waterfall,,,,,,,,,,
+all,2 & futures bar exists on the date,1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
+all,3 & futures night invested (roll F2M close exists),1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
+all,4 & same prior trading day (decomposition sample),1962.0,5.918881661577095,5.394613547326264,waterfall,,,,,,,,,,
+2023,"5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index)",237.0,10.211675581467308,4.602788964892266,waterfall,,,,,,,,,,
+2023,"6 decomposition sample (misaligned EXCLUDED), = step 4",225.0,11.07520308621801,5.070545333323369,waterfall,,,,,,,,,,
+all,"5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index)",1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
+all,"6 decomposition sample (misaligned EXCLUDED), = step 4",1962.0,5.918881661577095,5.394613547326264,waterfall,,,,,,,,,,
+2018,,,,,misaligned nights,2018-11-21,-110.1114480379195,-60.31999169223275,2018-11-20,,Tue->Wed,False,,1.0,futures prior day missing from VN30.csv
+2021,,,,,misaligned nights,2021-05-04,-1.5241811366450975,23.50177344953673,2021-04-28,2021-04-29,holiday,False,5.0,6.0,index prior day missing from VN30F1M.csv
+2022,,,,,misaligned nights,2022-11-21,-5.7677256161614565,64.16912931743606,2022-11-17,2022-11-18,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2022,,,,,misaligned nights,2022-12-19,-3.2897983650315155,-136.37643763530713,2022-12-15,2022-12-16,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-01-30,15.907387031663944,40.06237274626918,2023-01-19,2023-01-27,holiday,False,3.0,11.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-02-20,-12.724943552679946,-42.76556767260194,2023-02-16,2023-02-17,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-03-20,-55.992527495245525,-71.85659660874485,2023-03-16,2023-03-17,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-04-24,29.206576010638585,-86.33147144702889,2023-04-20,2023-04-21,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-05-22,14.304348435949521,0.0,2023-05-18,2023-05-19,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-06-19,8.562145926331866,12.734220385546342,2023-06-15,2023-06-16,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-07-24,39.53072980772632,203.4199254379522,2023-07-20,2023-07-21,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-08-21,4.956338123722759,-505.84361807727294,2023-08-17,2023-08-18,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-09-25,-19.47306354886713,-241.55763879336038,2023-09-21,2023-09-22,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-10-23,-8.546932972821608,161.56315143159588,2023-10-19,2023-10-20,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-11-20,-108.1465904053136,-495.82034344109223,2023-11-16,2023-11-17,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
+2023,,,,,misaligned nights,2023-12-25,20.66295104759419,-19.137017732671072,2023-12-21,2023-12-22,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv

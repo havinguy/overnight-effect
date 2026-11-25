@@ -1,0 +1,13 @@
+series,split,break_t_ONmID,sides,R2
+VNINDEX,COVID 2-way,1.6101552033022337,pre-COVID (< 2020-01-23): no detectable difference | post-COVID (>= 2020-01-23): H1 holds (ON>ID),CHANGES H1 conclusion
+VNINDEX,KRX,3.5360620005454697,pre-KRX (< 2025-05-05): H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion
+VNINDEX,KRX within regime 2,1.016973503139517,2022-08-25..2025-05-04: H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion
+VN30 index (ex degraded),COVID 2-way,0.9227595837849014,pre-COVID (< 2020-01-23): LOW N | post-COVID (>= 2020-01-23): H1 holds (ON>ID),LOW N
+VN30 index (ex degraded),KRX,1.3585272994029713,pre-KRX (< 2025-05-05): H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion
+VN30 index (ex degraded),KRX within regime 2,1.3115452097021867,2022-08-25..2025-05-04: H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion
+PIT basket CW,COVID 2-way,2.048672440140977,pre-COVID (< 2020-01-23): no detectable difference | post-COVID (>= 2020-01-23): H1 holds (ON>ID),CHANGES H1 conclusion
+PIT basket CW,KRX,3.164962806914263,pre-KRX (< 2025-05-05): no detectable difference | post-KRX (>= 2025-05-05): H1 holds (ON>ID),CHANGES H1 conclusion
+PIT basket CW,KRX within regime 2,1.0792089876592301,2022-08-25..2025-05-04: H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion
+PIT basket EW,COVID 2-way,3.262805430577706,pre-COVID (< 2020-01-23): no detectable difference | post-COVID (>= 2020-01-23): H1 holds (ON>ID),CHANGES H1 conclusion
+PIT basket EW,KRX,3.305598918629989,pre-KRX (< 2025-05-05): no detectable difference | post-KRX (>= 2025-05-05): H1 holds (ON>ID),CHANGES H1 conclusion
+PIT basket EW,KRX within regime 2,0.6275944563942871,2022-08-25..2025-05-04: H1 holds (ON>ID) | post-KRX (>= 2025-05-05): H1 holds (ON>ID),same H1 conclusion

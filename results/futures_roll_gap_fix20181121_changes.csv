@@ -1,0 +1,357 @@
+file,row,column,old,new
+futures_basis_year,"2018 (futures only, before index data) | a_all_days",n,212,211
+futures_basis_year,2018 | a_all_days,n,27,28
+futures_basis_year,all | a_all_days,n,1962,1963
+futures_basis_year,"2018 (futures only, before index data) | b_ex_index_flagged",n,212,211
+futures_basis_year,2018 | b_ex_index_flagged,n,27,28
+futures_basis_year,all | b_ex_index_flagged,n,1876,1877
+futures_basis_year,"2018 (futures only, before index data) | a_all_days",fut_ON_bp,2.4816925185800778,2.779330832375399
+futures_basis_year,2018 | a_all_days,fut_ON_bp,-0.3854270859027554,-2.5259472504145415
+futures_basis_year,all | a_all_days,fut_ON_bp,5.423580355253831,5.390088978765047
+futures_basis_year,"2018 (futures only, before index data) | b_ex_index_flagged",fut_ON_bp,2.4816925185800778,2.779330832375399
+futures_basis_year,2018 | b_ex_index_flagged,fut_ON_bp,-0.3854270859027554,-2.5259472504145415
+futures_basis_year,all | b_ex_index_flagged,fut_ON_bp,5.144740338775042,5.109863017501197
+futures_basis_year,"2018 (futures only, before index data) | a_all_days",fut_t,0.6877716236520272,0.7737157116871821
+futures_basis_year,2018 | a_all_days,fut_t,-0.0336800922824148,-0.2251445503715027
+futures_basis_year,all | a_all_days,fut_t,4.061102362810325,4.03592609634004
+futures_basis_year,"2018 (futures only, before index data) | b_ex_index_flagged",fut_t,0.6877716236520272,0.7737157116871821
+futures_basis_year,2018 | b_ex_index_flagged,fut_t,-0.0336800922824148,-0.2251445503715027
+futures_basis_year,all | b_ex_index_flagged,fut_t,3.940582920935447,3.913608743555373
+futures_basis_year,2018 | a_all_days,idx_ON_bp,-6.396047892080871,-10.100169325860822
+futures_basis_year,all | a_all_days,idx_ON_bp,5.918881661577095,5.859772986233489
+futures_basis_year,2018 | b_ex_index_flagged,idx_ON_bp,-6.396047892080871,-10.100169325860822
+futures_basis_year,all | b_ex_index_flagged,idx_ON_bp,6.1902163219692214,6.128254859870187
+futures_basis_year,2018 | a_all_days,idx_t,-0.5434112649309374,-0.8825458973386053
+futures_basis_year,all | a_all_days,idx_t,5.394613547326264,5.33501144022167
+futures_basis_year,2018 | b_ex_index_flagged,idx_t,-0.5434112649309374,-0.8825458973386053
+futures_basis_year,all | b_ex_index_flagged,idx_t,5.400286565260935,5.340474844523885
+futures_basis_year,2018 | a_all_days,dbasis_ON_bp,6.010620806177259,7.574222075445433
+futures_basis_year,all | a_all_days,dbasis_ON_bp,-0.4953013063232835,-0.4696840074684639
+futures_basis_year,2018 | b_ex_index_flagged,dbasis_ON_bp,6.010620806177259,7.574222075445433
+futures_basis_year,all | b_ex_index_flagged,dbasis_ON_bp,-1.045475983194199,-1.0183918423690097
+futures_basis_year,2018 | a_all_days,dbasis_t,0.7054014127814074,0.9363938445760052
+futures_basis_year,all | a_all_days,dbasis_t,-0.4079594506625428,-0.3870308895048072
+futures_basis_year,2018 | b_ex_index_flagged,dbasis_t,0.7054014127814074,0.9363938445760052
+futures_basis_year,all | b_ex_index_flagged,dbasis_t,-0.8966469387792244,-0.8737987572677549
+futures_basis_year,2018 | a_all_days,corr,0.5904364507689243,0.6019952533191062
+futures_basis_year,2018 | b_ex_index_flagged,corr,0.5904364507689243,0.6019952533191062
+futures_basis_year,2018 | a_all_days,slope,0.8382132322404234,0.7987383437400889
+futures_basis_year,2018 | b_ex_index_flagged,slope,0.8382132322404234,0.7987383437400889
+futures_basis_year,2018 | a_all_days,slope_nw_se,0.2950204254869303,0.2451197491808462
+futures_basis_year,2018 | b_ex_index_flagged,slope_nw_se,0.2950204254869303,0.2451197491808462
+futures_basis_year,2018 | a_all_days,r2,0.3486152023966044,0.3623982850187348
+futures_basis_year,2018 | b_ex_index_flagged,r2,0.3486152023966044,0.3623982850187348
+futures_basis_year,2018 | a_all_days,dbasis_ID_bp,-6.610928996706292,-4.243930231766765
+futures_basis_year,all | a_all_days,dbasis_ID_bp,1.959909598031714,1.989305994783405
+futures_basis_year,2018 | b_ex_index_flagged,dbasis_ID_bp,-6.610928996706292,-4.243930231766765
+futures_basis_year,all | b_ex_index_flagged,dbasis_ID_bp,2.6050237355644628,2.6354233161110985
+futures_basis_year,2018 | a_all_days,dbasis_ID_t,-0.8565277112055475,-0.5557557373402972
+futures_basis_year,all | a_all_days,dbasis_ID_t,1.509248020085013,1.5327678660425264
+futures_basis_year,2018 | b_ex_index_flagged,dbasis_ID_t,-0.8565277112055475,-0.5557557373402972
+futures_basis_year,all | b_ex_index_flagged,dbasis_ID_t,1.9073714233964192,1.9308165330051632
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,n,394,395
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,n,185,186
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,n,374,375
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,n,165,166
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,fut_ON_bp,6.738045162758603,6.568277980847232
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,fut_ON_bp,4.245030336825463,3.8979065624756872
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,fut_ON_bp,7.10986793528982,6.930054976283092
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,fut_ON_bp,4.785645005964932,4.393442375252898
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,fut_t,2.1061381204836325,2.0532945823539155
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,fut_t,1.3959240219029168,1.275717127968588
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,fut_t,2.1059982513393676,2.0531267878407253
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,fut_t,1.3844520216938527,1.2656322817713055
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,idx_ON_bp,8.0512913519683,7.752145176297699
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,idx_ON_bp,2.568605610996288,1.962798870948354
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,idx_ON_bp,8.48184169164575,8.165592919033577
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,idx_ON_bp,2.879951745662505,2.1992806626288783
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,idx_t,3.4197499351141825,3.265154671061181
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,idx_t,1.1642720841005945,0.8583644778177775
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,idx_t,3.4391128011835193,3.2825220557988386
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,idx_t,1.1721403449041414,0.8631125492999826
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,dbasis_ON_bp,-1.3132461892097802,-1.1838671954505495
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,dbasis_ON_bp,1.676424725828518,1.9351076915266776
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,dbasis_ON_bp,-1.3719737563560064,-1.2355379427505608
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,dbasis_ON_bp,1.9056932603017145,2.194161712623307
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,dbasis_t,-0.5694188611217214,-0.5138975083473869
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,dbasis_t,0.59781793805091,0.6921439147131115
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,dbasis_t,-0.5613355589810386,-0.5061524040139556
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,dbasis_t,0.5956626808100699,0.6884969849598432
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,dbasis_ID_bp,8.483599073952757,8.613172333060724
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,dbasis_ID_bp,3.774244964980866,4.0747330910917245
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,dbasis_ID_bp,8.541015730812552,8.677346452654652
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,dbasis_ID_bp,3.333558586108899,3.672904838129934
+futures_basis_weekday,full (index sample) | Tue->Wed | a_all_days,dbasis_ID_t,2.6699317894661907,2.713980429576342
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | a_all_days,dbasis_ID_t,0.7774030459792117,0.840595054719174
+futures_basis_weekday,full (index sample) | Tue->Wed | b_ex_index_flagged,dbasis_ID_t,2.6558623945060473,2.7015983732082423
+futures_basis_weekday,pre 2022-08-25 | Tue->Wed | b_ex_index_flagged,dbasis_ID_t,0.664950654877723,0.7336391398312023
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,n,427,428
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,n,394,395
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | a_all_days,n,89,90
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,n,410,411
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,n,374,375
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | b_ex_index_flagged,n,87,88
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,b_close_mean_bp,-28.47340487367472,-28.461635710193768
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,b_close_mean_bp,-16.2165464526598,-16.23482406392857
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,b_close_mean_bp,-29.65926959088721,-29.644128309410178
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,b_close_mean_bp,-15.3209510612091,-15.34259173278941
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,b_close_sd_bp,87.99445808988858,87.89169693996308
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,b_close_sd_bp,70.3651142910655,70.27670058174793
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,b_close_sd_bp,86.15397353961026,86.04939108370472
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,b_close_sd_bp,69.80024277165865,69.7081241674528
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,dbasis_ON_bp,-0.3330658782817472,-0.215952508599579
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,dbasis_ON_bp,-1.3132461892097802,-1.1838671954505495
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | a_all_days,dbasis_ON_bp,-0.9654908104923464,-0.4015247309792517
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,dbasis_ON_bp,-0.6155815094613883,-0.4929366484999588
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,dbasis_ON_bp,-1.3719737563560064,-1.2355379427505608
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | b_ex_index_flagged,dbasis_ON_bp,-1.378877303378636,-0.7973962391847172
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,dbasis_ON_t,-0.1318664800556745,-0.0856744067091394
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,dbasis_ON_t,-0.5694188611217214,-0.5138975083473869
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | a_all_days,dbasis_ON_t,-0.1855173316356278,-0.0768355471122469
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,dbasis_ON_t,-0.2357477006503822,-0.1891755463368293
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,dbasis_ON_t,-0.5613355589810386,-0.5061524040139556
+futures_basis_expiry,night x dte | Tue->Wed | dte 16+ | b_ex_index_flagged,dbasis_ON_t,-0.259261255198126,-0.1492848400125528
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,dbasis_ID_bp,1.1382712464547105,1.2750160249013118
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,dbasis_ID_bp,8.483599073952757,8.613172333060724
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,dbasis_ID_bp,0.739605164576715,0.882976043547575
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,dbasis_ID_bp,8.541015730812552,8.677346452654652
+futures_basis_expiry,days-to-expiry | 16+ | a_all_days,dbasis_ID_t,0.3891533744848283,0.4370090607628025
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,dbasis_ID_t,2.6699317894661907,2.713980429576342
+futures_basis_expiry,days-to-expiry | 16+ | b_ex_index_flagged,dbasis_ID_t,0.2410588808608841,0.2885319583624419
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,dbasis_ID_t,2.6558623945060473,2.7015983732082423
+futures_basis_expiry,night (entry weekday) | Tue->Wed | a_all_days,prev_b_close_mean_bp,-23.386899337402895,-23.664129201538863
+futures_basis_expiry,night (entry weekday) | Tue->Wed | b_ex_index_flagged,prev_b_close_mean_bp,-22.489993035665695,-22.784400242693547
+futures_basis_robustness,2018 | A | a_all_days | nan,n,24,25
+futures_basis_robustness,all | A | a_all_days | nan,n,1691,1692
+futures_basis_robustness,nan | B | a_all_days | full (index sample),n,301,302
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,n,141,142
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,n,24,25
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,n,1621,1622
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),n,284,285
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,n,124,125
+futures_basis_robustness,2018 | A | a_all_days | nan,fut_ON_bp,4.879332241443381,2.271359284096335
+futures_basis_robustness,all | A | a_all_days | nan,fut_ON_bp,5.313687872714666,5.2748972819552415
+futures_basis_robustness,nan | B | a_all_days | full (index sample),fut_ON_bp,5.952637016035635,5.733191225610905
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,fut_ON_bp,1.486114682193984,1.0508604119515417
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,fut_ON_bp,4.879332241443381,2.271359284096335
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,fut_ON_bp,4.932084747103261,4.891855353490847
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),fut_ON_bp,6.381457744585862,6.1474175711233405
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,fut_ON_bp,1.8559066760081455,1.3584994890622175
+futures_basis_robustness,2018 | A | a_all_days | nan,fut_t,0.4729752591016332,0.2195385798842344
+futures_basis_robustness,all | A | a_all_days | nan,fut_t,3.441987840760062,3.4170562897867653
+futures_basis_robustness,nan | B | a_all_days | full (index sample),fut_t,1.607195214510403,1.5491616279195173
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,fut_t,0.3798267992380048,0.2686162653644753
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,fut_t,0.4729752591016332,0.2195385798842344
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,fut_t,3.2667306704444723,3.240166407368867
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),fut_t,1.6389292741591572,1.580171159338015
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,fut_t,0.4280581670487932,0.3134674466147277
+futures_basis_robustness,2018 | A | a_all_days | nan,idx_ON_bp,-2.562741130808603,-6.864689407093039
+futures_basis_robustness,all | A | a_all_days | nan,idx_ON_bp,6.034942363370861,5.966297924599413
+futures_basis_robustness,nan | B | a_all_days | full (index sample),idx_ON_bp,8.739426939526288,8.34588099589236
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,idx_ON_bp,0.700994239300459,-0.0793750725109492
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,idx_ON_bp,-2.562741130808603,-6.864689407093039
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,idx_ON_bp,6.295550608550356,6.223783038484715
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),idx_ON_bp,9.262561650695114,8.843705476349097
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,idx_ON_bp,0.7970982882368123,-0.0901700823724382
+futures_basis_robustness,2018 | A | a_all_days | nan,idx_t,-0.2430501844591249,-0.6578786640271257
+futures_basis_robustness,all | A | a_all_days | nan,idx_t,4.946292820061057,4.884444757754137
+futures_basis_robustness,nan | B | a_all_days | full (index sample),idx_t,3.252823825873337,3.079687056149094
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,idx_t,0.2433834450451525,-0.0270031433571811
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,idx_t,-0.2430501844591249,-0.6578786640271257
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,idx_t,4.951693151168161,4.889635170818063
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),idx_t,3.2780800724215657,3.1019688925707327
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,idx_t,0.2446504240778322,-0.0271308721089333
+futures_basis_robustness,2018 | A | a_all_days | nan,dbasis_ON_bp,7.442073372251326,9.13604869118872
+futures_basis_robustness,all | A | a_all_days | nan,dbasis_ON_bp,-0.7212544906562485,-0.6914006426442256
+futures_basis_robustness,nan | B | a_all_days | full (index sample),dbasis_ON_bp,-2.7867899234907445,-2.6126897702815497
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,dbasis_ON_bp,0.7851204428928975,1.1302354844618645
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,dbasis_ON_bp,7.442073372251326,9.13604869118872
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,dbasis_ON_bp,-1.363465861447149,-1.3319276849939226
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),dbasis_ON_bp,-2.8811039061093444,-2.696287905225851
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,dbasis_ON_bp,1.0588083877706362,1.4486695714339612
+futures_basis_robustness,2018 | A | a_all_days | nan,dbasis_t,0.975611996439078,1.2877364588504348
+futures_basis_robustness,all | A | a_all_days | nan,dbasis_t,-0.5231061815870334,-0.5017123487852158
+futures_basis_robustness,nan | B | a_all_days | full (index sample),dbasis_t,-1.0500279614540855,-0.9861672255440302
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,dbasis_t,0.2434682851316148,0.3523453283887514
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,dbasis_t,0.975611996439078,1.2877364588504348
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,dbasis_t,-1.027184875963706,-1.0039319479514797
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),dbasis_t,-1.0230498088730249,-0.9592822706298764
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,dbasis_t,0.2878675929504271,0.3964238688279697
+futures_basis_robustness,2018 | A | a_all_days | nan,corr,0.5678538224745273,0.5867787923906221
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,corr,0.5678538224745273,0.5867787923906221
+futures_basis_robustness,2018 | A | a_all_days | nan,slope,0.8061035850504067,0.7711838699699122
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,slope,0.8061035850504067,0.7711838699699122
+futures_basis_robustness,2018 | A | a_all_days | nan,slope_nw_se,0.2450050852798451,0.2003067055141041
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,slope_nw_se,0.2450050852798451,0.2003067055141041
+futures_basis_robustness,2018 | A | a_all_days | nan,r2,0.322457963698932,0.3443093511993966
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,r2,0.322457963698932,0.3443093511993966
+futures_basis_robustness,2018 | A | a_all_days | nan,dbasis_ID_bp,-7.678794014125889,-4.9850407966968335
+futures_basis_robustness,all | A | a_all_days | nan,dbasis_ID_bp,1.9236304479772952,1.957756574439247
+futures_basis_robustness,nan | B | a_all_days | full (index sample),dbasis_ID_bp,9.167719537231047,9.33492919578856
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,dbasis_ID_bp,4.308356442908127,4.69819221740596
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,dbasis_ID_bp,-7.678794014125889,-4.9850407966968335
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,dbasis_ID_bp,2.390099181715794,2.4254104870424804
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),dbasis_ID_bp,8.738095449881293,8.916786470834692
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,dbasis_ID_bp,2.658175689595067,3.11423057545111
+futures_basis_robustness,2018 | A | a_all_days | nan,dbasis_ID_t,-0.95328566456141,-0.62192001229499
+futures_basis_robustness,all | A | a_all_days | nan,dbasis_ID_t,1.3304646646678402,1.3549651254485666
+futures_basis_robustness,nan | B | a_all_days | full (index sample),dbasis_ID_t,2.696374372757803,2.748233811430842
+futures_basis_robustness,nan | B | a_all_days | pre 2022-08-25,dbasis_ID_t,0.9076194745085916,0.988996961550789
+futures_basis_robustness,2018 | A | b_ex_index_flagged | nan,dbasis_ID_t,-0.95328566456141,-0.62192001229499
+futures_basis_robustness,all | A | b_ex_index_flagged | nan,dbasis_ID_t,1.6164405710935332,1.6414775345438757
+futures_basis_robustness,nan | B | b_ex_index_flagged | full (index sample),dbasis_ID_t,2.4913033932209547,2.5446858889652892
+futures_basis_robustness,nan | B | b_ex_index_flagged | pre 2022-08-25,dbasis_ID_t,0.5338423871076416,0.6240794262825909
+futures_basis_followup_reconcile,(shape),,"(28, 16)","(27, 16)"
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Tue->Wed,n,185,186
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | JOINT (all 5 equal),n,918,919
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Tue->Wed,n,165,166
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),n,838,839
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",n,141,142
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",n,784,785
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",n,124,125
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",n,719,720
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Tue->Wed,n,185,186
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | JOINT (all 5 equal),n,918,919
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Tue->Wed,n,165,166
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),n,838,839
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",n,141,142
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",n,784,785
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",n,124,125
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",n,719,720
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Tue->Wed,mean_bp,1.6764247258285192,1.935107691526678
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | JOINT (all 5 equal),mean_bp,4.728317946689917,4.777352917744319
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Tue->Wed,mean_bp,1.9056932603017132,2.1941617126233064
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),mean_bp,3.876641945675633,3.931367588583871
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",mean_bp,0.7851204428928978,1.1302354844618645
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_bp,4.464731242609324,4.5224722936960475
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",mean_bp,1.0588083877706365,1.44866957143396
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_bp,3.409446325289111,3.473865783650773
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Tue->Wed,mean_bp,3.7742449649808663,4.0747330910917245
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | JOINT (all 5 equal),mean_bp,-2.1774095113451013,-2.1101163166411343
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Tue->Wed,mean_bp,3.3335585861088988,3.672904838129933
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),mean_bp,-0.9971898518607796,-0.924886840807786
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",mean_bp,4.308356442908129,4.6981922174059605
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_bp,-2.7430130224034603,-2.663512322474793
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",mean_bp,2.658175689595065,3.1142305754511095
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_bp,-2.0524691612766643,-1.966750403522668
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Tue->Wed,mean_t,0.527713086550723,0.6100509586104
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | JOINT (all 5 equal),mean_t,2.2916677745954326,2.318196479998298
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Tue->Wed,mean_t,0.5547226604438508,0.6397714406723314
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),mean_t,1.8873722444735168,1.9164698143090988
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",mean_t,0.1983802004565033,0.2863472276287387
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_t,1.8668216202778245,1.8935598783322247
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",mean_t,0.2419403085998813,0.3320632378123446
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_t,1.4197350578217487,1.448670021217462
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Tue->Wed,mean_t,0.7477248248624607,0.8104916735589629
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | JOINT (all 5 equal),mean_t,-0.9778587928334296,-0.9486005994667316
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Tue->Wed,mean_t,0.6347431808069783,0.7024874327162053
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),mean_t,-0.4011277497847715,-0.3724799098777703
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",mean_t,0.7137143860781656,0.782539852991305
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_t,-1.0913364734493662,-1.060943587631524
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",mean_t,0.4092974626634713,0.4824742087137187
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",mean_t,-0.764681184088326,-0.7337080056445271
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Mon->Tue,minus_others_bp,10.107989600334214,10.043318858909672
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Tue->Wed,minus_others_bp,-3.819631586578355,-3.560948620880195
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Wed->Thu,minus_others_bp,-7.193441843661018,-7.258112585085558
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Thu->Fri,minus_others_bp,-0.4028395810042398,-0.467510322428779
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Fri->Mon (weekend),minus_others_bp,1.307923410909398,1.2432526694848594
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Mon->Tue,minus_others_bp,10.39529744299278,10.32318032991238
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Tue->Wed,minus_others_bp,-2.378536510795804,-2.090068058474211
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Wed->Thu,minus_others_bp,-6.967755642631208,-7.039872755711606
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Thu->Fri,minus_others_bp,-0.5708266963581402,-0.6429438094385389
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Fri->Mon (weekend),minus_others_bp,-0.4781785932076284,-0.5502957062880263
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Mon->Tue",minus_others_bp,11.187295126822024,11.101016366429782
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",minus_others_bp,-3.8544564137600714,-3.509341372191105
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Wed->Thu",minus_others_bp,-5.519108227554947,-5.605386987947189
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Thu->Fri",minus_others_bp,-4.200959422904217,-4.2872381832964574
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_bp,2.387228937397211,2.3009501770049687
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Mon->Tue",minus_others_bp,11.645119042117146,11.547653746201316
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",minus_others_bp,-2.187321002335285,-1.797459818671962
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Wed->Thu",minus_others_bp,-5.723974538113508,-5.821439834029339
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Thu->Fri",minus_others_bp,-4.50546650758509,-4.602931803500921
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_bp,0.7716430059167357,0.6741777100009044
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Mon->Tue,minus_others_bp,-9.709766660173134,-9.784888691700848
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Tue->Wed,minus_others_bp,7.472748767391545,7.773236893502403
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Wed->Thu,minus_others_bp,-0.7215176357669779,-0.7966396672946925
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Thu->Fri,minus_others_bp,4.632283515121789,4.557161483594075
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Fri->Mon (weekend),minus_others_bp,-1.673747986573221,-1.7488700181009362
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Mon->Tue,minus_others_bp,-11.889934653248242,-11.9747712162535
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Tue->Wed,minus_others_bp,5.356255145389772,5.695601397410806
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Wed->Thu,minus_others_bp,1.9585879665433987,1.87375140353814
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Thu->Fri,minus_others_bp,3.6378847666676024,3.553048203662344
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Fri->Mon (weekend),minus_others_bp,0.9372067746474688,0.8523702116422104
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Mon->Tue",minus_others_bp,-9.601672085280116,-9.699131028904574
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",minus_others_bp,8.248482689693642,8.638318464191473
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Wed->Thu",minus_others_bp,-6.479059804521106,-6.576518748145565
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Thu->Fri",minus_others_bp,9.397902611787783,9.300443668163323
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_bp,-1.5656534116802006,-1.6631123553046594
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Mon->Tue",minus_others_bp,-11.02036297716235,-11.13437669862636
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",minus_others_bp,5.381598200833373,5.837653086689417
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Wed->Thu",minus_others_bp,-4.60608403255146,-4.720097754015472
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Thu->Fri",minus_others_bp,8.438070358147078,8.324056636683068
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_bp,1.806778450733358,1.6927647292693464
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Mon->Tue,minus_others_t,2.0845843296233575,2.071167576573714
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Tue->Wed,minus_others_t,-0.9526472045158588,-0.8882817738386511
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Wed->Thu,minus_others_t,-1.844956378270331,-1.8598995538937289
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Thu->Fri,minus_others_t,-0.0840756248013965,-0.0975938489897152
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | Fri->Mon (weekend),minus_others_t,0.214333545506897,0.2037910360108893
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Mon->Tue,minus_others_t,2.1000484085313595,2.0852830957642015
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Tue->Wed,minus_others_t,-0.604980512619865,-0.5317140090543223
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Wed->Thu,minus_others_t,-1.726478794277949,-1.7425053004673494
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Thu->Fri,minus_others_t,-0.1094261884588898,-0.123289698745619
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | Fri->Mon (weekend),minus_others_t,-0.0787302504809,-0.0906328997530911
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Mon->Tue",minus_others_t,2.236962890895215,2.219781770942885
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",minus_others_t,-0.8066302652546796,-0.7350741405246477
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Wed->Thu",minus_others_t,-1.1871358931600202,-1.20431054098727
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Thu->Fri",minus_others_t,-0.8366826865861109,-0.8542748810103215
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_t,0.3777719395217382,0.3642752486134487
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Mon->Tue",minus_others_t,2.2735703075291283,2.25427542894837
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",minus_others_t,-0.4582951067666289,-0.3771086020229359
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Wed->Thu",minus_others_t,-1.1821613104051638,-1.200830537432053
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Thu->Fri",minus_others_t,-0.8452079577037517,-0.8640337576965689
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_t,0.124396457620334,0.1087443997575081
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Mon->Tue,minus_others_t,-1.8006617536127416,-1.8148848934596589
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Tue->Wed,minus_others_t,1.2096276542301474,1.261815078548316
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Wed->Thu,minus_others_t,-0.1261565094494517,-0.1393243164132233
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Thu->Fri,minus_others_t,0.7214242158266579,0.7099281092635907
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | Fri->Mon (weekend),minus_others_t,-0.2683335558286034,-0.2803957838989907
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Mon->Tue,minus_others_t,-2.0831478584751646,-2.098579063939141
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Tue->Wed,minus_others_t,0.843153875448705,0.8992808383609515
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Wed->Thu,minus_others_t,0.3352591239209632,0.3207384610931665
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Thu->Fri,minus_others_t,0.5331986775333775,0.5209700587222882
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | Fri->Mon (weekend),minus_others_t,0.1445400256884713,0.1314656553931298
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Mon->Tue",minus_others_t,-1.7928950587910517,-1.8116140878300953
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Tue->Wed",minus_others_t,1.199381596542952,1.261336934357905
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Wed->Thu",minus_others_t,-1.11788939604683,-1.135067785860301
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Thu->Fri",minus_others_t,1.2160389301187653,1.2037944925896191
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_t,-0.2449436282972897,-0.2602683533863937
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Mon->Tue",minus_others_t,-1.94229756462172,-1.963194005326406
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Tue->Wed",minus_others_t,0.7185602651333416,0.783037864284862
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Wed->Thu",minus_others_t,-0.8058099509888133,-0.8259853595739854
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Thu->Fri",minus_others_t,1.0431136598295283,1.0294763669305955
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | Fri->Mon (weekend)",minus_others_t,0.2650702908365042,0.2484118066119803
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | all days | JOINT (all 5 equal),wald,7.18904017487777,7.084087497657079
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),wald,6.843033377201931,6.725238343276131
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald,6.741795180653131,6.626957244280162
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald,6.873527826757719,6.7299341412296645
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | JOINT (all 5 equal),wald,4.063715282867651,4.179610909351845
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),wald,4.450730878016496,4.538782859968471
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald,5.47161312264666,5.6405282800269205
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald,4.929091603996332,5.06251613614767
+futures_basis_followup_weekday_tests,dbasis_ON | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),wald_p,0.1444193716018328,0.1511403252820239
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald_p,0.1501787235120788,0.1569647629467948
+futures_basis_followup_weekday_tests,"dbasis_ON | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald_p,0.1427245612811388,0.1508670301258961
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | all days | JOINT (all 5 equal),wald_p,0.397451594641491,0.3822435433829521
+futures_basis_followup_weekday_tests,dbasis_ID | pre 2022-08-25 | ex index-flagged | JOINT (all 5 equal),wald_p,0.3484295641247923,0.3379735741872229
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | all days, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald_p,0.2422360005266213,0.2276503059655017
+futures_basis_followup_weekday_tests,"dbasis_ID | pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1 | JOINT (all 5 equal)",wald_p,0.2946508274006227,0.2809428903761053
+futures_basis_followup_offset,all days | pre 2022-08-25 pooled (reference),n,936,937
+futures_basis_followup_offset,ex index-flagged | pre 2022-08-25 pooled (reference),n,854,855
+futures_basis_followup_offset,ex index-flagged | pre 2022-08-25 pooled (reference),a_se_bp,2.0505894976134535,2.043614422127338
+futures_basis_followup_offset,all days | pre 2022-08-25 pooled (reference),a_t,2.3185057387158308,2.327972745886808
+futures_basis_followup_offset,ex index-flagged | pre 2022-08-25 pooled (reference),a_t,2.0166939926541456,2.0273672450767557
+futures_basis_followup_offset,all days | pre 2022-08-25 pooled (reference),k_t_vs1,-5.22282574413255,-5.278736477159644
+futures_basis_followup_offset,ex index-flagged | pre 2022-08-25 pooled (reference),k_t_vs1,-5.08547416266894,-5.140702154140256
+futures_basis_followup_offset,all days | pre 2022-08-25 pooled (reference),r2,0.1542561046312612,0.1552316586395787
+futures_basis_followup_offset,all days | pre 2022-08-25 pooled (reference),mean_dbasis_bp,4.534459442598906,4.582759332570183
+futures_basis_followup_offset,ex index-flagged | pre 2022-08-25 pooled (reference),mean_dbasis_bp,3.74022572406354,3.794086812509882

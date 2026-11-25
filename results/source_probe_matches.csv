@@ -1,0 +1,17 @@
+probe,symbol,status,has_2026_11_24,ref,overlap,src_first,src_last,missing_in_ref,after_ref_last,ref_last,open_match_pct,high_match_pct,low_match_pct,close_match_pct,volume_match_pct,max_abs_close_diff
+P1 vnstock VCI,VN30F1M,ok,False,data/raw/VN30F1M.csv,10.0,2026-11-11,2026-11-25,,0.0,2026-11-25,100.0,100.0,100.0,100.0,100.0,0.0
+P1 vnstock VCI,VN30F1M,ok,False,frozen/VN30F1M.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,100.0,100.0,100.0,100.0,100.0,0.0
+P2 VCI direct,VN30F1M,HTTP 400,,-,,,,,,,,,,,,
+P3 vnstock KBS,VN30F1M,ok,False,data/raw/VN30F1M.csv,10.0,2026-11-11,2026-11-25,,0.0,2026-11-25,30.0,30.0,30.0,30.0,30.0,7.0
+P3 vnstock KBS,VN30F1M,ok,False,frozen/VN30F1M.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,40.0,0.0,0.0,0.0,0.0,5.5
+P1 vnstock VCI,41I1GC000,ok,False,raw_forward_20261125/KBS_41I1GC000_1D.csv,9.0,2026-11-11,2026-11-25,2026-11-23,0.0,2026-11-25,11.11111111111111,100.0,100.0,100.0,100.0,0.0
+P1 vnstock VCI,41I1GC000,ok,False,raw_forward_20261125/VCI_41I1GC000_1D.csv,10.0,2026-11-11,2026-11-25,,0.0,2026-11-25,100.0,100.0,100.0,100.0,100.0,0.0
+P2 VCI direct,41I1GC000,HTTP 400,,-,,,,,,,,,,,,
+P3 vnstock KBS,41I1GC000,ok,False,raw_forward_20261125/KBS_41I1GC000_1D.csv,9.0,2026-11-11,2026-11-25,2026-11-23,0.0,2026-11-25,100.0,100.0,100.0,100.0,100.0,0.0
+P3 vnstock KBS,41I1GC000,ok,False,raw_forward_20261125/VCI_41I1GC000_1D.csv,10.0,2026-11-11,2026-11-25,,0.0,2026-11-25,20.0,100.0,100.0,100.0,100.0,0.0
+P1 vnstock VCI,VN30,ok,False,data/raw/VN30.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,100.0,100.0,100.0,100.0,100.0,0.0
+P2 VCI direct,VN30,HTTP 400,,-,,,,,,,,,,,,
+P3 vnstock KBS,VN30,ok,False,data/raw/VN30.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,100.0,40.0,100.0,100.0,0.0,0.0
+P1 vnstock VCI,VNINDEX,ok,False,data/raw/VNINDEX.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,100.0,100.0,100.0,100.0,100.0,0.0
+P2 VCI direct,VNINDEX,HTTP 400,,-,,,,,,,,,,,,
+P3 vnstock KBS,VNINDEX,ok,False,data/raw/VNINDEX.csv,5.0,2026-11-11,2026-11-25,,5.0,2026-11-17,100.0,60.0,100.0,100.0,0.0,0.0

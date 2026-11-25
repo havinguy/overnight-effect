@@ -1,0 +1,2 @@
+tuesday_date,monday_date,entry,exit,is_roll,gross_bp,modeled_cost_bp,modeled_net_bp,status,realized_entry,realized_exit,realized_fee_bp,realized_slip_bp,realized_net_bp,note
+2026-11-25,2026-11-23,1789.3,1791.6,0.0,12.854188788911092,3.3962975963376945,9.457891192573397,skipped_hold,,,,,,

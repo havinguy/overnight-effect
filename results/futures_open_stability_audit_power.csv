@@ -1,0 +1,6 @@
+sigma_bp,seeds,quarters,mean_flag_r2,mean_flag_k,mean_pass_both,detectable
+0,1,16,6.0,5.0,8.0,False
+10,20,16,6.65,4.95,7.8,False
+25,20,16,7.25,4.6,7.7,False
+50,20,16,11.4,3.95,3.35,False
+100,20,16,14.65,2.6,0.85,True

@@ -1,0 +1,13 @@
+version,leg,months,spread_bp,nw3_t
+all days (= level_b_rebuild P base),ON,94,17.944821860084055,10.417797000595275
+all days (= level_b_rebuild P base),ID,94,-16.848506191202482,-5.373790355793396
+all days (= level_b_rebuild P base),CC,94,1.0963156688815743,0.40718446589978724
+"all days, same months as unflagged-only",ON,18,17.826530791594763,4.5938699365002105
+"all days, same months as unflagged-only",ID,18,-14.036858486363341,-1.4352806696263676
+"all days, same months as unflagged-only",CC,18,3.789672305231422,0.4053443656748836
+unflagged only,ON,18,14.913151470626469,1.9124823204211947
+unflagged only,ID,18,-4.30652812086961,-0.530520664258254
+unflagged only,CC,18,10.606623349756855,1.0894898767489591
+"(iv-b, post hoc) unflagged, coverage-matched [selects on outcome]",ON,92,25.266010121371878,9.010496547572894
+"(iv-b, post hoc) unflagged, coverage-matched [selects on outcome]",ID,92,-18.532946736879172,-6.584606583646286
+"(iv-b, post hoc) unflagged, coverage-matched [selects on outcome]",CC,92,6.733063384492706,2.653503477971844

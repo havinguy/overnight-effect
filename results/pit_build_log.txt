@@ -1,0 +1,9 @@
+CLOSURE chain(Jul-2021) == Jul-2021 PDF: True  | chain(Jan-2020) == KBSV mirror: True
+Jan-2022 (no source): Jul-2022 PDF - VIB + PNJ == Jul-2021 PDF: True -> Jan-2022 membership = Jul-2021 (confidence: inferred)
+RECONCILE 2023-02-06: PDF vs CSV rows=30 membership_diff=0 value_mismatch=0
+RECONCILE 2023-08-07: PDF vs CSV rows=30 membership_diff=0 value_mismatch=0
+RECONCILE 2024-02-05: PDF vs CSV rows=30 membership_diff=0 value_mismatch=1
+   TCB: pdf shares=3522510811/ff=65 csv shares=3522410935/ff=65
+RECONCILE 2024-08-05: PDF vs CSV rows=30 membership_diff=0 value_mismatch=0
+RECONCILE 2025-02-03: PDF vs CSV rows=30 membership_diff=0 value_mismatch=0
+wrote data/vn30_pit_membership.csv: 1140 rows, 38 effective dates, sources {'interp': 570, 'csv': 300, 'pdf': 240, 'mirror': 30}

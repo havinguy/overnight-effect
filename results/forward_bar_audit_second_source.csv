@@ -1,0 +1,5 @@
+source,n,first,last,open_match,high_match,low_match,close_match,volume_exact,volume_within_1pct
+KBS KRX codes stitched (front month) vs VCI VN30F1M,2,2026-11-20,2026-11-25,0.0,1.0,1.0,1.0,1.0,1.0
+KBS 'VN30F1M' as served vs VCI VN30F1M,58,2026-09-03,2026-11-25,0.06896551724137931,0.034482758620689655,0.10344827586206896,0.05172413793103448,0.034482758620689655,0.034482758620689655
+"report-only: KBS vs VCI, same contract 41I1GC000, all its days",149,2026-04-17,2026-11-25,0.3087248322147651,1.0,1.0,1.0,1.0,1.0
+"report-only: KBS vs VCI, same contract 41I1H1000, all its days",3,2026-11-20,2026-11-25,0.3333333333333333,1.0,1.0,1.0,1.0,1.0
