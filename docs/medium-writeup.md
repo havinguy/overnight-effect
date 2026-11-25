@@ -56,6 +56,10 @@ On a point-in-time, free-float cap-weighted VN30 stock basket (validated to trac
 | Intraday | +10.8 bp | −2.4 bp | **−13 bp** (t −2.8) |
 | Close-to-close | — | — | **≈ 0** (not detectable) |
 
+![The 2022 relocation of return from the intraday leg to the overnight leg](../results/regime_relocation.png)
+
+*Figure 1 — Before 2022 the overnight leg earned nothing and the trading day carried the return. After 25 August 2022 they swap places, while the full-day (close-to-close) return barely changes. Return was **relocated**, not created.*
+
 Return moved out of the trading day and into the overnight gap, with no detectable change in the total daily return. The same split holds on one-day nights alone (overnight +13.8 bp, intraday −14.0 bp), so it is not a weekend artifact. It is also not an artifact of "flat" opening prices: the share of opens equal to the prior close barely moves across the break (27% to 26%), and that change can account for only about 0.2 bp of the 14 bp shift. The overnight break survives controls for market trend, volatility and turnover.
 
 Date-stamped: VN-Index overnight-minus-intraday is +4.4 bp pre-COVID (t 1.96), −7.3 bp through the COVID period, and **+21.5 bp from late August 2022 (t 6.1)**.
@@ -66,7 +70,15 @@ What we **cannot** claim: we could not pin the break to a single date. Change-po
 
 A premium you cannot trade is a curiosity, not an edge. Phase 2 tested the two realistic ways to try.
 
-**Futures (VN30F1M, settle T+0).** This is the one place the overnight trade is literally executable. A strategy that buys every close and sells every open earns a healthy *gross* **+12.9%/yr (t 3.9)** — and then dies on costs, netting about **+1.0%/yr (t 0.45)**, indistinguishable from zero. A narrower **Monday-only** version is more interesting: net 6.4 bp/night (t 2.78) over the full sample. But strip out 2026 and it drops to 3.6 bp (t 1.57) — not significant. It is a *candidate*, not a validated edge, and it is now being tracked forward live with a frozen boundary and a pre-registered kill rule. Zero forward observations so far; a real verdict is years away.
+**Futures (VN30F1M, settle T+0).** This is the one place the overnight trade is literally executable. A strategy that buys every close and sells every open earns a healthy *gross* **+12.9%/yr (t 3.9)** — and then dies on costs, netting about **+1.0%/yr (t 0.45)**, indistinguishable from zero. ![VN30 futures overnight strategy: gross vs net equity curves](../results/level_c_equity.png)
+
+*Figure 2 — The futures overnight strategy (buy every close, sell every open). Gross (blue) compounds to roughly 3× over nine years; realistic costs (green) flatten it to nothing, and a slightly higher cost assumption (red dashed) bleeds it away entirely. The edge is real on paper and gone in practice — the whole point of separating measurement from tradability.*
+
+A narrower **Monday-only** version is more interesting: net 6.4 bp/night (t 2.78) over the full sample. But strip out 2026 and it drops to 3.6 bp (t 1.57) — not significant. It is a *candidate*, not a validated edge, and it is now being tracked forward live with a frozen boundary and a pre-registered kill rule. Zero forward observations so far; a real verdict is years away.
+
+![Futures overnight return by entry weekday, gross vs net](../results/level_c_dayofweek.png)
+
+*Figure 3 — Futures overnight return by entry weekday, gross (blue) vs net of costs (green), with 95% confidence intervals on the gross bars. Only Monday and Tuesday survive costs; Wednesday and Thursday are dead or negative. Monday is the forward-tracking candidate — and notice how wide the confidence interval is. That width is why this is a candidate, not a conclusion.*
 
 Why do futures capture so little of the index's overnight premium? Because the futures overnight return equals the index overnight return *plus the overnight change in the basis*, and post-2022 the basis systematically narrows during the day — futures under-react to the overnight move and catch up intraday. In 2025 the index earned ~16.7 bp overnight while futures captured ~6.4.
 
@@ -91,6 +103,10 @@ Everything is reproducible and auditable:
 - A **roll-gap repair** that recovered 14 missing futures roll days from per-contract tickers, and an **open-definition audit** that flagged and bounded stale opens — 20–38% of stock-days carry an open equal to the prior close, which, left unhandled, inflates the overnight leg.
 - A **claims register**: 31 claims, each with evidence file, confidence interval and status. Where the data forced it, claims were retired — including an earlier "82% of the Monday edge is basis" figure (now undetermined, 48% with a confidence interval from −88% to +138%) and an earlier index-based regime story (re-based on the stock basket once the index open proved unreliable).
 - Frozen, hash-verified data snapshots so results reproduce bit-for-bit.
+
+![Reconstructed vs published VN30, rebased to 100](../results/vn30_tracking_level_overlay.png)
+
+*Figure 4 — The point-in-time VN30 reconstruction (blue and orange, two share-count variants) against the published index (black), rebased to 100. The replica tracks the real index at a 0.9970 correlation over eight years; the lower panel shows the two variants drift only a few percent apart. This is what lets the single-stock tests avoid survivorship and look-ahead bias — the reconstruction is a faithful stand-in for the index the futures actually track.*
 
 The full methodology, results tables and the claims register are in the repository.
 
