@@ -12,8 +12,16 @@ Developed markets earn almost all of their return overnight; China, under same-d
 
 - **Over the full sample the overnight leg wins and is the calmer leg** (VN-Index overnight−intraday +7.1 bp/night, t 3.8; Sharpe-like 1.51 vs −0.22). The China-style negative overnight is *not* found.
 - **But it is regime-dependent.** On a point-in-time VN30 basket the overnight return is ≈0 before 2022-08-25 and ≈+13.5 bp after — a **relocation** of return from the intraday to the overnight leg, with no detectable change in close-to-close. It holds on one-day nights and is not a flat-open or weekend artifact.
+
+![The 2022 relocation](results/regime_relocation.png)
+
+*The headline result: before 2022-08-25 the overnight leg earns ~0 and the trading day carries the return; after it they swap, while the full day barely changes. Return was relocated between legs, not created.*
 - **Part of the full-sample headline is a weekend effect:** on one-day nights alone the overnight−intraday gap is not significant (+1.4 bp, t 0.66).
 - **The effect is hard to capture.** An always-on VN30 futures overnight strategy nets ≈0 after costs; a Monday-only version is an unvalidated candidate now tracked live. A T+2 equity hold gives ~79% of the overnight edge back intraday and loses money after costs.
+
+![VN30F1M overnight strategy: gross vs net](results/level_c_equity.png)
+
+*The executable side: a VN30 futures overnight strategy is strong gross (blue, ~3x) but nets to nothing after costs (green). You can measure the premium; you mostly cannot capture it.*
 - **Not settled:** the exact break date (interval ~2021–2024) and its cause are open.
 
 ## Repository layout

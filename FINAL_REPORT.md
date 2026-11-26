@@ -10,6 +10,10 @@ Data through 2026-11-25 (forward boundary 2026-11-17, frozen). Generated from CL
 
 ## 2. The 2022 regime: how firm it is
 - On a point-in-time VN30 stock basket, overnight return is about 0 before 2022-08-25 (CW -0.7 bp) and +13.5 bp after (break +14.1 bp, CI 6.8..21.5); intraday goes from +10.75 to -2.35 bp (break -13.1, CI -22.9..-3.3). Close-to-close shows no detectable change (+1.0 bp, CI -9.4..11.4); the CI half-width is about 10 bp and a change of about 15 bp would be needed for 80% power, so smaller changes could not be seen: the data are consistent with a relocation from intraday to overnight [C4, C5].
+
+![The 2022 relocation](results/regime_relocation.png)
+
+*Figure 1 — The relocation on the point-in-time VN30 basket. Before 2022-08-25 the overnight leg earns about 0 and the trading day carries the return; after it, they swap, while the full day (close-to-close) barely moves. Return was relocated between legs, not created.*
 - **Holds on one-day nights, not produced by weekends.** Restricted to one-day nights, the break is overnight +13.8 bp (t 3.70) and intraday -14.0 bp (t -2.80) for CW, +15.6 / -18.0 bp for EW, with close-to-close about 0. The post-weekend intraday drop (about -26 to -30 bp) is present in both regimes. Whether post-weekend sessions also relocate cannot be told: that cell has 179/201 nights and could only detect a break of about 39 bp (power about 17% for a 14 bp break) [C31].
 - **Not a flat-open artifact.** About 27% of stock opens equal the prior close in both regimes (27.3% vs 26.2%); because those nights have ON = 0, the share change can move the overnight mean by about 0.2 bp of the 13.8 bp break (this test's sample, n 741/833 nights, differs slightly from the 739/820 above, hence 13.8 vs 14.1). On unflagged stock-days only, the overnight break is +15.6 bp (t 3.85) and the intraday break -14.9 bp (t -2.88); that check drops days on an outcome-related flag, so it supports only this conditional statement, not a level [C4, C5, C27].
 - **Survives:** market-state controls for the overnight leg (t 3.77 -> 4.13); not the intraday leg with all four controls (t -1.59). Three treatments of the 7% rule. Neither the 2018 nor the 2020 drawdown shows the same pattern (low power) [C7, C8, C11].
@@ -18,6 +22,10 @@ Data through 2026-11-25 (forward boundary 2026-11-17, frozen). Generated from CL
 
 ## 3. Level B: single stocks and persistence (H3)
 - 30 current names: ON positive in 23 (NW t > 2 in 19); ID t < -2 in 3. The current-30 list is survivorship-biased; the PIT basket is not [C10].
+
+![Point-in-time VN30 reconstruction vs published index](results/vn30_tracking_level_overlay.png)
+
+*Figure 2 — The point-in-time VN30 reconstruction (two share-count variants) against the published index, rebased to 100: correlation 0.9970 over eight years, drifting only a few percent apart (lower panel). This is the basket the single-stock tests use, which is why they are free of survivorship and look-ahead bias.*
 - **Persistence (H3):** stocks with high trailing overnight returns keep higher overnight (+17.9 bp/night top minus bottom third, NW t 10.4) and lower intraday returns (-16.9 bp, t -5.4) next month; the two nearly cancel (close-to-close +1.1 bp, t 0.41). The overnight part halves but survives removing each stock's own mean (+9.1, t 5.3) and a 12-month gap (+9.3, t 4.2). The pre-registered check on unflagged nights fails (t 1.91); it had only 18 of 94 eligible months (all-days spread on those months t 4.59), so it is underpowered rather than a clean rejection, but it does not exclude a flat-open explanation. A post hoc coverage-matched unflagged version (t 9.0) drops nights on an outcome-related flag and is not counted as evidence. The intraday reversal holds at short lags only (12-month lag t -1.5). Supported for the overnight leg; a slow-moving stock-level open effect is not excluded [C9].
 - Mon+Tue minus Wed+Thu overnight: +5.3 to +6.6 bp (t 1.55 to 1.98), not significant, chosen after seeing the data [C12].
 - Open filter: dropping flat opens selects on the outcome (flagged names close 11.7 bp lower, t -5.77); unfiltered numbers are the reference [C27].
@@ -25,8 +33,16 @@ Data through 2026-11-25 (forward boundary 2026-11-17, frozen). Generated from CL
 ## 4. Phase 2: what can be captured
 **Futures (T+0).**
 - Always-on VN30F1M overnight: gross +12.9%/yr (t 3.9), net of realistic costs +1.0%/yr (t 0.45): H4 holds for this strategy [C16].
+
+![VN30F1M overnight strategy equity curves](results/level_c_equity.png)
+
+*Figure 3 — The futures overnight strategy (buy every close, sell every open). Gross (blue) compounds to roughly 3x over nine years; realistic costs (green) flatten it to nothing and a slightly higher cost assumption (red dashed) bleeds it away. The edge is real on paper and gone after costs.*
 - Futures overnight shows no detected break (post-2022 7.1 bp, t 4.5; break +1.6 bp, CI -3.6..6.7); the pre-2022 level cannot be verified (pre-2022-06 opens unverifiable). The paired stock-minus-futures break is +12.6 bp (t 5.0). Futures ON is described by index ON plus the change in basis (a = -3.22 bp, k = 0.82), consistent with the index premium and the futures capture diverging [C13, C14].
 - Monday-only futures: net 6.4 bp/night (t 2.78; 2022-2025 net 3.6 bp, t 1.57). Chosen after seeing the data: a forward-tracking candidate only, 0 realised forward Mondays (the first, 2026-11-23 -> 11-24, is skipped: the 11-24 bar is in neither VCI nor KBS). Boundary and kill rule unchanged. The old "82% of the Monday edge is basis" is undetermined (48%, CI -88..138%) [C15, C17, C20].
+
+![Futures overnight return by entry weekday](results/level_c_dayofweek.png)
+
+*Figure 4 — Futures overnight return by entry weekday, gross (blue) vs net of costs (green), with 95% confidence intervals on the gross bars. Only Monday and Tuesday survive costs; Wednesday and Thursday are dead or negative. The wide interval on Monday is why it is a forward-tracking candidate, not a result.*
 
 **Stocks under the settlement rule (T+2, Option C).**
 - Regime 2 (from 2022-08-25, sale in the T+2 afternoon, 1,052 entry dates): gross 9.0 bp per 2-night hold (NW t 1.30; not distinguishable from 0); net -21 / -31 / -51 bp at 30 / 40 / 60 bp round trip [C23, C24].
