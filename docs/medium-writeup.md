@@ -4,15 +4,35 @@
 
 ---
 
-## The puzzle
+## Where this started
 
-In most developed markets, almost all of the stock market's long-run return has arrived overnight — between yesterday's close and today's open — while the trading day itself, open to close, has gone roughly nowhere. The pattern was first noted by French and Roll in 1986 and documented across strategies and countries by Lou, Polk and Skouras (2019). It turns up in all 23 developed markets of the MSCI World index.
+I spend most of my time looking at Vietnamese capital markets, and this project began with a mismatch: something the global literature treats as almost a law of markets, set against a market — my own — that nobody had checked it against.
 
-Then there is China, the great exception. Chinese overnight returns are, on average, *negative*. Researchers trace it to the settlement rule: for most of its history China ran a T+1 system that bars you from selling a stock the same day you buy it, which pushes a discount onto the open.
+The "something" is the **overnight effect**. In the United States and most developed markets, essentially all of the stock market's long-run return has accrued *overnight*, from one day's close to the next day's open, while the open-to-close trading day has contributed almost nothing. It sounds like a measurement glitch, and it has survived decades of scrutiny.
 
-Vietnam sits in between. It is a frontier, retail-driven market that runs **T+2 settlement** — you cannot sell until two days after you buy. So before looking at any data, the sign was genuinely open: would Vietnam look like the developed world (positive overnight) or like China (negative overnight)?
+## What the research actually says
 
-This project set out to answer that cleanly, and then to ask the harder second question: even if the pattern exists, can anyone actually *capture* it?
+The idea that the two sessions are different objects goes back to French and Roll (1986), who showed that stock-return variance is far higher when the market is open than when it is closed — information and trading, not just elapsed time, drive volatility. That reframes a daily return as two unlike things: a quiet overnight gap and a noisy trading session.
+
+The modern, more startling version is empirical. Cliff, Cooper and Gulen documented that in the US the entire equity premium, historically, has been an overnight phenomenon — hold the market only during trading hours and you earn roughly nothing. Lou, Polk and Skouras (2019), in the *Journal of Financial Economics*, pushed this further: they decomposed fourteen well-known return anomalies into overnight and intraday pieces and found each one lives almost entirely in one session or the other — momentum overnight, many others intraday — with an offsetting reversal across the two that persists for years. They attribute it to a "tug of war" between investor clienteles who prefer to trade at the open versus through the day. Across developed markets the overnight leg beats the intraday leg with striking consistency.
+
+Then comes the exception that makes Vietnam worth studying. In China, overnight returns are on average **negative** — the opposite result. Zhang (2020) shows the Chinese overnight return is significantly negative while T+0 venues that track the same market (index futures, Hong Kong-listed shares, international indices) sit near zero, and argues the overnight return there is essentially a proxy for the trading mechanism itself. Qiao and Dam trace the cause to the **T+1 rule**, which forbids selling a share on the day you buy it: that one-sided restriction imposes a discount on the opening price, which they estimate at about **14 basis points**, showing up as a negative overnight return. Later work (An, Huang and Li, 2022) finds the Chinese anomaly is asymmetric, concentrated after down days.
+
+So the literature offered two sharply different pictures, and the line between them looked a lot like **settlement**: instant-sale (T+0) markets earn positive or zero overnight; the one big T+1 market earns negative.
+
+## The question I kept asking
+
+Vietnam sits right on that fault line. The Ho Chi Minh Stock Exchange is a frontier, retail-dominated market, and it runs **T+2 settlement** — you cannot sell a share until two days after you buy it, a restriction closer to China's than to the US's. As far as I could find, nobody had decomposed Vietnamese returns this way. So the opening question was genuinely open: would Vietnam look like the developed world (positive overnight), like China (negative overnight), or like neither?
+
+That single question kept splitting into sharper ones, and the project is really the record of that splitting:
+
+- Does the overnight leg even differ from the intraday leg in Vietnam? *(the raw question)*
+- If it does, does it survive **risk adjustment** — is the overnight leg better *per unit of volatility*, or just bigger? *(what separates a real anomaly from mere compensation for overnight-gap risk)*
+- Is Vietnam a China-style reversal, with a **negative** overnight leg driven by T+2?
+- Does the pattern **persist** at the level of individual stocks, the way Lou–Polk–Skouras find in the US?
+- And the one that matters for anyone tempted to act on it: does any measured edge survive **real trading costs**?
+
+The answers turned out stranger than any of those three guesses, because the honest reply to the very first question is "it depends when you ask" — the effect switches on around 2022 — and that discovery reorganized the whole project. The rest of this piece is what those questions returned.
 
 ## What we measured
 
@@ -122,6 +142,9 @@ The full methodology, results tables and the claims register are in the reposito
 *Data via `vnstock` (VCI/KBS). This is a measurement study, not investment advice. Code, data notes and the full claims register: [GitHub repository]. Methodology design doc and progress report included in the repo.*
 
 ### References
-- French, K. & Roll, R. (1986). *Stock return variances: The arrival of information and the reaction of traders.*
-- Lou, D., Polk, C. & Skouras, S. (2019). *A Tug of War: Overnight Versus Intraday Expected Returns.*
-- Work on China's T+1 rule and the negative-overnight-return puzzle (e.g. Zhang, 2020).
+- French, K. R. & Roll, R. (1986). Stock return variances: The arrival of information and the reaction of traders. *Journal of Financial Economics* 17(1), 5–26.
+- Cliff, M., Cooper, M. & Gulen, H. Return differences between trading and non-trading hours (working paper).
+- Lou, D., Polk, C. & Skouras, S. (2019). A tug of war: Overnight versus intraday expected returns. *Journal of Financial Economics* 134(1), 192–213.
+- Zhang, B. (2020). T+1 trading mechanism causes negative overnight return. *Economic Modelling* 89, 55–71.
+- Qiao, —. & Dam, L. (2020). The overnight return puzzle and the "T+1" trading rule in Chinese stock markets. (Estimates the T+1 open-price discount at ~14 bp.)
+- An, Y., Huang, L. & Li, Y. (2022). The asymmetric overnight return anomaly in the Chinese stock market. *Journal of Risk and Financial Management* 15(11), 534.
