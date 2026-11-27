@@ -57,8 +57,8 @@ The overnight premium is real in the index and stock data but regime-dependent: 
 Break timing and cause are not identified. Pre-2022 futures opens are unverifiable; the VN30 index open is unreliable 2019-mid 2021. Weekend findings and several diagnostics are post hoc and labelled so. Settlement-rule details are from a secondary source. The Monday edge is a forward-tracking candidate with n = 0. Data continuity: vnstock 4.0.4 -> VCI still works and is self-consistent, but v4/v5 are being shut down, no credential-free replacement passed the probe, and the choice of a successor is the user's [C21].
 
 ## 7. Not covered (still not done)
-- Intraday futures timing (09:00/09:15/09:30): parked; VCI 1-minute VN30F1M bars already cached from 2023-09-11 (795 days, results/intraday_probe.md), so only 2023-09..2026-11 could be tested, not pre-2022 (PARKED 4-5).
-- Relocation mechanism at 2022-08-25 (PARKED 1) and verification of pre-2022 futures opens (PARKED 2); 2019Q4 anomaly (PARKED 3).
+- Intraday futures timing (09:00/09:15/09:30): done on 2023-09..2026-11 (pre-2022 still open, no data). No special Wednesday or Monday in the morning basis (W1/W2 fail); the overnight basis shortfall's recovery is inconclusive on one year (T2); futures ON = index ON + basis offset holds (C14). The futures closing auction does not price in overnight drift (auction leg -0.85 bp, t -1.00; hypothesis rejected, P1/P2). A post-hoc one-year lead -- the index's own closing auction lowers its close relative to futures, explaining much of the in-window overnight gap -- is parked for a pre-registered test once more index-intraday history accrues [C14, C32, C33].
+- Relocation mechanism at 2022-08-25: tested and inconclusive (cross-section n=30, no significant liquidity/price gradient; mechanism not identified) [C18, PARKED 1]. Verification of pre-2022 futures opens (PARKED 2) and the 2019Q4 anomaly (PARKED 3) remain open.
 - Forward validation of the Monday futures candidate: first checkpoint at 30 forward Mondays.
 - Primary-source confirmation of the settlement rules (VSD decision text).
 - Data-source continuity after the vnstock sunset: user decision (HARD STOP).
