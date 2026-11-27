@@ -82,9 +82,12 @@ def futures_nights() -> pd.DataFrame:
 
 
 def index_nights() -> pd.DataFrame:
-    v = decompose(pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]))   # all nights (Level A convention)
-    v["prev_date"] = v["date"].shift(1)
-    v["prev_close"] = v["close"].shift(1)
+    # 2018-11-21 first-night fix (2026-11-27; = futures_roll_gap_repair.index_nights_fixed): prior date / close are taken from the
+    # RAW series BEFORE decompose() drops row 0. Previously they were computed after the drop, so the first night (2018-11-21) had
+    # prev_date NaT, failed the alignment test and left the decomposition sample (N 1,962 -> 1,963).
+    raw = pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
+    raw["prev_date"] = raw["date"].shift(1); raw["prev_close"] = raw["close"].shift(1)
+    v = decompose(raw)                                                        # all nights (Level A convention)
     return v.set_index("date").rename(columns={"r_overnight": "idx_ON", "r_intraday": "idx_ID", "open_suspicious": "idx_flag"})
 
 

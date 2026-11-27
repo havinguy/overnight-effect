@@ -6,12 +6,11 @@ year,step,n,mean_bp,t,section,date,idx_ON_bp,fut_ON_bp,fut_prior_day,idx_prior_d
 all,1 full index nights (gate convention),1993.0,5.703740945212499,5.259438887335943,waterfall,,,,,,,,,,
 all,2 & futures bar exists on the date,1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
 all,3 & futures night invested (roll F2M close exists),1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
-all,4 & same prior trading day (decomposition sample),1962.0,5.918881661577095,5.394613547326264,waterfall,,,,,,,,,,
+all,4 & same prior trading day (decomposition sample),1963.0,5.859772986233489,5.33501144022167,waterfall,,,,,,,,,,
 2023,"5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index)",237.0,10.211675581467308,4.602788964892266,waterfall,,,,,,,,,,
 2023,"6 decomposition sample (misaligned EXCLUDED), = step 4",225.0,11.07520308621801,5.070545333323369,waterfall,,,,,,,,,,
 all,"5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index)",1978.0,5.773710356555713,5.287711019814818,waterfall,,,,,,,,,,
-all,"6 decomposition sample (misaligned EXCLUDED), = step 4",1962.0,5.918881661577095,5.394613547326264,waterfall,,,,,,,,,,
-2018,,,,,misaligned nights,2018-11-21,-110.1114480379195,-60.31999169223275,2018-11-20,,Tue->Wed,False,,1.0,futures prior day missing from VN30.csv
+all,"6 decomposition sample (misaligned EXCLUDED), = step 4",1963.0,5.859772986233489,5.33501144022167,waterfall,,,,,,,,,,
 2021,,,,,misaligned nights,2021-05-04,-1.5241811366450975,23.50177344953673,2021-04-28,2021-04-29,holiday,False,5.0,6.0,index prior day missing from VN30F1M.csv
 2022,,,,,misaligned nights,2022-11-21,-5.7677256161614565,64.16912931743606,2022-11-17,2022-11-18,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv
 2022,,,,,misaligned nights,2022-12-19,-3.2897983650315155,-136.37643763530713,2022-12-15,2022-12-16,holiday,False,3.0,4.0,index prior day missing from VN30F1M.csv

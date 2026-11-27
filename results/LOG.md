@@ -69,3 +69,26 @@ G1 full-history refetch, new backend: 100% on O/H/L/C/V + open_suspicious. VN30F
 G2 A/B vs vnstock: all fields 100% on vnstock's window; VN30F1M byte-identical. vnstock now caps 1D history at 8 years (VN30F2M/VN30/VNINDEX start 2018-11-29), so G2 was redefined from file bytes to that window (REV 1, written after run 0 crashed in formatting and before any verdict).
 G3 track_forward dry runs in two throwaway repo copies (direct vs vnstock): no-refresh outputs byte-identical to live; --refresh exit 0, guard passed, +1 bar each (2026-11-26), boundary unchanged, rows <= 2026-11-17 unchanged, scorecard identical to live; D == V byte-for-byte (F1M, F2M, log, scorecard).
 G4: 67 protected files (data/raw, frozen_20261117, track_forward boundary/log/scorecard, track_forward.py) hash-identical before/after. No real refresh run in the project.
+
+## 2026-11-27 | 2018-11-21 first-night bug: FB-only fix (Option A) + inventory (#5) -- GATE PASS, uncommitted
+Fixed: src/futures_basis_decomp.py index_nights(). Prior date/close now come from the RAW series before decompose() drops row 0; the result .equals() futures_roll_gap_repair.index_nights_fixed(). src/futures_roll_gap_repair.py now has index_nights_legacy() pinned (frozen pre-fix copy, equal to HEAD 0c3c8f4, labelled DO NOT 'fix'), and the 'before (as reported)' variant uses it. That script was not rerun.
+Regenerated futures_basis_decomp.py (its own gate PASSED; N 1,962 -> 1,963) and futures_basis_followup.py. GATE: all 9 tables equal their *_fix20181121.csv twins byte-for-byte. The twins are now redundant; not deleted (Harry's call).
+Headline: C14 (a -3.22, t -2.40, k 0.820), C32 (W1 -1.79/t -0.65, W2 +1.76/t 0.67, T2 61%), futures all-nights 4.99 bp, and the Monday/Wednesday tables are unchanged. Moved but not cited anywhere: pooled decomposition fut/idx/dbasis 5.42/5.92/-0.50 -> 5.39/5.86/-0.47; Tue->Wed weekday cells (full and pre-2022); the 2018 row. No registered claim moves.
+Correction to the earlier pass: a first pass also edited the index-series lines in pit_residual_split, open_filter_audit, regime_changepoint_audit and regime_market_state_audit (Option B). Reverted to HEAD after Harry chose Option A, together with their 2 regenerated md footers. Their outputs had been byte-identical anyway.
+Inventory (not edited) -> results/fix20181121_inventory.md. Measured in two throwaway copies of the tree (B unpatched reproduces every committed CSV; A has every remaining carrier fixed).
+- Carriers: pit_dayofweek_2x2 (RET + PC), level_b_dayofweek, composition_diagnostic, open_filter_audit (ret_panel + index_on), pit_residual_split, regime_legs_audit, regime_changepoint_audit (+_repaired) and regime_market_state_audit. Inheritors: index_open_degradation_audit, option_c_t2_equity, pit_vs_futures, futures_basis_decomp.pit_basket.
+- Lost nights: 53/54 tickers lose their first one-day night (27 lose 2018-11-21, 22 lose 2018-11-22, plus SSB/VPL/TCX/BMP); the CW basket loses 2018-11-21; VN30 loses 2018-11-21; VNINDEX loses 2011-04-29.
+- If fixed, these registered figures would move with no verdict change: C4 CW ON pre -0.7 -> -0.8; C5 CW ID pre 10.75 -> 10.96 (C2C t 0.19 -> 0.18); C13 futures pre 5.5 -> 5.4, break 1.55 -> 1.64; C6 ON interval 2021-04-09..2024-08-20 -> 2021-06-18..2024-10-01 (LS dates unchanged); C7 CW ON t 3.77->4.13 becomes 3.81->4.19.
+- Unchanged: C8, C15, C23-C27. Largest table shift: 5.1 bp in 2018-only basket cells (open_audit, index_open_degradation).
+- CLAIMS_REGISTER not edited.
+
+## 2026-11-27 | stock back-adjustment guard (policy: stock data frozen; reopen = full re-pull) -- uncommitted
+src/fetch_indices.py: in update(), for every symbol outside DIRECT_VCI_SYMBOLS (i.e. stocks), check_stock_overlap() compares the cached rows the fresh fetch overlaps BEFORE the keep='last' merge. Any O/H/L/C change (|diff| > 1e-6) or any volume change raises StockRevisionError and nothing is written. The message names the changed rows and fields and the reopen path. update_with_retry re-raises it at once (no 65 s retry). Volume is included on purpose (FPT's volumes were revised too, and it mirrors track_forward's any-change guard); narrow to OHLC by deleting one line.
+Futures/index: not checked here; logger, boundary and kill rule unchanged.
+data/README.md: one note (stocks frozen; reopen = full re-pull via direct VCI into a new dated snapshot).
+Tests on scratch copies of data/raw (repo data untouched):
+- Offline (_download monkeypatched): FPT x0.9775 -> abort; a single close +0.05 -> abort; volume-only change -> abort; identical overlap -> passes; update_with_retry -> abort with 0 sleeps; VN30F1M/VNINDEX changed overlap -> no guard (unchanged behaviour).
+- Live vnstock: FPT ABORTED (the real VCI back-adjustment); VCB passed (8 overlapping rows unchanged, +6 rows in scratch).
+Open:
+- The guard blocks splicing, not incremental stock refresh as such: an unchanged overlap still appends.
+- The full-re-pull path itself is not built: stocks still route to vnstock, which now caps 1D history at 8 years. A direct-VCI stock re-pull into a dated snapshot is still to do.

@@ -30,8 +30,8 @@ GATE PASSED
 
 ## Step 1: alignment and sample
 - Futures nights (invested): 2284, 2017-08-11 .. 2026-11-17. Index nights from 2018-11-21.
-- Decomposition sample (intersection, both legs from the same prior trading day): N = 1962, 2018-11-22 .. 2026-11-17; 16 intersection nights dropped because the prior trading day differs between the two series.
-- Excluding index-flagged opens: N = 1876. Identity fut_ON = idx_ON + dbasis_ON: max |residual| = 9.50e-16.
+- Decomposition sample (intersection, both legs from the same prior trading day): N = 1963, 2018-11-21 .. 2026-11-17; 15 intersection nights dropped because the prior trading day differs between the two series.
+- Excluding index-flagged opens: N = 1877. Identity fut_ON = idx_ON + dbasis_ON: max |residual| = 9.50e-16.
 - Roll nights in sample: 81; prior-close leg uses the VN30F2M close (build() entry) for both the futures return and the basis.
 - Index-flag rate by year (%): 2018 0.0, 2019 11.6, 2020 15.5, 2021 4.4, 2022 1.6, 2023 0.0, 2024 0.4, 2025 0.4, 2026 0.5
 - Futures open == prior close (entry): 3.42% of invested nights; degenerate bars (O=H=L=C): 0; zero-volume bars: 0.
@@ -40,9 +40,9 @@ GATE PASSED
 ## Tables, sample a_all_days
 A. By year:
                                   year    n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  corr  slope  slope_nw_se   r2  dbasis_ID_bp  idx_flag_pct
-2018 (futures only, before index data)  212       2.48   0.69        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
+2018 (futures only, before index data)  211       2.78   0.77        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
 2017 (futures only, before index data)   95       9.34   4.17        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
-                                  2018   27      -0.39  -0.03      -6.40  -0.54          6.01      0.71  0.59   0.84         0.30 0.35         -6.61          0.00
+                                  2018   28      -2.53  -0.23     -10.10  -0.88          7.57      0.94  0.60   0.80         0.25 0.36         -4.24          0.00
                                   2019  250       3.99   2.00       0.02   0.01          3.97      1.32  0.35   0.36         0.15 0.13         -3.28         11.60
                                   2020  252       6.91   0.96      -1.33  -0.55          8.25      1.38  0.37   0.98         0.11 0.14         -0.86         15.48
                                   2021  248       8.05   2.35       5.95   3.26          2.11      0.60  0.32   0.46         0.09 0.10         -2.96          4.44
@@ -51,18 +51,18 @@ A. By year:
                                   2024  250       3.66   1.96       8.77   4.71         -5.11     -3.87  0.72   0.84         0.05 0.51          3.49          0.40
                                   2025  249       6.36   1.95      16.65   4.26        -10.29     -3.71  0.78   0.78         0.15 0.60         11.20          0.40
                                   2026  216       4.28   1.27      10.78   3.63         -6.50     -2.86  0.74   0.99         0.11 0.54          7.59          0.46
-                                   all 1962       5.42   4.06       5.92   5.39         -0.50     -0.41  0.58   0.75         0.05 0.33          1.96          4.38
+                                   all 1963       5.39   4.04       5.86   5.34         -0.47     -0.39  0.58   0.75         0.05 0.33          1.99          4.38
 
 B. By night (entry weekday), NW t lag 5. 6 night types x 4 periods = 24 cells: Bonferroni |t| ~3.1 at 5%; weekday cells are descriptive.
              period              night   n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  dbasis_ID_bp
 full (index sample)           Mon->Tue 391      12.14   4.24       8.22   3.19          3.93      1.36         -4.04
-full (index sample)           Tue->Wed 394       6.74   2.11       8.05   3.42         -1.31     -0.57          8.48
+full (index sample)           Tue->Wed 395       6.57   2.05       7.75   3.27         -1.18     -0.51          8.61
 full (index sample)           Wed->Thu 390       2.75   1.07       6.84   3.12         -4.10     -2.00         -0.86
 full (index sample)           Thu->Fri 384       3.58   1.30       2.46   1.07          1.13      0.43          3.95
 full (index sample) Fri->Mon (weekend) 366       1.78   0.38       4.15   1.41         -2.37     -0.57          4.05
 full (index sample)            holiday  37       3.81   0.31       2.62   0.19          1.19      0.12        -15.81
      pre 2022-08-25           Mon->Tue 184      12.87   2.64       0.06   0.02         12.82      2.58         -9.97
-     pre 2022-08-25           Tue->Wed 185       4.25   1.40       2.57   1.16          1.68      0.60          3.77
+     pre 2022-08-25           Tue->Wed 186       3.90   1.28       1.96   0.86          1.94      0.69          4.07
      pre 2022-08-25           Wed->Thu 183       1.98   0.55       3.01   1.29         -1.02     -0.31         -2.78
      pre 2022-08-25           Thu->Fri 187       2.93   0.62      -1.48  -0.43          4.41      0.90          1.50
      pre 2022-08-25 Fri->Mon (weekend) 179       4.38   0.59      -1.39  -0.45          5.78      0.81         -3.54
@@ -101,9 +101,9 @@ E. Basis level and dbasis by days-to-expiry / night:
        days-to-expiry                            0-5 570            -8.29          0.84         0.53          2.36         1.06
        days-to-expiry                           6-10 475           -24.56         -1.92        -0.65          3.93         1.35
        days-to-expiry                          11-15 467           -28.26         -0.54        -0.27          0.03         0.01
-       days-to-expiry                            16+ 427           -28.47         -0.33        -0.13          1.14         0.39
+       days-to-expiry                            16+ 428           -28.46         -0.22        -0.09          1.28         0.44
 night (entry weekday)                       Mon->Tue 391           -22.78          3.93         1.36         -4.04        -1.48
-night (entry weekday)                       Tue->Wed 394           -16.22         -1.31        -0.57          8.48         2.67
+night (entry weekday)                       Tue->Wed 395           -16.23         -1.18        -0.51          8.61         2.71
 night (entry weekday)                       Wed->Thu 390           -19.67         -4.10        -2.00         -0.86        -0.30
 night (entry weekday)                       Thu->Fri 384           -22.55          1.13         0.43          3.95         1.18
 night (entry weekday)             Fri->Mon (weekend) 366           -22.11         -2.37        -0.57          4.05         1.01
@@ -115,7 +115,7 @@ night (entry weekday)                        holiday  37           -48.32       
           night x dte             Tue->Wed | dte 0-5  96              NaN          2.36         0.69           NaN          NaN
           night x dte            Tue->Wed | dte 6-10 101              NaN         -6.36        -1.07           NaN          NaN
           night x dte           Tue->Wed | dte 11-15 104              NaN         -0.12        -0.03           NaN          NaN
-          night x dte             Tue->Wed | dte 16+  89              NaN         -0.97        -0.19           NaN          NaN
+          night x dte             Tue->Wed | dte 16+  90              NaN         -0.40        -0.08           NaN          NaN
           night x dte             Wed->Thu | dte 0-5 187              NaN         -5.03        -1.62           NaN          NaN
           night x dte            Wed->Thu | dte 6-10  83              NaN         -6.49        -1.61           NaN          NaN
           night x dte           Wed->Thu | dte 11-15  87              NaN         -0.21        -0.05           NaN          NaN
@@ -134,9 +134,9 @@ night (entry weekday)                        holiday  37           -48.32       
 ## Tables, sample b_ex_index_flagged
 A. By year:
                                   year    n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  corr  slope  slope_nw_se   r2  dbasis_ID_bp  idx_flag_pct
-2018 (futures only, before index data)  212       2.48   0.69        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
+2018 (futures only, before index data)  211       2.78   0.77        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
 2017 (futures only, before index data)   95       9.34   4.17        NaN    NaN           NaN       NaN   NaN    NaN          NaN  NaN           NaN           NaN
-                                  2018   27      -0.39  -0.03      -6.40  -0.54          6.01      0.71  0.59   0.84         0.30 0.35         -6.61          0.00
+                                  2018   28      -2.53  -0.23     -10.10  -0.88          7.57      0.94  0.60   0.80         0.25 0.36         -4.24          0.00
                                   2019  221       4.11   1.92       0.03   0.01          4.08      1.22  0.36   0.36         0.15 0.13         -3.49          0.00
                                   2020  213       4.32   0.59      -1.58  -0.54          5.90      1.04  0.40   0.98         0.10 0.16          0.97          0.00
                                   2021  237       8.24   2.27       6.22   3.28          2.02      0.54  0.32   0.46         0.09 0.11         -1.04          0.00
@@ -145,18 +145,18 @@ A. By year:
                                   2024  249       3.68   1.97       8.80   4.74         -5.12     -3.87  0.72   0.84         0.05 0.51          3.40          0.00
                                   2025  248       6.22   1.89      16.71   4.26        -10.50     -3.77  0.78   0.78         0.15 0.60         11.43          0.00
                                   2026  215       4.51   1.35      10.83   3.61         -6.32     -2.74  0.74   0.99         0.11 0.54          7.31          0.00
-                                   all 1876       5.14   3.94       6.19   5.40         -1.05     -0.90  0.59   0.75         0.05 0.35          2.61          0.00
+                                   all 1877       5.11   3.91       6.13   5.34         -1.02     -0.87  0.59   0.75         0.05 0.35          2.64          0.00
 
 B. By night (entry weekday), NW t lag 5. 6 night types x 4 periods = 24 cells: Bonferroni |t| ~3.1 at 5%; weekday cells are descriptive.
              period              night   n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  dbasis_ID_bp
 full (index sample)           Mon->Tue 378      11.81   4.40       8.50   3.20          3.31      1.25         -4.05
-full (index sample)           Tue->Wed 374       7.11   2.11       8.48   3.44         -1.37     -0.56          8.54
+full (index sample)           Tue->Wed 375       6.93   2.05       8.17   3.28         -1.24     -0.51          8.68
 full (index sample)           Wed->Thu 369       2.78   1.02       7.23   3.13         -4.46     -2.09          0.85
 full (index sample)           Thu->Fri 368       3.19   1.13       2.57   1.07          0.62      0.23          4.09
 full (index sample) Fri->Mon (weekend) 352       0.43   0.09       4.31   1.42         -3.89     -0.91          5.97
 full (index sample)            holiday  35       5.22   0.41       2.77   0.19          2.46      0.26        -19.95
      pre 2022-08-25           Mon->Tue 171      12.18   2.72       0.06   0.02         12.12      2.71        -10.46
-     pre 2022-08-25           Tue->Wed 165       4.79   1.38       2.88   1.17          1.91      0.60          3.33
+     pre 2022-08-25           Tue->Wed 166       4.39   1.27       2.20   0.86          2.19      0.69          3.67
      pre 2022-08-25           Wed->Thu 163       1.61   0.41       3.38   1.28         -1.77     -0.49          0.62
      pre 2022-08-25           Thu->Fri 172       1.74   0.35      -1.61  -0.43          3.35      0.65          1.96
      pre 2022-08-25 Fri->Mon (weekend) 167       1.93   0.24      -1.49  -0.45          3.43      0.44         -0.20
@@ -195,9 +195,9 @@ E. Basis level and dbasis by days-to-expiry / night:
        days-to-expiry                            0-5 543            -5.69          0.93         0.60          3.68         1.43
        days-to-expiry                           6-10 453           -24.19         -3.80        -1.47          4.87         1.70
        days-to-expiry                          11-15 447           -27.79         -0.78        -0.37          0.56         0.23
-       days-to-expiry                            16+ 410           -29.66         -0.62        -0.24          0.74         0.24
+       days-to-expiry                            16+ 411           -29.64         -0.49        -0.19          0.88         0.29
 night (entry weekday)                       Mon->Tue 378           -22.61          3.31         1.25         -4.05        -1.47
-night (entry weekday)                       Tue->Wed 374           -15.32         -1.37        -0.56          8.54         2.66
+night (entry weekday)                       Tue->Wed 375           -15.34         -1.24        -0.51          8.68         2.70
 night (entry weekday)                       Wed->Thu 369           -18.01         -4.46        -2.09          0.85         0.29
 night (entry weekday)                       Thu->Fri 368           -22.65          0.62         0.23          4.09         1.11
 night (entry weekday)             Fri->Mon (weekend) 352           -21.11         -3.89        -0.91          5.97         1.39
@@ -209,7 +209,7 @@ night (entry weekday)                        holiday  35           -48.43       
           night x dte             Tue->Wed | dte 0-5  93              NaN          2.27         0.64           NaN          NaN
           night x dte            Tue->Wed | dte 6-10  95              NaN         -6.56        -1.03           NaN          NaN
           night x dte           Tue->Wed | dte 11-15  95              NaN          0.24         0.05           NaN          NaN
-          night x dte             Tue->Wed | dte 16+  87              NaN         -1.38        -0.26           NaN          NaN
+          night x dte             Tue->Wed | dte 16+  88              NaN         -0.80        -0.15           NaN          NaN
           night x dte             Wed->Thu | dte 0-5 174              NaN         -5.17        -1.53           NaN          NaN
           night x dte            Wed->Thu | dte 6-10  81              NaN         -7.66        -1.96           NaN          NaN
           night x dte           Wed->Thu | dte 11-15  84              NaN          0.27         0.06           NaN          NaN
@@ -228,7 +228,7 @@ night (entry weekday)                        holiday  35           -48.43       
 ## F. Robustness: excluding roll nights and nights whose open date is expiry-1, expiry or expiry+1 (all days sample)
 A:
 year    n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  corr  slope  slope_nw_se   r2  dbasis_ID_bp  idx_flag_pct
-2018   24       4.88   0.47      -2.56  -0.24          7.44      0.98  0.57   0.81         0.25 0.32         -7.68          0.00
+2018   25       2.27   0.22      -6.86  -0.66          9.14      1.29  0.59   0.77         0.20 0.34         -4.99          0.00
 2019  214       3.95   1.74      -0.37  -0.11          4.33      1.32  0.34   0.35         0.16 0.11         -3.59         10.75
 2020  216       4.79   0.55      -1.67  -0.59          6.46      0.91  0.37   0.97         0.09 0.14         -2.28         14.81
 2021  212       7.44   1.88       5.97   2.88          1.47      0.37  0.35   0.51         0.09 0.12         -3.20          4.25
@@ -237,18 +237,18 @@ year    n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  corr  slo
 2024  214       2.72   1.49       7.22   3.77         -4.49     -3.34  0.74   0.82         0.05 0.54          4.09          0.47
 2025  213       6.83   1.79      17.67   3.88        -10.84     -3.36  0.78   0.79         0.15 0.61         12.40          0.47
 2026  186       4.02   1.07      10.59   3.25         -6.56     -2.62  0.74   1.00         0.11 0.55          6.67          0.00
- all 1691       5.31   3.44       6.03   4.95         -0.72     -0.52  0.57   0.76         0.06 0.33          1.92          4.14
+ all 1692       5.27   3.42       5.97   4.88         -0.69     -0.50  0.57   0.76         0.06 0.33          1.96          4.14
 
 B:
              period              night   n  fut_ON_bp  fut_t  idx_ON_bp  idx_t  dbasis_ON_bp  dbasis_t  dbasis_ID_bp
 full (index sample)           Mon->Tue 390      12.20   4.26       8.23   3.19          3.97      1.38         -3.85
-full (index sample)           Tue->Wed 301       5.95   1.61       8.74   3.25         -2.79     -1.05          9.17
+full (index sample)           Tue->Wed 302       5.73   1.55       8.35   3.08         -2.61     -0.99          9.33
 full (index sample)           Wed->Thu 297       5.02   1.68       8.05   3.21         -3.03     -1.19         -2.46
 full (index sample)           Thu->Fri 304       0.91   0.30       1.27   0.48         -0.36     -0.15          5.55
 full (index sample) Fri->Mon (weekend) 366       1.78   0.38       4.15   1.41         -2.37     -0.57          4.05
 full (index sample)            holiday  33       0.57   0.05       2.15   0.15         -1.58     -0.16        -13.42
      pre 2022-08-25           Mon->Tue 184      12.87   2.64       0.06   0.02         12.82      2.58         -9.97
-     pre 2022-08-25           Tue->Wed 141       1.49   0.38       0.70   0.24          0.79      0.24          4.31
+     pre 2022-08-25           Tue->Wed 142       1.05   0.27      -0.08  -0.03          1.13      0.35          4.70
      pre 2022-08-25           Wed->Thu 138       4.22   1.02       4.77   2.12         -0.55     -0.13         -7.47
      pre 2022-08-25           Thu->Fri 142      -1.58  -0.30      -2.09  -0.51          0.51      0.11          5.23
      pre 2022-08-25 Fri->Mon (weekend) 179       4.38   0.59      -1.39  -0.45          5.78      0.81         -3.54
@@ -289,5 +289,5 @@ full (index sample) 297       8.05       5.02              3.03             1.19
 - Between thresholds = ambiguous.
 
 ## Verdicts
-[a_all_days] R1 MIXED/AMBIGUOUS (holds only in: 2017-21 where index exists (2018-11..2021)) (full (index sample, 2018-11..2026): share 32%, t 1.36; 2017-21 where index exists (2018-11..2021): share 82%, t 2.21; 2022-25: share -28%, t -0.73; 2026: share -2%, t -0.06). R2 HOLDS: Wed->Thu dbasis_ON -4.10 bp (NW t -2.001; excluding roll/near-expiry nights -3.03 bp, t -1.19, n 297); -(idx-fut) on the same nights is -4.10 bp, identical by construction, so the 1.5 bp condition is automatic; the substantive check is against the earlier PIT-basket-minus-futures gap of 4.83 bp: -dbasis_ON = 4.10 bp, 0.73 bp away; on the basket's own dates the basket-minus-futures gap is 5.01 bp = basket-minus-index 0.91 bp + index-minus-futures 4.10 bp. R3 HOLDS (futures track the index overnight): slope within 1 +/- 0.25 in 6 of 9 years (slopes 2018: 0.84, 2019: 0.36, 2020: 0.98, 2021: 0.46, 2022: 0.71, 2023: 0.76, 2024: 0.84, 2025: 0.78, 2026: 0.99).
-[b_ex_index_flagged] R1 MIXED/AMBIGUOUS (holds only in: 2017-21 where index exists (2018-11..2021)) (full (index sample, 2018-11..2026): share 28%, t 1.25; 2017-21 where index exists (2018-11..2021): share 80%, t 2.29; 2022-25: share -28%, t -0.73; 2026: share -2%, t -0.06). R2 HOLDS: Wed->Thu dbasis_ON -4.46 bp (NW t -2.087; excluding roll/near-expiry nights -3.51 bp, t -1.34, n 282); -(idx-fut) on the same nights is -4.46 bp, identical by construction, so the 1.5 bp condition is automatic; the substantive check is against the earlier PIT-basket-minus-futures gap of 4.83 bp: -dbasis_ON = 4.46 bp, 0.37 bp away; on the basket's own dates the basket-minus-futures gap is 4.88 bp = basket-minus-index 0.42 bp + index-minus-futures 4.46 bp. R3 HOLDS (futures track the index overnight): slope within 1 +/- 0.25 in 6 of 9 years (slopes 2018: 0.84, 2019: 0.36, 2020: 0.98, 2021: 0.46, 2022: 0.71, 2023: 0.76, 2024: 0.84, 2025: 0.78, 2026: 0.99).
+[a_all_days] R1 MIXED/AMBIGUOUS (holds only in: 2017-21 where index exists (2018-11..2021)) (full (index sample, 2018-11..2026): share 32%, t 1.36; 2017-21 where index exists (2018-11..2021): share 82%, t 2.21; 2022-25: share -28%, t -0.73; 2026: share -2%, t -0.06). R2 HOLDS: Wed->Thu dbasis_ON -4.10 bp (NW t -2.001; excluding roll/near-expiry nights -3.03 bp, t -1.19, n 297); -(idx-fut) on the same nights is -4.10 bp, identical by construction, so the 1.5 bp condition is automatic; the substantive check is against the earlier PIT-basket-minus-futures gap of 4.83 bp: -dbasis_ON = 4.10 bp, 0.73 bp away; on the basket's own dates the basket-minus-futures gap is 5.01 bp = basket-minus-index 0.91 bp + index-minus-futures 4.10 bp. R3 HOLDS (futures track the index overnight): slope within 1 +/- 0.25 in 6 of 9 years (slopes 2018: 0.80, 2019: 0.36, 2020: 0.98, 2021: 0.46, 2022: 0.71, 2023: 0.76, 2024: 0.84, 2025: 0.78, 2026: 0.99).
+[b_ex_index_flagged] R1 MIXED/AMBIGUOUS (holds only in: 2017-21 where index exists (2018-11..2021)) (full (index sample, 2018-11..2026): share 28%, t 1.25; 2017-21 where index exists (2018-11..2021): share 80%, t 2.29; 2022-25: share -28%, t -0.73; 2026: share -2%, t -0.06). R2 HOLDS: Wed->Thu dbasis_ON -4.46 bp (NW t -2.087; excluding roll/near-expiry nights -3.51 bp, t -1.34, n 282); -(idx-fut) on the same nights is -4.46 bp, identical by construction, so the 1.5 bp condition is automatic; the substantive check is against the earlier PIT-basket-minus-futures gap of 4.83 bp: -dbasis_ON = 4.46 bp, 0.37 bp away; on the basket's own dates the basket-minus-futures gap is 4.88 bp = basket-minus-index 0.42 bp + index-minus-futures 4.46 bp. R3 HOLDS (futures track the index overnight): slope within 1 +/- 0.25 in 6 of 9 years (slopes 2018: 0.80, 2019: 0.36, 2020: 0.98, 2021: 0.46, 2022: 0.71, 2023: 0.76, 2024: 0.84, 2025: 0.78, 2026: 0.99).

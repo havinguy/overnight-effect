@@ -263,6 +263,16 @@ def futures_nights_from(f1, exclude=()):
     return d
 
 
+def index_nights_legacy():
+    """Frozen pre-fix copy of futures_basis_decomp.index_nights as of the 2018-11-21 bug. DO NOT 'fix' -- it exists solely to preserve
+    the before/after audit diff; the live fix is in futures_basis_decomp.index_nights().
+    (Verbatim old logic: prev_date / prev_close computed AFTER decompose() drops row 0, so 2018-11-21 gets prev_date NaT. Pinned 2026-11-27;
+    the 'before (as reported)' variant in main() uses it. Verified equal to the pre-fix function at HEAD 0c3c8f4.)"""
+    v = decompose(pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]))
+    v["prev_date"] = v["date"].shift(1); v["prev_close"] = v["close"].shift(1)
+    return v.set_index("date").rename(columns={"r_overnight": "idx_ON", "r_intraday": "idx_ID", "open_suspicious": "idx_flag"})
+
+
 def index_nights_fixed():
     """futures_basis_decomp.index_nights with the first-row bug fixed: prior date / close taken before decompose drops row 0."""
     raw = pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
@@ -451,7 +461,7 @@ def main():
     E14 = pd.to_datetime(G[~G.month.isna()].post_expiry_day)
     cont = [f1o.index[f1o.index > t][0] for t in E14]                       # 14 contaminated Monday nights in the original
     cont += [pd.Timestamp("2021-05-04")]
-    i_old, i_fix = FB.index_nights(), index_nights_fixed()
+    i_old, i_fix = index_nights_legacy(), index_nights_fixed()      # FB.index_nights is fixed since 2026-11-27; 'before' uses the pinned legacy copy
     V_ = {}
     V_["before (as reported)"] = (f1o, (), i_old)
     V_["2018-11-21 fix only"] = (f1o, (), i_fix)

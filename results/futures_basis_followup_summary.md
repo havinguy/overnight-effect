@@ -9,67 +9,66 @@ year                                                                step    n  m
  all                               1 full index nights (gate convention) 1993    5.704 5.259
  all                                  2 & futures bar exists on the date 1978    5.774 5.288
  all                  3 & futures night invested (roll F2M close exists) 1978    5.774 5.288
- all                   4 & same prior trading day (decomposition sample) 1962    5.919 5.395
+ all                   4 & same prior trading day (decomposition sample) 1963    5.860 5.335
 2023 5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index)  237   10.212 4.603
 2023              6 decomposition sample (misaligned EXCLUDED), = step 4  225   11.075 5.071
  all 5 decomposition sample, misaligned nights INCLUDED (step 3 ∩ index) 1978    5.774 5.288
- all              6 decomposition sample (misaligned EXCLUDED), = step 4 1962    5.919 5.395
+ all              6 decomposition sample (misaligned EXCLUDED), = step 4 1963    5.860 5.335
 
 Misaligned nights (prior trading day differs between VN30F1M and VN30):
       date  idx_ON_bp  fut_ON_bp fut_prior_day idx_prior_day night_label  idx_flag  idx_gap_calendar_days  fut_gap_calendar_days                                     note
-2018-11-21   -110.111    -60.320    2018-11-20           NaT    Tue->Wed     False                    NaN                      1  futures prior day missing from VN30.csv
-2021-05-04     -1.524     23.502    2021-04-28    2021-04-29     holiday     False                  5.000                      6 index prior day missing from VN30F1M.csv
-2022-11-21     -5.768     64.169    2022-11-17    2022-11-18     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2022-12-19     -3.290   -136.376    2022-12-15    2022-12-16     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-01-30     15.907     40.062    2023-01-19    2023-01-27     holiday     False                  3.000                     11 index prior day missing from VN30F1M.csv
-2023-02-20    -12.725    -42.766    2023-02-16    2023-02-17     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-03-20    -55.993    -71.857    2023-03-16    2023-03-17     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-04-24     29.207    -86.331    2023-04-20    2023-04-21     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-05-22     14.304      0.000    2023-05-18    2023-05-19     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-06-19      8.562     12.734    2023-06-15    2023-06-16     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-07-24     39.531    203.420    2023-07-20    2023-07-21     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-08-21      4.956   -505.844    2023-08-17    2023-08-18     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-09-25    -19.473   -241.558    2023-09-21    2023-09-22     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-10-23     -8.547    161.563    2023-10-19    2023-10-20     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-11-20   -108.147   -495.820    2023-11-16    2023-11-17     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
-2023-12-25     20.663    -19.137    2023-12-21    2023-12-22     holiday     False                  3.000                      4 index prior day missing from VN30F1M.csv
+2021-05-04     -1.524     23.502    2021-04-28    2021-04-29     holiday     False                      5                      6 index prior day missing from VN30F1M.csv
+2022-11-21     -5.768     64.169    2022-11-17    2022-11-18     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2022-12-19     -3.290   -136.376    2022-12-15    2022-12-16     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-01-30     15.907     40.062    2023-01-19    2023-01-27     holiday     False                      3                     11 index prior day missing from VN30F1M.csv
+2023-02-20    -12.725    -42.766    2023-02-16    2023-02-17     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-03-20    -55.993    -71.857    2023-03-16    2023-03-17     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-04-24     29.207    -86.331    2023-04-20    2023-04-21     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-05-22     14.304      0.000    2023-05-18    2023-05-19     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-06-19      8.562     12.734    2023-06-15    2023-06-16     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-07-24     39.531    203.420    2023-07-20    2023-07-21     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-08-21      4.956   -505.844    2023-08-17    2023-08-18     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-09-25    -19.473   -241.558    2023-09-21    2023-09-22     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-10-23     -8.547    161.563    2023-10-19    2023-10-20     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-11-20   -108.147   -495.820    2023-11-16    2023-11-17     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
+2023-12-25     20.663    -19.137    2023-12-21    2023-12-22     holiday     False                      3                      4 index prior day missing from VN30F1M.csv
 
 ## 1b. Weekday equality on dbasis_ON (5 night dummies, no intercept, HAC lag 5 over consecutive nights; 'minus others' = beta_k - mean of the other four betas; joint Wald chi2(4) that all five are equal; holiday nights excluded). JOINT row: mean_bp = period grand mean (all five categories).
 ### pre 2022-08-25 | all days
               night   n  mean_bp  mean_t  minus_others_bp  minus_others_t  wald  wald_p  n_excluded_holiday
-           Mon->Tue 184   12.819   3.007           10.108           2.085   NaN     NaN                 NaN
-           Tue->Wed 185    1.676   0.528           -3.820          -0.953   NaN     NaN                 NaN
-           Wed->Thu 183   -1.023  -0.275           -7.193          -1.845   NaN     NaN                 NaN
-           Thu->Fri 187    4.410   1.069           -0.403          -0.084   NaN     NaN                 NaN
- Fri->Mon (weekend) 179    5.778   0.963            1.308           0.214   NaN     NaN                 NaN
-JOINT (all 5 equal) 918    4.728   2.292              NaN             NaN 7.189   0.126              18.000
+           Mon->Tue 184   12.819   3.007           10.043           2.071   NaN     NaN                 NaN
+           Tue->Wed 186    1.935   0.610           -3.561          -0.888   NaN     NaN                 NaN
+           Wed->Thu 183   -1.023  -0.275           -7.258          -1.860   NaN     NaN                 NaN
+           Thu->Fri 187    4.410   1.069           -0.468          -0.098   NaN     NaN                 NaN
+ Fri->Mon (weekend) 179    5.778   0.963            1.243           0.204   NaN     NaN                 NaN
+JOINT (all 5 equal) 919    4.777   2.318              NaN             NaN 7.084   0.132              18.000
 
 ### pre 2022-08-25 | ex index-flagged
               night   n  mean_bp  mean_t  minus_others_bp  minus_others_t  wald  wald_p  n_excluded_holiday
-           Mon->Tue 171   12.125   3.045           10.395           2.100   NaN     NaN                 NaN
-           Tue->Wed 165    1.906   0.555           -2.379          -0.605   NaN     NaN                 NaN
-           Wed->Thu 163   -1.766  -0.445           -6.968          -1.726   NaN     NaN                 NaN
-           Thu->Fri 172    3.352   0.746           -0.571          -0.109   NaN     NaN                 NaN
- Fri->Mon (weekend) 167    3.426   0.584           -0.478          -0.079   NaN     NaN                 NaN
-JOINT (all 5 equal) 838    3.877   1.887              NaN             NaN 6.843   0.144              16.000
+           Mon->Tue 171   12.125   3.045           10.323           2.085   NaN     NaN                 NaN
+           Tue->Wed 166    2.194   0.640           -2.090          -0.532   NaN     NaN                 NaN
+           Wed->Thu 163   -1.766  -0.445           -7.040          -1.743   NaN     NaN                 NaN
+           Thu->Fri 172    3.352   0.746           -0.643          -0.123   NaN     NaN                 NaN
+ Fri->Mon (weekend) 167    3.426   0.584           -0.550          -0.091   NaN     NaN                 NaN
+JOINT (all 5 equal) 839    3.931   1.916              NaN             NaN 6.725   0.151              16.000
 
 ### pre 2022-08-25 | all days, ex roll & expiry-1..+1
               night   n  mean_bp  mean_t  minus_others_bp  minus_others_t  wald  wald_p  n_excluded_holiday
-           Mon->Tue 184   12.819   3.041           11.187           2.237   NaN     NaN                 NaN
-           Tue->Wed 141    0.785   0.198           -3.854          -0.807   NaN     NaN                 NaN
-           Wed->Thu 138   -0.547  -0.116           -5.519          -1.187   NaN     NaN                 NaN
-           Thu->Fri 142    0.508   0.117           -4.201          -0.837   NaN     NaN                 NaN
- Fri->Mon (weekend) 179    5.778   0.926            2.387           0.378   NaN     NaN                 NaN
-JOINT (all 5 equal) 784    4.465   1.867              NaN             NaN 6.742   0.150              17.000
+           Mon->Tue 184   12.819   3.041           11.101           2.220   NaN     NaN                 NaN
+           Tue->Wed 142    1.130   0.286           -3.509          -0.735   NaN     NaN                 NaN
+           Wed->Thu 138   -0.547  -0.116           -5.605          -1.204   NaN     NaN                 NaN
+           Thu->Fri 142    0.508   0.117           -4.287          -0.854   NaN     NaN                 NaN
+ Fri->Mon (weekend) 179    5.778   0.926            2.301           0.364   NaN     NaN                 NaN
+JOINT (all 5 equal) 785    4.522   1.894              NaN             NaN 6.627   0.157              17.000
 
 ### pre 2022-08-25 | ex flagged, ex roll & expiry-1..+1
               night   n  mean_bp  mean_t  minus_others_bp  minus_others_t  wald  wald_p  n_excluded_holiday
-           Mon->Tue 171   12.125   3.061           11.645           2.274   NaN     NaN                 NaN
-           Tue->Wed 124    1.059   0.242           -2.187          -0.458   NaN     NaN                 NaN
-           Wed->Thu 124   -1.771  -0.357           -5.724          -1.182   NaN     NaN                 NaN
-           Thu->Fri 133   -0.796  -0.173           -4.505          -0.845   NaN     NaN                 NaN
- Fri->Mon (weekend) 167    3.426   0.563            0.772           0.124   NaN     NaN                 NaN
-JOINT (all 5 equal) 719    3.409   1.420              NaN             NaN 6.874   0.143              15.000
+           Mon->Tue 171   12.125   3.061           11.548           2.254   NaN     NaN                 NaN
+           Tue->Wed 125    1.449   0.332           -1.797          -0.377   NaN     NaN                 NaN
+           Wed->Thu 124   -1.771  -0.357           -5.821          -1.201   NaN     NaN                 NaN
+           Thu->Fri 133   -0.796  -0.173           -4.603          -0.864   NaN     NaN                 NaN
+ Fri->Mon (weekend) 167    3.426   0.563            0.674           0.109   NaN     NaN                 NaN
+JOINT (all 5 equal) 720    3.474   1.449              NaN             NaN 6.730   0.151              15.000
 
 ### post 2022-08-25 | all days
               night    n  mean_bp  mean_t  minus_others_bp  minus_others_t  wald  wald_p  n_excluded_holiday
@@ -151,7 +150,7 @@ JOINT (all 5 equal) 797   -6.283  -4.790              NaN             NaN 6.262 
         all days                                    2025  249 -6.681    3.864 -1.729 0.783 0.146   -1.480 0.601         -10.289
         all days                                    2026  216 -6.403    2.431 -2.634 0.991 0.108   -0.082 0.544          -6.498
         all days                  post 2022-08-25 pooled 1026 -3.216    1.338 -2.404 0.820 0.063   -2.838 0.552          -5.084
-        all days       pre 2022-08-25 pooled (reference)  936  4.896    2.112  2.319 0.641 0.069   -5.223 0.154           4.534
+        all days       pre 2022-08-25 pooled (reference)  937  4.902    2.106  2.328 0.641 0.068   -5.279 0.155           4.583
         all days post 2022-08-25, ex roll & expiry-1..+1  890 -3.175    1.493 -2.126 0.821 0.069   -2.609 0.552          -5.101
 ex index-flagged                                    2022  241  2.666    2.439  1.093 0.705 0.058   -5.119 0.548           3.299
 ex index-flagged                                    2023  225  1.190    2.030  0.587 0.765 0.099   -2.369 0.471          -1.416
@@ -159,7 +158,7 @@ ex index-flagged                                    2024  249 -3.681    1.426 -2
 ex index-flagged                                    2025  248 -6.886    3.882 -1.774 0.784 0.146   -1.478 0.602         -10.497
 ex index-flagged                                    2026  215 -6.220    2.478 -2.510 0.990 0.108   -0.088 0.544          -6.323
 ex index-flagged                  post 2022-08-25 pooled 1022 -3.167    1.342 -2.360 0.820 0.063   -2.838 0.553          -5.044
-ex index-flagged       pre 2022-08-25 pooled (reference)  854  4.135    2.051  2.017 0.642 0.070   -5.085 0.172           3.740
+ex index-flagged       pre 2022-08-25 pooled (reference)  855  4.143    2.044  2.027 0.641 0.070   -5.141 0.173           3.794
 ex index-flagged post 2022-08-25, ex roll & expiry-1..+1  887 -3.167    1.496 -2.118 0.821 0.069   -2.609 0.553          -5.100
 
 ## 1d. Weekday equality on the intraday basis change dbasis_ID = fut_ID - idx_ID
