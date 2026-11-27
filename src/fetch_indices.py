@@ -102,6 +102,46 @@ def flag_suspicious(df: pd.DataFrame) -> pd.DataFrame:
     return d
 
 
+# STOCK BACK-ADJUSTMENT GUARD (2026-11-27; policy approved by Harry). Stock data is FROZEN: VCI back-adjusts stock history after
+# corporate actions (FPT 2026-11: every past price x0.9775, volumes revised), so an incremental refresh would splice adjusted new
+# rows onto unadjusted old rows (false overnight gap + wrong open_suspicious at the splice). For every symbol that is not one of
+# the futures/index symbols, update() compares the cached rows that the fresh fetch overlaps; if ANY open/high/low/close
+# (|diff| > PRICE_TOL) or volume differs, it raises StockRevisionError BEFORE merging or writing anything. The reopen path is a
+# FULL re-pull via direct VCI into a new dated snapshot, not an incremental refresh (data/README.md). Futures/index rows are not
+# checked here (track_forward.py has its own rewritten-row guard), so the logger's behaviour is unchanged.
+PRICE_TOL = 1e-6        # prices are stored rounded to 2 dp, so any real change is >= 0.005
+
+
+class StockRevisionError(RuntimeError):
+    """The vendor revised already-stored stock rows. Never retried, never spliced."""
+
+
+def is_frozen_stock(symbol: str) -> bool:
+    return symbol not in DIRECT_VCI_SYMBOLS            # the futures/index set; everything else fetched here is a stock
+
+
+def check_stock_overlap(symbol: str, cached: pd.DataFrame, new: pd.DataFrame, path: Path) -> int:
+    """Raise StockRevisionError if any overlapping cached row changed in the fresh fetch; else return the number of rows compared."""
+    j = cached[COLS].merge(new[COLS], on="date", how="inner", suffixes=("_old", "_new"))
+    if j.empty:
+        return 0
+    bad = pd.Series(False, index=j.index); fields = {}
+    for c in ["open", "high", "low", "close"]:
+        m = (j[f"{c}_old"].astype(float) - j[f"{c}_new"].astype(float)).abs() > PRICE_TOL
+        bad |= m; fields[c] = int(m.sum())
+    mv = j["volume_old"].astype(float) != j["volume_new"].astype(float); bad |= mv; fields["volume"] = int(mv.sum())
+    if bad.any():
+        ex = j[bad].head(3)
+        eg = "; ".join(f"{r.date:%Y-%m-%d} close {r.close_old} -> {r.close_new}, open {r.open_old} -> {r.open_new}, volume {r.volume_old} -> {r.volume_new}"
+                       for r in ex.itertuples())
+        raise StockRevisionError(
+            f"{symbol}: the vendor REVISED {int(bad.sum())} of {len(j)} already-stored rows "
+            f"({j.date.min():%Y-%m-%d}..{j.date.max():%Y-%m-%d}; changed fields: {fields}). Example: {eg}. "
+            f"This looks like a back-adjustment (corporate action). Stock data is frozen: NOTHING was written to {path}. "
+            "Do NOT splice. Reopen equities with a FULL re-pull via direct VCI into a new dated snapshot (see data/README.md).")
+    return len(j)
+
+
 def update(symbol: str, start: str = DEFAULT_START, source: str = "VCI",
            raw_dir: Path = RAW_DIR, full: bool = False) -> pd.DataFrame:
     raw_dir.mkdir(parents=True, exist_ok=True)
@@ -113,6 +153,9 @@ def update(symbol: str, start: str = DEFAULT_START, source: str = "VCI",
     end = (datetime.now(VN_TZ).date() + timedelta(days=1)).strftime("%Y-%m-%d")
 
     new = _drop_incomplete(_download(symbol, fetch_from, end, source))
+    if is_frozen_stock(symbol) and not cached.empty:                      # stock back-adjustment guard (see above)
+        n_cmp = check_stock_overlap(symbol, cached, new, csv_path(symbol, raw_dir))
+        print(f"[guard] {symbol}: {n_cmp} overlapping stored rows unchanged in the fresh fetch")
     merged = pd.concat([cached, new], ignore_index=True)
     merged = (merged.drop_duplicates("date", keep="last")
                     .sort_values("date").reset_index(drop=True))
@@ -133,6 +176,8 @@ def update_with_retry(symbol: str, *args, retries: int = 4, **kw) -> pd.DataFram
     for attempt in range(retries):
         try:
             return update(symbol, *args, **kw)
+        except StockRevisionError:
+            raise                                   # a vendor revision is not a rate limit: abort at once, never retry
         except (Exception, SystemExit) as e:
             if attempt == retries - 1:
                 raise
