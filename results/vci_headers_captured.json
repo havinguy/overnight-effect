@@ -1,0 +1,103 @@
+{
+ "captured_utc": "2026-11-26",
+ "method": "monkeypatched requests.Session.request; PreparedRequest headers as sent on the wire",
+ "vnstock_version": "4.0.4",
+ "identical_across_calls": true,
+ "device_id_sent": false,
+ "note": "vnstock 4.0.4 defines _generate_vci_device_id() but never calls it; no Device-Id, no cookies, no auth header is sent.",
+ "headers": {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "Accept-Encoding": "gzip, deflate",
+  "Accept": "application/json, text/plain, */*",
+  "Connection": "keep-alive",
+  "Accept-Language": "en-US,en;q=0.9,vi-VN;q=0.8,vi;q=0.7",
+  "Content-Type": "application/json",
+  "Cache-Control": "no-cache",
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "same-site",
+  "DNT": "1",
+  "Pragma": "no-cache",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "sec-ch-ua-mobile": "?0",
+  "Referer": "https://trading.vietcap.com.vn/",
+  "Origin": "https://trading.vietcap.com.vn/"
+ },
+ "calls": [
+  {
+   "symbol_in": "VCB",
+   "url": "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap-chart",
+   "method": "post",
+   "body": {
+    "timeFrame": "ONE_DAY",
+    "symbols": [
+     "VCB"
+    ],
+    "to": 1795669200,
+    "countBack": 42
+   },
+   "status": 200,
+   "rows": 42
+  },
+  {
+   "symbol_in": "VNINDEX",
+   "url": "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap-chart",
+   "method": "post",
+   "body": {
+    "timeFrame": "ONE_DAY",
+    "symbols": [
+     "VNINDEX"
+    ],
+    "to": 1795669200,
+    "countBack": 42
+   },
+   "status": 200,
+   "rows": 42
+  },
+  {
+   "symbol_in": "VN30",
+   "url": "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap-chart",
+   "method": "post",
+   "body": {
+    "timeFrame": "ONE_DAY",
+    "symbols": [
+     "VN30"
+    ],
+    "to": 1795669200,
+    "countBack": 42
+   },
+   "status": 200,
+   "rows": 42
+  },
+  {
+   "symbol_in": "VN30F1M",
+   "url": "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap-chart",
+   "method": "post",
+   "body": {
+    "timeFrame": "ONE_DAY",
+    "symbols": [
+     "VN30F1M"
+    ],
+    "to": 1795669200,
+    "countBack": 42
+   },
+   "status": 200,
+   "rows": 42
+  },
+  {
+   "symbol_in": "VN30F2M",
+   "url": "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap-chart",
+   "method": "post",
+   "body": {
+    "timeFrame": "ONE_DAY",
+    "symbols": [
+     "VN30F2M"
+    ],
+    "to": 1795669200,
+    "countBack": 42
+   },
+   "status": 200,
+   "rows": 42
+  }
+ ]
+}

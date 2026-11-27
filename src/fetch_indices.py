@@ -10,6 +10,7 @@ completed session (ATO open .. ATC close).
 from __future__ import annotations
 
 import argparse
+import os
 import time as _time
 from datetime import datetime, time, timedelta
 from pathlib import Path
@@ -47,7 +48,36 @@ def _drop_incomplete(df: pd.DataFrame, now: datetime | None = None) -> pd.DataFr
     return df[keep]
 
 
+# FETCH BACKEND SWITCH (2026-11-27, approved by Harry; scoped): with source="VCI", these four symbols are fetched through
+# src/fetch_vci_direct.py (direct VCI POST, no vnstock) instead of vnstock's Quote. Every other symbol (all 3-letter
+# stocks) and every other source stays on vnstock. Validated: results/backend_switch_validation.md.
+# ROLLBACK: set OVERNIGHT_FETCH_BACKEND=vnstock in the environment (restores vnstock for all symbols, no code change),
+# or revert this block. Nothing else in the fetch path (overlap, keep='last', _drop_incomplete, flag_suspicious) changes.
+DIRECT_VCI_SYMBOLS = frozenset({"VN30F1M", "VN30F2M", "VN30", "VNINDEX"})
+BACKEND_ENV = "OVERNIGHT_FETCH_BACKEND"
+
+
+def backend_for(symbol: str, source: str) -> str:
+    if source == "VCI" and symbol in DIRECT_VCI_SYMBOLS and os.environ.get(BACKEND_ENV, "").strip().lower() != "vnstock":
+        return "vci_direct"
+    return "vnstock"
+
+
+def _download_vci_direct(symbol: str, start: str, end: str) -> pd.DataFrame:
+    """Same request vnstock 4.0.4 VCI Quote.history(start, end, '1D') sends: to = end date + 1 day (local), countBack =
+    business days in [start, to] + 1. Like vnstock, rows before `start` are NOT filtered (the merge handles them)."""
+    import fetch_vci_direct as V
+    end_time = datetime.strptime(end, "%Y-%m-%d") + timedelta(days=1)
+    count_back = len(pd.bdate_range(start=datetime.strptime(start, "%Y-%m-%d"), end=end_time)) + 1
+    df = V.fetch(symbol, count_back, to=int(end_time.timestamp()))
+    return df[COLS].copy()
+
+
 def _download(symbol: str, start: str, end: str, source: str) -> pd.DataFrame:
+    backend = backend_for(symbol, source)
+    print(f"[fetch] {symbol}: backend={backend} (source={source})")
+    if backend == "vci_direct":
+        return _download_vci_direct(symbol, start, end)
     from vnstock import Quote  # imported lazily so analysis works offline
 
     raw = Quote(symbol=symbol, source=source).history(start=start, end=end, interval="1D")
