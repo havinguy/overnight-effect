@@ -2,121 +2,121 @@
 
 Read-only on data/raw/ and results/. Script: `src/regime_changepoint_audit.py`; rules S1-S5 pre-registered in the script header before the first run.
 
-Sample: regime_legs_audit sample (one-day nights, common CW basket / futures dates), n = 1572, 2018-11-22..2026-11-17; EW basket present on all of them. VARIANT RUN, futures input VN30F1M_repaired (frozen). Reproduction gate NOT APPLIED (different input); plain split at 2022-08-25 gives t = 3.67 (CW ON), -2.74 (CW ID), 0.45 (FUT ON), 5.02 (paired), vs regime_legs_breaks.csv (original input): see regime_changepoint_repaired_compare.md. Break t = (post - pre mean) / hypot(NW SEs), lag 5. 2022-08-25 = night #739 of 1572.
+Sample: regime_legs_audit sample (one-day nights, common CW basket / futures dates), n = 1573, 2018-11-21..2026-11-17; EW basket present on all of them. VARIANT RUN, futures input VN30F1M_repaired (frozen). Reproduction gate NOT APPLIED (different input); plain split at 2022-08-25 gives t = 3.71 (CW ON), -2.78 (CW ID), 0.48 (FUT ON), 5.05 (paired), vs regime_legs_breaks.csv (original input): see regime_changepoint_repaired_compare.md. Break t = (post - pre mean) / hypot(NW SEs), lag 5. 2022-08-25 = night #740 of 1573.
 
 ## 1. Change-point scan (single mean shift, 15% trimming)
 
-1101 candidate dates 2020-02-11..2025-09-10. Best-fit = LS break; sup|t| = max NW break t over candidates; p_boot from a circular block bootstrap of the demeaned series (block 10, B 999), Holm across the 6 series. Date interval: residual block bootstrap around the LS break (B 999), 2.5-97.5%. rank_of_cut_abs_t = rank of |t| at 2022-08-25 among all 1101 candidates. Report-only iid-Gaussian 5% critical value for sup|t|: 2.93. t and break size at every candidate date: `results/regime_changepoint_repaired_scan.csv`.
+1102 candidate dates 2020-02-07..2025-09-10. Best-fit = LS break; sup|t| = max NW break t over candidates; p_boot from a circular block bootstrap of the demeaned series (block 10, B 999), Holm across the 6 series. Date interval: residual block bootstrap around the LS break (B 999), 2.5-97.5%. rank_of_cut_abs_t = rank of |t| at 2022-08-25 among all 1102 candidates. Report-only iid-Gaussian 5% critical value for sup|t|: 2.93. t and break size at every candidate date: `results/regime_changepoint_repaired_scan.csv`.
 
 ```
           series    ls_date  ls_break_bp  t_at_ls  supt_date  sup_abs_t  boot_crit95  p_boot  p_holm      ci_lo      ci_hi  ci_width_nights  cut_inside  t_at_cut_pointwise  rank_of_cut_abs_t                          interval
-           CW ON 2022-11-25       16.411    4.480 2022-11-25      4.480        3.288   0.003   0.012 2021-03-10 2024-08-21              681        True               3.670                164                       informative
-           CW ID 2022-08-26      -13.917   -2.776 2022-08-26      2.776        2.811   0.054   0.108 2020-05-22 2025-06-20             1001        True              -2.738                  6 UNINFORMATIVE (no detected break)
-           EW ON 2022-11-25       18.289    4.862 2022-11-25      4.862        3.302   0.002   0.010 2021-10-19 2024-04-17              494        True               4.007                143                       informative
-           EW ID 2022-08-26      -17.973   -3.675 2022-08-26      3.675        2.882   0.006   0.018 2020-08-26 2024-08-30              791        True              -3.632                  8                       informative
-          FUT ON 2020-03-17        8.877    2.039 2020-03-20      2.074        3.000   0.345   0.345 2020-02-11 2025-04-25             1027        True               0.446                819 UNINFORMATIVE (no detected break)
-PAIRED CW-FUT ON 2022-12-07       14.118    5.792 2022-12-07      5.792        3.423   0.001   0.006 2021-11-25 2023-12-29              416        True               5.018                 98                       informative
+           CW ON 2022-11-25       16.554    4.522 2022-11-25      4.522        3.332   0.003   0.012 2021-06-30 2024-10-29              659        True               3.714                162                       informative
+           CW ID 2022-08-26      -14.124   -2.820 2022-08-26      2.820        2.860   0.053   0.106 2020-05-21 2025-03-19              952        True              -2.782                  6 UNINFORMATIVE (no detected break)
+           EW ON 2022-11-25       18.451    4.907 2022-11-25      4.907        3.257   0.001   0.006 2021-11-10 2024-03-19              464        True               4.053                145                       informative
+           EW ID 2022-08-26      -18.197   -3.725 2022-08-26      3.725        2.959   0.004   0.012 2020-11-17 2024-08-28              744        True              -3.683                  8                       informative
+          FUT ON 2020-03-17        9.106    2.096 2020-03-20      2.134        2.972   0.327   0.327 2020-02-07 2025-04-24             1027        True               0.480                833 UNINFORMATIVE (no detected break)
+PAIRED CW-FUT ON 2022-12-07       14.178    5.824 2022-12-07      5.824        3.438   0.001   0.006 2021-12-08 2023-12-19              402        True               5.051                 98                       informative
 ```
 
-- CW ON: LS break 2022-11-25 (+16.41 bp), sup|t| 4.48 at 2022-11-25 vs bootstrap 5% critical 3.29 (p 0.003, Holm 0.012); 95% date interval 2021-03-10..2024-08-21 (681 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 3.67 (rank 164/1101).
-- CW ID: LS break 2022-08-26 (-13.92 bp), sup|t| 2.78 at 2022-08-26 vs bootstrap 5% critical 2.81 (p 0.054, Holm 0.108); 95% date interval 2020-05-22..2025-06-20 (1001 nights) -> 2022-08-25 INSIDE; NO DETECTED BREAK, interval uninformative. Pointwise t at 2022-08-25 -2.74 (rank 6/1101).
-- EW ON: LS break 2022-11-25 (+18.29 bp), sup|t| 4.86 at 2022-11-25 vs bootstrap 5% critical 3.30 (p 0.002, Holm 0.010); 95% date interval 2021-10-19..2024-04-17 (494 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 4.01 (rank 143/1101).
-- EW ID: LS break 2022-08-26 (-17.97 bp), sup|t| 3.67 at 2022-08-26 vs bootstrap 5% critical 2.88 (p 0.006, Holm 0.018); 95% date interval 2020-08-26..2024-08-30 (791 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 -3.63 (rank 8/1101).
-- FUT ON: LS break 2020-03-17 (+8.88 bp), sup|t| 2.07 at 2020-03-20 vs bootstrap 5% critical 3.00 (p 0.345, Holm 0.345); 95% date interval 2020-02-11..2025-04-25 (1027 nights) -> 2022-08-25 INSIDE; NO DETECTED BREAK, interval uninformative. Pointwise t at 2022-08-25 0.45 (rank 819/1101).
-- PAIRED CW-FUT ON: LS break 2022-12-07 (+14.12 bp), sup|t| 5.79 at 2022-12-07 vs bootstrap 5% critical 3.42 (p 0.001, Holm 0.006); 95% date interval 2021-11-25..2023-12-29 (416 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 5.02 (rank 98/1101).
+- CW ON: LS break 2022-11-25 (+16.55 bp), sup|t| 4.52 at 2022-11-25 vs bootstrap 5% critical 3.33 (p 0.003, Holm 0.012); 95% date interval 2021-06-30..2024-10-29 (659 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 3.71 (rank 162/1102).
+- CW ID: LS break 2022-08-26 (-14.12 bp), sup|t| 2.82 at 2022-08-26 vs bootstrap 5% critical 2.86 (p 0.053, Holm 0.106); 95% date interval 2020-05-21..2025-03-19 (952 nights) -> 2022-08-25 INSIDE; NO DETECTED BREAK, interval uninformative. Pointwise t at 2022-08-25 -2.78 (rank 6/1102).
+- EW ON: LS break 2022-11-25 (+18.45 bp), sup|t| 4.91 at 2022-11-25 vs bootstrap 5% critical 3.26 (p 0.001, Holm 0.006); 95% date interval 2021-11-10..2024-03-19 (464 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 4.05 (rank 145/1102).
+- EW ID: LS break 2022-08-26 (-18.20 bp), sup|t| 3.73 at 2022-08-26 vs bootstrap 5% critical 2.96 (p 0.004, Holm 0.012); 95% date interval 2020-11-17..2024-08-28 (744 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 -3.68 (rank 8/1102).
+- FUT ON: LS break 2020-03-17 (+9.11 bp), sup|t| 2.13 at 2020-03-20 vs bootstrap 5% critical 2.97 (p 0.327, Holm 0.327); 95% date interval 2020-02-07..2025-04-24 (1027 nights) -> 2022-08-25 INSIDE; NO DETECTED BREAK, interval uninformative. Pointwise t at 2022-08-25 0.48 (rank 833/1102).
+- PAIRED CW-FUT ON: LS break 2022-12-07 (+14.18 bp), sup|t| 5.82 at 2022-12-07 vs bootstrap 5% critical 3.44 (p 0.001, Holm 0.006); 95% date interval 2021-12-08..2023-12-19 (402 nights) -> 2022-08-25 INSIDE. Pointwise t at 2022-08-25 5.05 (rank 98/1102).
 
 ## 2. Placebo comparison
 
-Primary: local window, 125 one-day nights each side. Random dates (drawn first, seed 20261124, from 488 eligible 2019-2021 nights whose windows end before 2022-08-25): 2019-10-31, 2019-11-14, 2020-01-17, 2020-05-26, 2020-11-04, 2020-12-11, 2021-02-03, 2021-03-05, 2021-11-17, 2021-11-23. The 2022 named dates other than 08-25 have windows that contain the cutover. t_fullsplit is report-only: a pre-cutover split puts the whole post-cutover regime on the 'post' side.
+Primary: local window, 125 one-day nights each side. Random dates (drawn first, seed 20261124, from 489 eligible 2019-2021 nights whose windows end before 2022-08-25): 2019-10-31, 2019-11-13, 2020-01-17, 2020-05-22, 2020-11-04, 2020-12-11, 2021-02-03, 2021-03-05, 2021-11-17, 2021-11-23. The 2022 named dates other than 08-25 have windows that contain the cutover. t_fullsplit is report-only: a pre-cutover split puts the whole post-cutover regime on the 'post' side.
 
 Named-date mapping (first sample night >= date): 2022-07-11 -> 2022-07-12 (07-11 is a Monday open, i.e. a weekend night, not a one-day night); 2022-11-18 -> 2022-11-22: 2022-11-18 is absent from data/raw/VN30F1M.csv (the file regime_legs_audit and this script read), so 11-21 is a 'holiday' hold and 11-18 drops from the common sample. data/raw/VN30F1M_repaired.csv does contain 2022-11-18 (one of 13 inserted post-expiry rows, 2022-11-18..2023-12-22, futures_roll_gap_inserted_rows.csv). Reported, not repaired here: the regime_legs sample (and this one) omits those 13 nights.
 
 ```
           series   kind       date   k  window_contains_cut  t_window  break_window_bp  t_fullsplit_reportonly  break_fullsplit_bp
-           CW ON  named 2022-07-12 713                 True      0.60             5.58                    3.62               13.66
-           CW ON  named 2022-08-25 739                 True      1.12            10.27                    3.67               13.72
-           CW ON  named 2022-11-03 777                 True      1.04             9.82                    3.48               12.96
-           CW ON  named 2022-11-18 786                 True      3.24            26.30                    4.25               15.49
-           CW ON random 2019-10-31 185                False     -0.90           -11.53                    2.84                9.97
-           CW ON random 2019-11-14 193                False     -0.84           -10.91                    2.77                9.54
-           CW ON random 2020-01-17 228                False     -1.01           -13.16                    2.90                9.29
-           CW ON random 2020-05-26 292                False      1.61            21.15                    2.89               17.23
-           CW ON random 2020-11-04 383                False     -0.12            -1.14                    2.93               14.41
-           CW ON random 2020-12-11 405                False     -0.47            -4.16                    2.80               13.40
-           CW ON random 2021-02-03 434                False      0.67             6.16                    2.97               14.79
-           CW ON random 2021-03-05 447                False      0.85             7.39                    2.99               14.40
-           CW ON random 2021-11-17 586                False     -2.12           -12.75                    2.84               11.58
-           CW ON random 2021-11-23 589                False     -2.05           -12.15                    2.81               11.45
-           CW ID  named 2022-07-12 713                 True     -1.04           -16.84                   -2.56              -12.96
-           CW ID  named 2022-08-25 739                 True     -1.56           -24.28                   -2.74              -13.72
-           CW ID  named 2022-11-03 777                 True     -0.16            -2.58                   -1.93               -9.72
-           CW ID  named 2022-11-18 786                 True     -0.81           -12.63                   -2.28              -11.41
-           CW ID random 2019-10-31 185                False      0.78             8.57                    0.24                1.33
-           CW ID random 2019-11-14 193                False      0.66             7.09                    0.30                1.61
-           CW ID random 2020-01-17 228                False      1.34            14.27                    0.57                3.08
-           CW ID random 2020-05-26 292                False     -0.49            -5.50                   -1.11               -6.41
-           CW ID random 2020-11-04 383                False      0.92            13.45                   -1.22               -6.38
-           CW ID random 2020-12-11 405                False      0.66            10.05                   -1.49               -7.71
-           CW ID random 2021-02-03 434                False     -0.16            -2.21                   -1.77               -9.64
-           CW ID random 2021-03-05 447                False     -0.88           -13.06                   -1.92              -10.99
-           CW ID random 2021-11-17 586                False     -0.02            -0.28                   -2.24              -11.66
-           CW ID random 2021-11-23 589                False      0.44             5.83                   -2.14              -11.18
-           EW ON  named 2022-07-12 713                 True      0.71             7.27                    3.97               15.53
-           EW ON  named 2022-08-25 739                 True      1.27            12.61                    4.01               15.48
-           EW ON  named 2022-11-03 777                 True      1.16            11.96                    3.81               14.59
-           EW ON  named 2022-11-18 786                 True      3.42            30.19                    4.65               17.39
-           EW ON random 2019-10-31 185                False     -0.78           -10.44                    3.78               13.17
-           EW ON random 2019-11-14 193                False     -0.65            -8.82                    3.73               12.75
-           EW ON random 2020-01-17 228                False     -0.82           -11.26                    3.93               12.65
-           EW ON random 2020-05-26 292                False      1.75            24.05                    3.34               20.48
-           EW ON random 2020-11-04 383                False      0.12             1.24                    3.35               17.18
-           EW ON random 2020-12-11 405                False     -0.39            -3.86                    3.20               15.93
-           EW ON random 2021-02-03 434                False      0.59             6.03                    3.23               17.07
-           EW ON random 2021-03-05 447                False      0.64             6.15                    3.20               16.27
-           EW ON random 2021-11-17 586                False     -2.09           -13.36                    3.12               13.30
-           EW ON random 2021-11-23 589                False     -2.04           -12.88                    3.10               13.16
-           EW ID  named 2022-07-12 713                 True     -1.19           -19.52                   -3.34              -16.53
-           EW ID  named 2022-08-25 739                 True     -1.85           -28.99                   -3.63              -17.76
-           EW ID  named 2022-11-03 777                 True     -0.42            -6.77                   -2.82              -13.87
-           EW ID  named 2022-11-18 786                 True     -1.14           -17.77                   -3.23              -15.71
-           EW ID random 2019-10-31 185                False      0.53             5.81                   -0.47               -2.39
-           EW ID random 2019-11-14 193                False      0.27             2.97                   -0.51               -2.53
-           EW ID random 2020-01-17 228                False      1.44            15.87                    0.08                0.39
-           EW ID random 2020-05-26 292                False     -0.29            -3.48                   -1.49               -8.43
-           EW ID random 2020-11-04 383                False      0.73            10.87                   -1.59               -8.19
-           EW ID random 2020-12-11 405                False      0.49             7.37                   -1.90               -9.74
-           EW ID random 2021-02-03 434                False     -0.24            -3.21                   -2.19              -11.66
-           EW ID random 2021-03-05 447                False     -0.85           -12.41                   -2.26              -12.74
-           EW ID random 2021-11-17 586                False      0.13             1.73                   -2.70              -13.78
-           EW ID random 2021-11-23 589                False      0.63             8.31                   -2.60              -13.30
-          FUT ON  named 2022-07-12 713                 True      0.36             1.93                    0.60                1.58
-          FUT ON  named 2022-08-25 739                 True      0.14             0.79                    0.45                1.17
-          FUT ON  named 2022-11-03 777                 True     -0.09            -0.50                    0.46                1.19
-          FUT ON  named 2022-11-18 786                 True      1.05             5.55                    0.87                2.23
-          FUT ON random 2019-10-31 185                False      0.21             2.09                    0.92                2.73
-          FUT ON random 2019-11-14 193                False      0.39             3.87                    1.00                2.88
-          FUT ON random 2020-01-17 228                False      0.65             6.55                    1.43                3.82
-          FUT ON random 2020-05-26 292                False      0.54             5.36                    0.69                3.02
-          FUT ON random 2020-11-04 383                False     -1.04            -8.57                    0.47                1.73
-          FUT ON random 2020-12-11 405                False     -0.22            -1.51                    0.42                1.49
-          FUT ON random 2021-02-03 434                False      1.24             8.08                    0.73                2.63
-          FUT ON random 2021-03-05 447                False      1.10             6.64                    0.56                1.95
-          FUT ON random 2021-11-17 586                False     -2.30            -8.15                    0.14                0.39
-          FUT ON random 2021-11-23 589                False     -1.95            -7.03                    0.17                0.49
-PAIRED CW-FUT ON  named 2022-07-12 713                 True      0.54             3.66                    4.76               12.09
-PAIRED CW-FUT ON  named 2022-08-25 739                 True      1.50             9.48                    5.02               12.55
-PAIRED CW-FUT ON  named 2022-11-03 777                 True      1.54            10.32                    4.72               11.77
-PAIRED CW-FUT ON  named 2022-11-18 786                 True      3.47            20.74                    5.41               13.26
-PAIRED CW-FUT ON random 2019-10-31 185                False     -1.56           -13.61                    3.40                7.24
-PAIRED CW-FUT ON random 2019-11-14 193                False     -1.70           -14.78                    3.12                6.66
-PAIRED CW-FUT ON random 2020-01-17 228                False     -2.29           -19.71                    2.46                5.48
-PAIRED CW-FUT ON random 2020-05-26 292                False      1.76            15.79                    3.51               14.21
-PAIRED CW-FUT ON random 2020-11-04 383                False      1.02             7.43                    3.78               12.69
-PAIRED CW-FUT ON random 2020-12-11 405                False     -0.50            -2.65                    3.67               11.92
-PAIRED CW-FUT ON random 2021-02-03 434                False     -0.38            -1.92                    3.82               12.16
-PAIRED CW-FUT ON random 2021-03-05 447                False      0.15             0.75                    3.97               12.45
-PAIRED CW-FUT ON random 2021-11-17 586                False     -0.89            -4.61                    4.11               11.19
-PAIRED CW-FUT ON random 2021-11-23 589                False     -1.01            -5.13                    4.03               10.95
+           CW ON  named 2022-07-12 714                 True      0.60             5.58                    3.66               13.82
+           CW ON  named 2022-08-25 740                 True      1.12            10.27                    3.71               13.88
+           CW ON  named 2022-11-03 778                 True      1.04             9.82                    3.53               13.11
+           CW ON  named 2022-11-18 787                 True      3.24            26.30                    4.29               15.63
+           CW ON random 2019-10-31 186                False     -0.90           -11.53                    3.02               10.58
+           CW ON random 2019-11-13 193                False     -0.84           -10.81                    2.95               10.18
+           CW ON random 2020-01-17 229                False     -1.01           -13.16                    3.06                9.79
+           CW ON random 2020-05-22 292                False      1.51            19.80                    2.90               17.32
+           CW ON random 2020-11-04 384                False     -0.12            -1.14                    2.99               14.70
+           CW ON random 2020-12-11 406                False     -0.47            -4.16                    2.87               13.68
+           CW ON random 2021-02-03 435                False      0.67             6.16                    3.03               15.05
+           CW ON random 2021-03-05 448                False      0.85             7.39                    3.05               14.64
+           CW ON random 2021-11-17 587                False     -2.12           -12.75                    2.89               11.77
+           CW ON random 2021-11-23 590                False     -2.05           -12.15                    2.86               11.64
+           CW ID  named 2022-07-12 714                 True     -1.04           -16.84                   -2.61              -13.18
+           CW ID  named 2022-08-25 740                 True     -1.56           -24.28                   -2.78              -13.93
+           CW ID  named 2022-11-03 778                 True     -0.16            -2.58                   -1.97               -9.92
+           CW ID  named 2022-11-18 787                 True     -0.81           -12.63                   -2.32              -11.61
+           CW ID random 2019-10-31 186                False      0.78             8.57                    0.08                0.46
+           CW ID random 2019-11-13 193                False      0.55             5.93                    0.04                0.23
+           CW ID random 2020-01-17 229                False      1.34            14.27                    0.44                2.36
+           CW ID random 2020-05-22 292                False     -0.70            -8.01                   -1.26               -7.29
+           CW ID random 2020-11-04 384                False      0.92            13.45                   -1.30               -6.79
+           CW ID random 2020-12-11 406                False      0.66            10.05                   -1.57               -8.10
+           CW ID random 2021-02-03 435                False     -0.16            -2.21                   -1.84               -9.99
+           CW ID random 2021-03-05 448                False     -0.88           -13.06                   -1.98              -11.33
+           CW ID random 2021-11-17 587                False     -0.02            -0.28                   -2.29              -11.92
+           CW ID random 2021-11-23 590                False      0.44             5.83                   -2.20              -11.44
+           EW ON  named 2022-07-12 714                 True      0.71             7.27                    4.02               15.71
+           EW ON  named 2022-08-25 740                 True      1.27            12.61                    4.05               15.66
+           EW ON  named 2022-11-03 778                 True      1.16            11.96                    3.85               14.76
+           EW ON  named 2022-11-18 787                 True      3.42            30.19                    4.69               17.55
+           EW ON random 2019-10-31 186                False     -0.78           -10.44                    3.96               13.84
+           EW ON random 2019-11-13 193                False     -0.64            -8.68                    3.92               13.47
+           EW ON random 2020-01-17 229                False     -0.82           -11.26                    4.09               13.20
+           EW ON random 2020-05-22 292                False      1.63            22.48                    3.34               20.56
+           EW ON random 2020-11-04 384                False      0.12             1.24                    3.42               17.50
+           EW ON random 2020-12-11 406                False     -0.39            -3.86                    3.26               16.24
+           EW ON random 2021-02-03 435                False      0.59             6.03                    3.29               17.35
+           EW ON random 2021-03-05 448                False      0.64             6.15                    3.26               16.55
+           EW ON random 2021-11-17 587                False     -2.09           -13.36                    3.17               13.52
+           EW ON random 2021-11-23 590                False     -2.04           -12.88                    3.15               13.38
+           EW ID  named 2022-07-12 714                 True     -1.19           -19.52                   -3.39              -16.76
+           EW ID  named 2022-08-25 740                 True     -1.85           -28.99                   -3.68              -17.99
+           EW ID  named 2022-11-03 778                 True     -0.42            -6.77                   -2.87              -14.08
+           EW ID  named 2022-11-18 787                 True     -1.14           -17.77                   -3.27              -15.92
+           EW ID random 2019-10-31 186                False      0.53             5.81                   -0.66               -3.32
+           EW ID random 2019-11-13 193                False      0.17             1.85                   -0.78               -3.84
+           EW ID random 2020-01-17 229                False      1.44            15.87                   -0.07               -0.38
+           EW ID random 2020-05-22 292                False     -0.47            -5.61                   -1.66               -9.38
+           EW ID random 2020-11-04 384                False      0.73            10.87                   -1.68               -8.63
+           EW ID random 2020-12-11 406                False      0.49             7.37                   -1.99              -10.15
+           EW ID random 2021-02-03 435                False     -0.24            -3.21                   -2.26              -12.04
+           EW ID random 2021-03-05 448                False     -0.85           -12.41                   -2.33              -13.11
+           EW ID random 2021-11-17 587                False      0.13             1.73                   -2.76              -14.06
+           EW ID random 2021-11-23 590                False      0.63             8.31                   -2.66              -13.59
+          FUT ON  named 2022-07-12 714                 True      0.36             1.93                    0.63                1.67
+          FUT ON  named 2022-08-25 740                 True      0.14             0.79                    0.48                1.26
+          FUT ON  named 2022-11-03 778                 True     -0.09            -0.50                    0.49                1.27
+          FUT ON  named 2022-11-18 787                 True      1.05             5.55                    0.90                2.32
+          FUT ON random 2019-10-31 186                False      0.21             2.09                    1.03                3.07
+          FUT ON random 2019-11-13 193                False      0.34             3.30                    1.07                3.10
+          FUT ON random 2020-01-17 229                False      0.65             6.55                    1.53                4.09
+          FUT ON random 2020-05-22 292                False      0.59             5.85                    0.77                3.38
+          FUT ON random 2020-11-04 384                False     -1.04            -8.57                    0.51                1.90
+          FUT ON random 2020-12-11 406                False     -0.22            -1.51                    0.46                1.65
+          FUT ON random 2021-02-03 435                False      1.24             8.08                    0.77                2.78
+          FUT ON random 2021-03-05 448                False      1.10             6.64                    0.60                2.09
+          FUT ON random 2021-11-17 587                False     -2.30            -8.15                    0.17                0.51
+          FUT ON random 2021-11-23 590                False     -1.95            -7.03                    0.21                0.61
+PAIRED CW-FUT ON  named 2022-07-12 714                 True      0.54             3.66                    4.80               12.15
+PAIRED CW-FUT ON  named 2022-08-25 740                 True      1.50             9.48                    5.05               12.62
+PAIRED CW-FUT ON  named 2022-11-03 778                 True      1.54            10.32                    4.75               11.84
+PAIRED CW-FUT ON  named 2022-11-18 787                 True      3.47            20.74                    5.44               13.32
+PAIRED CW-FUT ON random 2019-10-31 186                False     -1.56           -13.61                    3.57                7.51
+PAIRED CW-FUT ON random 2019-11-13 193                False     -1.62           -14.11                    3.37                7.08
+PAIRED CW-FUT ON random 2020-01-17 229                False     -2.29           -19.71                    2.57                5.70
+PAIRED CW-FUT ON random 2020-05-22 292                False      1.54            13.95                    3.46               13.94
+PAIRED CW-FUT ON random 2020-11-04 384                False      1.02             7.43                    3.83               12.81
+PAIRED CW-FUT ON random 2020-12-11 406                False     -0.50            -2.65                    3.72               12.03
+PAIRED CW-FUT ON random 2021-02-03 435                False     -0.38            -1.92                    3.87               12.27
+PAIRED CW-FUT ON random 2021-03-05 448                False      0.15             0.75                    4.01               12.55
+PAIRED CW-FUT ON random 2021-11-17 587                False     -0.89            -4.61                    4.14               11.27
+PAIRED CW-FUT ON random 2021-11-23 590                False     -1.01            -5.13                    4.06               11.04
 ```
 
 Ranking (|t_window| of random dates above the 2022-08-25 value):
@@ -125,7 +125,7 @@ Ranking (|t_window| of random dates above the 2022-08-25 value):
           series  t_window_cut  n_random_above  max_abs_random  n_random_above_fullsplit_reportonly                                          other_named
            CW ON          1.12               3            2.12                                    0    2022-07-12 0.60, 2022-11-03 1.04, 2022-11-18 3.24
            CW ID         -1.56               0            1.34                                    0 2022-07-12 -1.04, 2022-11-03 -0.16, 2022-11-18 -0.81
-           EW ON          1.27               3            2.09                                    0    2022-07-12 0.71, 2022-11-03 1.16, 2022-11-18 3.42
+           EW ON          1.27               3            2.09                                    1    2022-07-12 0.71, 2022-11-03 1.16, 2022-11-18 3.42
            EW ID         -1.85               0            1.44                                    0 2022-07-12 -1.19, 2022-11-03 -0.42, 2022-11-18 -1.14
           FUT ON          0.14              10            2.30                                    7   2022-07-12 0.36, 2022-11-03 -0.09, 2022-11-18 1.05
 PAIRED CW-FUT ON          1.50               4            2.29                                    0    2022-07-12 0.54, 2022-11-03 1.54, 2022-11-18 3.47
@@ -137,12 +137,12 @@ Ramp linear in calendar days 2022-07-11 -> 2022-10-09. Both models 2 parameters;
 
 ```
           series    n  step_shift_bp  ramp_shift_bp   ssr_step   ssr_ramp  aic_step  aic_ramp  dAIC_ramp_minus_step             verdict  nights_inside_ramp
-           CW ON 1572          13.72          13.95 6801861.40 6800934.90  13165.73  13165.52                 -0.21 NOT DISTINGUISHABLE                  50
-           EW ON 1572          15.48          15.77 7139417.55 7137893.61  13241.87  13241.54                 -0.34 NOT DISTINGUISHABLE                  50
-PAIRED CW-FUT ON 1572          12.55          12.49 2634139.06 2636045.89  11674.47  11675.61                  1.14 NOT DISTINGUISHABLE                  50
+           CW ON 1573          13.88          14.11 6814992.29 6814036.46  13176.14  13175.92                 -0.22 NOT DISTINGUISHABLE                  50
+           EW ON 1573          15.66          15.95 7156770.15 7155205.17  13253.11  13252.77                 -0.34 NOT DISTINGUISHABLE                  50
+PAIRED CW-FUT ON 1573          12.62          12.56 2636545.71 2638455.43  11682.33  11683.47                  1.14 NOT DISTINGUISHABLE                  50
 ```
 
-- CW ON: dAIC -0.21 -> NOT DISTINGUISHABLE. The two models differ only on the 50 nights inside the ramp, out of 1572.
+- CW ON: dAIC -0.22 -> NOT DISTINGUISHABLE. The two models differ only on the 50 nights inside the ramp, out of 1573.
 
 ## 4. VNINDEX legs by year (one-day nights, mean bp, NW t)
 
@@ -261,23 +261,23 @@ Note: in regime_legs_monday.csv the 8.05 bp basket figure is the **2018-11..2021
 
 ```
         window  csv_basket_mon_bp  csv_basket_mon_t  n_mon  other_nights_bp  other_nights_t  n_other  mon_minus_other_bp  mon_minus_other_t  lo95  hi95  distinguishable  all_nights_bp  all_nights_t  onesample_vs_allmean_t_reportonly
- 2018-11..2021               8.05              1.31    154            -2.27           -0.64      459               10.32               1.45 -3.63 24.26            False           0.32          0.10                               1.25
-pre 2022-08-25               2.86              0.50    184            -1.84           -0.60      555                4.70               0.72 -8.11 17.50            False          -0.67         -0.23                               0.61
+ 2018-11..2021               8.05              1.31    154            -2.51           -0.71      460               10.56               1.49 -3.38 24.50            False           0.14          0.04                               1.28
+pre 2022-08-25               2.86              0.50    184            -2.04           -0.67      556                4.90               0.75 -7.91 17.70            False          -0.82         -0.28                               0.64
 ```
 
-- 2018-11-21..2022-08-24: basket Mon->Tue 2.86 bp (t 0.50, n 184); minus other one-day nights +4.70 bp (t 0.72) -> NOT distinguishable. All-night mean -0.67 bp.
-- 2018-11..2021: basket Mon->Tue 8.05 bp (t 1.31, n 154); minus other nights +10.32 bp (t 1.45) -> NOT distinguishable.
+- 2018-11-21..2022-08-24: basket Mon->Tue 2.86 bp (t 0.50, n 184); minus other one-day nights +4.90 bp (t 0.75) -> NOT distinguishable. All-night mean -0.82 bp.
+- 2018-11..2021: basket Mon->Tue 8.05 bp (t 1.31, n 154); minus other nights +10.56 bp (t 1.49) -> NOT distinguishable.
 
 Caveats: pre-2022-06 futures opens unverified; one-day nights only; stock flat opens kept; VNINDEX opens per the caveat list.
 
 Variant of regime_changepoint_audit.py: only the futures input changed (see src/regime_changepoint_repaired.py for the exact substitutions).
 
-Integrity: md5 of every pre-existing file in data/raw/, data/raw_kbs_index/ and results/ identical before and after: True (186 files).
+Integrity: md5 of every pre-existing file in data/raw/, data/raw_kbs_index/ and results/ identical before and after: True (252 files).
 
 ## Summary (5 lines)
 
-1. Break date: CW ON LS break 2022-11-25, 95% interval 2021-03-10..2024-08-21 (681 nights; 2022-08-25 inside, but the interval does not single it out: cutover |t| ranks 164/1101); sup|t| 4.48 vs block-bootstrap 5% critical 3.29 (Holm p 0.012). ON legs: LS dates 2022-11-25 (CW), 2022-11-25 (EW), paired 2022-12-07; ID legs: LS date 2022-08-26 (CW, rank of cutover 6) and 2022-08-26 (EW, rank 8). Holm p < 0.05: CW ON, EW ON, EW ID, PAIRED CW-FUT ON; not detected (interval uninformative): CW ID, FUT ON.
+1. Break date: CW ON LS break 2022-11-25, 95% interval 2021-06-30..2024-10-29 (659 nights; 2022-08-25 inside, but the interval does not single it out: cutover |t| ranks 162/1102); sup|t| 4.52 vs block-bootstrap 5% critical 3.33 (Holm p 0.012). ON legs: LS dates 2022-11-25 (CW), 2022-11-25 (EW), paired 2022-12-07; ID legs: LS date 2022-08-26 (CW, rank of cutover 6) and 2022-08-26 (EW, rank 8). Holm p < 0.05: CW ON, EW ON, EW ID, PAIRED CW-FUT ON; not detected (interval uninformative): CW ID, FUT ON.
 2. Placebo (±125 nights, local window): random 2019-21 dates with |t| above the 08-25 value: CW ON 3/10, CW ID 0/10, EW ON 3/10, EW ID 0/10, FUT ON 10/10, PAIRED CW-FUT ON 4/10; CW ON t at 08-25 only 1.12 (max random 2.12) vs 3.24 at the 2022-11-18 named date (mapped to 2022-11-18).
-3. Sharpness (CW ON): dAIC ramp - step -0.21 -> NOT DISTINGUISHABLE; EW ON -0.34, paired +1.14 (50 nights inside the ramp).
+3. Sharpness (CW ON): dAIC ramp - step -0.22 -> NOT DISTINGUISHABLE; EW ON -0.34, paired +1.14 (50 nights inside the ramp).
 4. Earlier relocations (VNINDEX, R2 rule, Y-1 vs Y): 2017->2018 no - ON FELL (-11.4 bp, t -2.54), the opposite direction; 2022->2023 NOT ROBUST: R2 met only in VCI with flagged opens kept (dID t -2.05), not with flagged dropped (t -1.84) or KBS (t -1.76); ON up (t > 3) and C2C flat in all three. 2022->2023 straddles the cutover, so it is not an independent event; background KBS 0/7, VCI 1/14, VCI flagged dropped 0/12 adjacent pairs.
-5. Monday basket: 2018-11-21..2022-08-24 Mon->Tue 2.86 bp (t 0.50), minus other nights +4.70 (t 0.72) -> not distinguishable; the 8.05 bp figure is the 2018-11..2021 row (t 1.31; vs other nights t 1.45).
+5. Monday basket: 2018-11-21..2022-08-24 Mon->Tue 2.86 bp (t 0.50), minus other nights +4.90 (t 0.75) -> not distinguishable; the 8.05 bp figure is the 2018-11..2021 row (t 1.31; vs other nights t 1.49).

@@ -73,7 +73,7 @@ On a point-in-time, free-float cap-weighted VN30 stock basket (validated to trac
 | Leg | Before 2022-08-25 | After | Change |
 |---|---|---|---|
 | Overnight | ≈ 0 | +13.5 bp | **+14 bp** (t 3.8) |
-| Intraday | +10.8 bp | −2.4 bp | **−13 bp** (t −2.8) |
+| Intraday | +11.0 bp (2026-11-27: 2018-11-21 first-night fix) | −2.3 bp | **−13 bp** (t −2.7) |
 | Close-to-close | — | — | **≈ 0** (not detectable) |
 
 ![The 2022 relocation of return from the intraday leg to the overnight leg](../results/regime_relocation.png)

@@ -22,53 +22,53 @@ Note the 7% rule is asymmetric in log terms: a limit-down open is ln(0.93) = -7.
 Mean absolute weekday difference, basket minus index (bp):
 version    a    b    c
 scheme                
-cap     3.91 2.22 2.20
-ew      3.89 2.09 2.02
+cap     3.90 2.22 2.20
+ew      3.87 2.08 2.04
 
 All-nights mean difference (bp):
 version    a    b     c
 scheme                 
-cap     3.82 0.84  0.08
-ew      3.87 0.90 -0.25
+cap     3.80 0.83  0.07
+ew      3.85 0.89 -0.26
 
 Correlation with index overnight (all nights):
 version    a    b    c
 scheme                
-cap     0.78 0.77 0.77
+cap     0.78 0.78 0.77
 ew      0.76 0.76 0.75
 
-Basket level by weekday (bp); index (cap a rows' dates): Mon->Tue 8.54, Tue->Wed 8.48, Wed->Thu 7.23, Thu->Fri 2.17
+Basket level by weekday (bp); index (cap a rows' dates): Mon->Tue 8.54, Tue->Wed 8.17, Wed->Thu 7.23, Thu->Fri 2.17
 version             a     b     c
 scheme group                     
 cap    Mon->Tue 16.61 12.98 12.53
        Thu->Fri  2.00 -0.58 -1.92
-       Tue->Wed 12.22  9.04  8.35
-       Wed->Thu 10.88  8.32  7.76
+       Tue->Wed 11.85  8.71  8.02
+       Wed->Thu 10.89  8.32  7.77
 ew     Mon->Tue 15.11 11.74 10.93
        Thu->Fri  2.45 -0.18 -1.98
-       Tue->Wed 12.31  9.14  8.13
-       Wed->Thu 12.10  9.35  8.37
+       Tue->Wed 11.90  8.76  7.75
+       Wed->Thu 12.11  9.35  8.38
 
 Basket minus index by weekday (bp):
 version             a     b     c
 scheme group                     
 cap    Mon->Tue  8.08  4.48  4.03
        Thu->Fri -0.17 -2.76 -4.09
-       Tue->Wed  3.74  0.56 -0.13
-       Wed->Thu  3.65  1.09  0.54
+       Tue->Wed  3.69  0.55 -0.14
+       Wed->Thu  3.66  1.09  0.54
 ew     Mon->Tue  6.58  3.24  2.43
        Thu->Fri  0.28 -2.35 -4.15
-       Tue->Wed  3.83  0.66 -0.35
-       Wed->Thu  4.87  2.12  1.14
+       Tue->Wed  3.74  0.60 -0.41
+       Wed->Thu  4.88  2.13  1.15
 
 Wed->Thu vs VN30F1M (paired by date):
 version scheme   n  basket_bp  index_bp  diff_bp  paired_t
-      a    cap 390      10.77      2.92     7.85      3.49
-      a     ew 390      12.01      2.92     9.09      4.16
+      a    cap 390      10.78      2.92     7.86      3.49
+      a     ew 390      12.02      2.92     9.10      4.16
       b    cap 390       8.28      2.92     5.36      2.64
-      b     ew 390       9.34      2.92     6.42      3.28
-      c    cap 390       7.75      2.92     4.83      2.37
-      c     ew 390       8.41      2.92     5.49      2.73
+      b     ew 390       9.35      2.92     6.43      3.28
+      c    cap 390       7.76      2.92     4.83      2.37
+      c     ew 390       8.42      2.92     5.50      2.74
 
 Decision rule outcome (cap-weighted, fixed in advance): C (neither tracks within ~2 bp: another data or method issue)
 
@@ -194,36 +194,36 @@ Level B date-level EW current-30 (all nights)   filtered full 2018-11-21+  1987.
 Level B date-level EW current-30 (all nights) unfiltered   pre 2022-08-25   939.00     1.95  0.79    62.62  NaN
 Level B date-level EW current-30 (all nights) unfiltered  post 2022-08-25  1054.00    12.16  6.19    70.21  NaN
 Level B date-level EW current-30 (all nights) unfiltered full 2018-11-21+  1993.00     7.35  4.70    66.63  NaN
-               PIT EW basket (one-day nights)  version a   pre 2022-08-25   739.00     0.42  0.15    57.10  NaN
+               PIT EW basket (one-day nights)  version a   pre 2022-08-25   740.00     0.23  0.08    57.03  NaN
                PIT EW basket (one-day nights)  version a  post 2022-08-25   833.00    19.22  8.50    72.75  NaN
-               PIT EW basket (one-day nights)  version a full 2018-11-21+  1572.00    10.38  5.80    65.39  NaN
-              PIT CAP basket (one-day nights)  version a   pre 2022-08-25   739.00     1.69  0.64    58.46  NaN
+               PIT EW basket (one-day nights)  version a full 2018-11-21+  1573.00    10.28  5.75    65.35  NaN
+              PIT CAP basket (one-day nights)  version a   pre 2022-08-25   740.00     1.52  0.57    58.38  NaN
               PIT CAP basket (one-day nights)  version a  post 2022-08-25   833.00    18.00  7.72    70.47  NaN
-              PIT CAP basket (one-day nights)  version a full 2018-11-21+  1572.00    10.33  5.85    64.82  NaN
-               PIT EW basket (one-day nights)  version b   pre 2022-08-25   740.00    -1.18 -0.47    57.03  NaN
+              PIT CAP basket (one-day nights)  version a full 2018-11-21+  1573.00    10.25  5.80    64.78  NaN
+               PIT EW basket (one-day nights)  version b   pre 2022-08-25   741.00    -1.36 -0.54    56.95  NaN
                PIT EW basket (one-day nights)  version b  post 2022-08-25   833.00    15.07  7.23    72.75  NaN
-               PIT EW basket (one-day nights)  version b full 2018-11-21+  1573.00     7.42  4.56    65.35  NaN
-              PIT CAP basket (one-day nights)  version b   pre 2022-08-25   740.00    -0.30 -0.13    58.38  NaN
+               PIT EW basket (one-day nights)  version b full 2018-11-21+  1574.00     7.34  4.50    65.31  NaN
+              PIT CAP basket (one-day nights)  version b   pre 2022-08-25   741.00    -0.46 -0.19    58.30  NaN
               PIT CAP basket (one-day nights)  version b  post 2022-08-25   833.00    14.18  6.61    70.47  NaN
-              PIT CAP basket (one-day nights)  version b full 2018-11-21+  1573.00     7.36  4.58    64.78  NaN
-               PIT EW basket (one-day nights)  version c   pre 2022-08-25   740.00    -1.87 -0.72    56.89  NaN
+              PIT CAP basket (one-day nights)  version b full 2018-11-21+  1574.00     7.29  4.53    64.74  NaN
+               PIT EW basket (one-day nights)  version c   pre 2022-08-25   741.00    -2.04 -0.78    56.82  NaN
                PIT EW basket (one-day nights)  version c  post 2022-08-25   833.00    13.54  6.11    72.27  NaN
-               PIT EW basket (one-day nights)  version c full 2018-11-21+  1573.00     6.29  3.68    65.03  NaN
-              PIT CAP basket (one-day nights)  version c   pre 2022-08-25   740.00    -0.60 -0.24    58.38  NaN
+               PIT EW basket (one-day nights)  version c full 2018-11-21+  1574.00     6.21  3.63    64.99  NaN
+              PIT CAP basket (one-day nights)  version c   pre 2022-08-25   741.00    -0.75 -0.31    58.30  NaN
               PIT CAP basket (one-day nights)  version c  post 2022-08-25   833.00    13.06  5.80    70.35  NaN
-              PIT CAP basket (one-day nights)  version c full 2018-11-21+  1573.00     6.63  3.98    64.72  NaN
+              PIT CAP basket (one-day nights)  version c full 2018-11-21+  1574.00     6.55  3.93    64.68  NaN
 
 By year (mean bp):
 group                                                      2018  2019  2020  2021  2022  2023  2024  2025  2026
 series                                        filter                                                           
 Level B date-level EW current-30 (all nights) filtered   -27.70  8.20  0.90 16.40  0.50 19.30 16.30 19.30 12.40
                                               unfiltered -20.50  4.20 -4.60 11.40 -0.20 14.60 12.30 15.20  9.50
-PIT CAP basket (one-day nights)               version a  -16.50  1.20 -1.10 11.60 -0.60 18.00 16.00 24.50 16.90
-                                              version b  -15.40  0.20 -4.10  7.90 -0.70 13.10 11.70 19.70 14.60
-                                              version c  -15.60  0.10 -4.80  7.60 -3.50 13.10 11.70 18.00 14.40
-PIT EW basket (one-day nights)                version a  -18.70 -3.40 -1.30 12.80 -1.00 21.20 18.40 22.30 18.60
-                                              version b  -16.80 -2.60 -4.10  8.50 -1.10 15.60 13.70 17.70 15.50
-                                              version c  -17.60 -3.00 -5.70  8.00 -4.80 15.50 13.70 15.50 15.00
+PIT CAP basket (one-day nights)               version a  -21.20  1.20 -1.10 11.60 -0.60 18.00 16.00 24.50 16.90
+                                              version b  -19.80  0.20 -4.10  7.90 -0.70 13.10 11.70 19.70 14.60
+                                              version c  -19.90  0.10 -4.80  7.60 -3.50 13.10 11.70 18.00 14.40
+PIT EW basket (one-day nights)                version a  -23.80 -3.40 -1.30 12.80 -1.00 21.20 18.40 22.30 18.60
+                                              version b  -21.70 -2.60 -4.10  8.50 -1.10 15.60 13.70 17.70 15.50
+                                              version c  -22.50 -3.00 -5.70  8.00 -4.80 15.50 13.70 15.50 15.00
 VN30 index (Level A, all nights)              filtered   -10.10  0.00 -1.60  6.20 -2.50  9.90  8.80 16.70 10.80
                                               unfiltered -10.10  0.00 -1.30  5.90 -2.50  9.90  8.80 16.60 10.80
 VNINDEX index (Level A, all nights)           filtered    -7.00  2.60 -2.70  6.60 -6.80 13.70 12.60 16.50 11.80
@@ -260,4 +260,4 @@ VNINDEX index per-night overnight x3, same calendar (unfiltered / index-flag dro
 - Level B 'date-level' = EW across the current-30 per date, all nights, k >= 10; the Level B cross-section itself is per stock (reproduced above).
 
 ## Verdict
-VERDICT. Filter: the open_suspicious filter is mainly truncation bias for levels. Against the published VN30 overnight, the cap-weighted PIT basket's all-nights gap is 3.82 bp with the filter and 0.08 bp without it, and the mean absolute weekday gap falls from 3.91 to 2.20 bp (correlation unchanged, ~0.78). Fixed rule outcome: C by a 0.20 bp margin over the ~2 bp threshold, so I read it as borderline A/C (ambiguous, D) on weekday shape; the residual is a shape mismatch (Mon->Tue +4.0, Thu->Fri -4.1 bp), not a level gap. Flags run 20-34% a year against an expected genuine flat-open rate of about 10-15% (cc-scaled) or 6-10% (tick rule), but KBS shows the same open on 99% of VCI-flagged days, so the excess is not a VCI fill that another vendor corrects; it looks like the exchange-reported open equal to the reference price (plausibly no ATO match), which the index also uses. Flagged names close 11.7 bp below unflagged names on the same date (t -5.77), so the filter selects on the outcome: harmless for the overnight leg (zeros), but it biases any hold that spans the flagged day (the Option C 12.8 vs 4.8 bp). Regime 1: there is no inconsistency to explain. The published VN30 overnight is itself ~0 before 2022-08-25 (0.89 bp/night, t 0.70) and strongly positive after (9.99 bp, t 6.42); the Level A full-sample positive overnight comes from outside 2018-11..2022-08. Option C's unfiltered three-leg sum (-4.70 bp) matches 3 x the per-night PIT mean (-5.29 bp); the filtered version differs (-1.37 vs 0.19 bp) because Option C drops the whole window. The 'index positive, stocks ~0' hypothesis is rejected: stock basket minus index in regime 1 is -3.63 bp (not significant). Wednesday: the Wed->Thu replica-minus-VN30F1M gap shrinks from 7.85 bp (t 3.49) to 4.83 bp (t 2.37) unfiltered; about 38% of it was filter, the rest persists. Levels A/B: unfiltered overnight is positive with t >= 3 after 2022-08-25 for both, but not before (Level A VN30 0.89 bp, Level B 1.95 bp, t 0.79); Level B's unfiltered mean is 34% (pre) and 77% (post) of the filtered mean; Level A is essentially unaffected by the filter after 2018.
+VERDICT. Filter: the open_suspicious filter is mainly truncation bias for levels. Against the published VN30 overnight, the cap-weighted PIT basket's all-nights gap is 3.80 bp with the filter and 0.07 bp without it, and the mean absolute weekday gap falls from 3.90 to 2.20 bp (correlation unchanged, ~0.78). Fixed rule outcome: C by a 0.20 bp margin over the ~2 bp threshold, so I read it as borderline A/C (ambiguous, D) on weekday shape; the residual is a shape mismatch (Mon->Tue +4.0, Thu->Fri -4.1 bp), not a level gap. Flags run 20-34% a year against an expected genuine flat-open rate of about 10-15% (cc-scaled) or 6-10% (tick rule), but KBS shows the same open on 99% of VCI-flagged days, so the excess is not a VCI fill that another vendor corrects; it looks like the exchange-reported open equal to the reference price (plausibly no ATO match), which the index also uses. Flagged names close 11.7 bp below unflagged names on the same date (t -5.77), so the filter selects on the outcome: harmless for the overnight leg (zeros), but it biases any hold that spans the flagged day (the Option C 12.8 vs 4.8 bp). Regime 1: there is no inconsistency to explain. The published VN30 overnight is itself ~0 before 2022-08-25 (0.89 bp/night, t 0.70) and strongly positive after (9.99 bp, t 6.42); the Level A full-sample positive overnight comes from outside 2018-11..2022-08. Option C's unfiltered three-leg sum (-4.70 bp) matches 3 x the per-night PIT mean (-5.29 bp); the filtered version differs (-1.37 vs 0.19 bp) because Option C drops the whole window. The 'index positive, stocks ~0' hypothesis is rejected: stock basket minus index in regime 1 is -3.63 bp (not significant). Wednesday: the Wed->Thu replica-minus-VN30F1M gap shrinks from 7.86 bp (t 3.49) to 4.83 bp (t 2.37) unfiltered; about 38% of it was filter, the rest persists. Levels A/B: unfiltered overnight is positive with t >= 3 after 2022-08-25 for both, but not before (Level A VN30 0.89 bp, Level B 1.95 bp, t 0.79); Level B's unfiltered mean is 34% (pre) and 77% (post) of the filtered mean; Level A is essentially unaffected by the filter after 2018.

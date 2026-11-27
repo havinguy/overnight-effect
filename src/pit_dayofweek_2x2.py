@@ -16,13 +16,16 @@ START = pd.Timestamp("2018-11-21")
 # ---------- per-stock panel ----------
 RET, PC, CL = {}, {}, {}
 for t in tickers:
-    d = decompose(pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"]))
-    gap = d["date"].diff().dt.days
+    # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+    raw = pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
+    raw["gap"] = raw["date"].diff().dt.days; raw["prev_close"] = raw["close"].shift(1)
+    d = decompose(raw)
+    gap = d["gap"]
     flag = d["open_suspicious"].astype(bool) | (d["r_overnight"].abs() > 0.07)
     ok = (gap == 1) & ~flag
     d = d.set_index("date")
     RET[t] = d["r_overnight"].where(ok.values)
-    PC[t] = d["close"].shift(1)
+    PC[t] = d["prev_close"]                     # raw prior close (was d.close.shift(1) after the drop: NaN on the first night)
     CL[t] = d["close"]
 RET, PC = pd.DataFrame(RET).sort_index(), pd.DataFrame(PC).sort_index()
 RET = RET.loc[START:]; PC = PC.reindex(RET.index)

@@ -8,7 +8,9 @@ NAMES = X.NAMES
 cells = pd.read_pickle("results/_pit_cells.pkl")
 rep = cells[("pit", "cap", "B")].r; repA = cells[("pit", "cap", "A")].r
 # published index overnight (ln open / prev close), ordinary nights, index open not flagged
-v = pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]); dv = decompose(v); gap = dv["date"].diff().dt.days
+# 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+v = pd.read_csv(RAW_DIR / "VN30.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); v["gap"] = v["date"].diff().dt.days
+dv = decompose(v); gap = dv["gap"]
 idx_ok = (gap == 1) & ~dv["open_suspicious"].astype(bool)
 idx = dv.set_index("date")["r_overnight"].where(idx_ok.values).dropna(); idx = idx.loc["2018-11-21":]
 print("index nights usable:", len(idx), "| index open_suspicious share by year:", dv.groupby(dv.date.dt.year).open_suspicious.mean().round(2).to_dict())
@@ -17,7 +19,8 @@ fut = d.loc[(d["hold_type"] == "") & d["invested"], "r_gross"]
 def sens_rep():  # keep open_suspicious stock-nights (their overnight return is 0) instead of dropping them
     alt = {}
     for t in X.tickers:
-        dd = decompose(pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"])); g = dd["date"].diff().dt.days
+        raw = pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); raw["gap"] = raw["date"].diff().dt.days   # first-night fix (raw gap)
+        dd = decompose(raw); g = dd["gap"]
         ok = (g == 1) & (dd["r_overnight"].abs() <= 0.07)
         alt[t] = dd.set_index("date")["r_overnight"].where(ok.values)
     old = X.RET; X.RET = pd.DataFrame(alt).sort_index().loc[X.START:]

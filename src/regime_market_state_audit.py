@@ -106,8 +106,10 @@ def main():
     surv = A.loc["CW ON", "verdict"] == "SURVIVES" and A.loc["CW ID", "verdict"] == "SURVIVES"
 
     # ---- episodes
-    vd = decompose(pd.read_csv(RAW_DIR / "VNINDEX.csv", parse_dates=["date"]))
-    vd = vd[vd.date.diff().dt.days == 1].set_index("date")[["r_overnight", "r_intraday", "r_cc"]].rename(columns={"r_overnight": "ON", "r_intraday": "ID", "r_cc": "C2C"})
+    # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0 (VNINDEX: 2011-04-29)
+    vraw = pd.read_csv(RAW_DIR / "VNINDEX.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); vraw["gap"] = vraw["date"].diff().dt.days
+    vd = decompose(vraw)
+    vd = vd[vd.gap == 1].set_index("date")[["r_overnight", "r_intraday", "r_cc"]].rename(columns={"r_overnight": "ON", "r_intraday": "ID", "r_cc": "C2C"})
     ep = []
     for E in (2018, 2020, 2022):
         tr = v.close[str(E)].idxmin()

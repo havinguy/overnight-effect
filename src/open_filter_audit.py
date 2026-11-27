@@ -95,9 +95,11 @@ def gate():
 def ret_panel(drop_susp, drop_big, one_day=True):
     out = {}
     for t in X.tickers:
-        d = decompose(pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"]))
+        # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+        raw = pd.read_csv(RAW_DIR / f"{t}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); raw["gap"] = raw["date"].diff().dt.days
+        d = decompose(raw)
         ok = pd.Series(True, index=d.index)
-        if one_day: ok &= d["date"].diff().dt.days == 1
+        if one_day: ok &= d["gap"] == 1
         if drop_susp: ok &= ~d["open_suspicious"].astype(bool)
         if drop_big: ok &= ~(d["r_overnight"].abs() > LIM)
         out[t] = d.set_index("date")["r_overnight"].where(ok.values)
@@ -111,9 +113,11 @@ def with_ret(R, fn):
 
 
 def index_on(sym, one_day=True, drop_flag=True):
-    dv = decompose(pd.read_csv(RAW_DIR / f"{sym}.csv", parse_dates=["date"]))
+    # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+    raw = pd.read_csv(RAW_DIR / f"{sym}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); raw["gap"] = raw["date"].diff().dt.days
+    dv = decompose(raw)
     ok = pd.Series(True, index=dv.index)
-    if one_day: ok &= dv["date"].diff().dt.days == 1
+    if one_day: ok &= dv["gap"] == 1
     if drop_flag: ok &= ~dv["open_suspicious"].astype(bool)
     return dv.set_index("date")["r_overnight"].where(ok.values).dropna()
 

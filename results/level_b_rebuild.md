@@ -55,10 +55,10 @@ Full weekday table: results/level_b_rebuild_dayofweek.csv. Old (legacy 2x2) vs r
 ```
                 night  n_old  mean_bp_old    t  n_rebuild_O  mean_bp_rebuild_O  plain_t
              Mon->Tue    390        15.87 4.89          390              15.87     4.89
-             Tue->Wed    394        11.82 3.54          395              11.47     3.43
+             Tue->Wed    395        11.47 3.43          395              11.47     3.43
              Wed->Thu    391        10.92 2.84          391              10.92     2.84
              Thu->Fri    397         2.83 0.78          397               2.83     0.78
-Mon+Tue minus Wed+Thu   1572         6.99 1.98         1573               6.81     1.93
+Mon+Tue minus Wed+Thu   1573         6.81 1.93         1573               6.81     1.93
 ```
 
 ## 3. Regime split of PIT CW basket at 2022-08-25
@@ -169,7 +169,7 @@ R2 verdict (P, full sample, base): ON spread t 10.42, ID spread t -5.37 -> H3 SU
 R4 check: ON persistence survives D1 and D2 (R4 not triggered); ID reversal NOT significant under both D1 and D2. Base C2C spread 1.10 bp (t 0.41): ON and ID spreads offset, which fits (but does not prove) a stock-level open-price effect that moves return between legs without changing the daily return.
 Diagnostics (ADDED AFTER RUN 0; D1 redefined in rerun 2): D1 demeaned score ON 9.13 bp (t 5.32), ID -10.56 bp (t -3.46); D2 12-month lag ON 9.30 bp (t 4.24), ID -4.51 bp (t -1.52).
 Treatment O (drops flat opens) leaves few eligible months for H3 (month counts in the table); by R1 read literally its H3 is TREATMENT-DEPENDENT; the cause is not measured here, so no coverage explanation is claimed.
-Scope: only one-day nights (gap == 1) enter every table, so Fri->Mon and holiday nights are excluded; ON/ID/C2C means are not full-sample. Mon+Tue minus Wed+Thu uses a plain Welch t (no NW); ON values 1.5-2.0 are at the threshold, not a significant day-of-week effect. Legacy-vs-O differences (e.g. Tue->Wed n 394 vs 395) come from the 2018-11-21 fix.
+Scope: only one-day nights (gap == 1) enter every table, so Fri->Mon and holiday nights are excluded; ON/ID/C2C means are not full-sample. Mon+Tue minus Wed+Thu uses a plain Welch t (no NW); ON values 1.5-2.0 are at the threshold, not a significant day-of-week effect. Legacy (old 2x2) and rebuilt O now agree on every row of the old-vs-O table (e.g. Tue->Wed n 395 in both). The earlier gap (Tue->Wed n 394 vs 395) was the 2018-11-21 first-night bug in the legacy 2x2 (pit_dayofweek_2x2.py), which is now fixed (2026-11-27: 2018-11-21 first-night fix).
 
 ## 5. 2018-11-21 check
 

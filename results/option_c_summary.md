@@ -346,18 +346,18 @@ R1_T3close P1 2018-11..2022-08 (regime 1)                 25              60.00 
 ## Secondary: Level B 1-night day-of-week, date-level EW baskets
                 night  pooled_mean_bp  pooled_naive_t  levelb_csv_ew_mean_bp  levelb_csv_ew_t  cur30_ew_mean_bp  cur30_ew_t  pit_ew_dates  pit_ew_mean_bp  pit_ew_t
              Mon->Tue           18.35           14.64                  17.19             5.50             17.19        5.50           390           14.32      4.42
-             Tue->Wed           15.03           12.18                  13.75             4.09             13.75        4.09           394           11.91      3.47
-             Wed->Thu           15.79           12.32                  14.49             3.84             14.49        3.84           391           12.17      3.16
+             Tue->Wed           14.65           11.85                  13.42             3.98             13.42        3.98           395           11.52      3.35
+             Wed->Thu           15.87           12.36                  14.56             3.86             14.56        3.86           391           12.18      3.16
              Thu->Fri            4.57            3.70                   5.01             1.37              5.01        1.37           397            3.23      0.86
-Mon+Tue minus Wed+Thu             NaN             NaN                    NaN              NaN               NaN         NaN          1572            5.45      1.52
+Mon+Tue minus Wed+Thu             NaN             NaN                    NaN              NaN               NaN         NaN          1573            5.25      1.47
 
 PIT EW by period:
                         period                 night  pit_ew_dates  pit_ew_mean_bp  pit_ew_t
 P1 2018-11..2022-08 (regime 1)              Mon->Tue           183            2.06      0.37
-P1 2018-11..2022-08 (regime 1)              Tue->Wed           185            3.04      0.63
-P1 2018-11..2022-08 (regime 1)              Wed->Thu           184            4.02      0.68
+P1 2018-11..2022-08 (regime 1)              Tue->Wed           186            2.26      0.47
+P1 2018-11..2022-08 (regime 1)              Wed->Thu           184            4.04      0.68
 P1 2018-11..2022-08 (regime 1)              Thu->Fri           187           -7.32     -1.24
-P1 2018-11..2022-08 (regime 1) Mon+Tue minus Wed+Thu           739            4.25      0.76
+P1 2018-11..2022-08 (regime 1) Mon+Tue minus Wed+Thu           740            3.85      0.69
 P2 2022-08-25..2025 (regime 2)              Mon->Tue           164           23.49      6.50
 P2 2022-08-25..2025 (regime 2)              Tue->Wed           166           17.62      3.14
 P2 2022-08-25..2025 (regime 2)              Wed->Thu           165           21.88      3.66

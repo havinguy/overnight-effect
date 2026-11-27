@@ -2,6 +2,8 @@
 
 Written 2026-11-27. Measurement / hygiene only. Uncommitted.
 
+> **Status update (2026-11-27, later):** Harry approved the full fix. It has now been applied to all remaining carriers listed below (code changed and outputs regenerated). See results/LOG.md and the cell-level change log results/fix20181121_fullfix_changes.csv. The 'NOT edited' / 'would move' wording below describes the inventory as measured before that.
+
 ## Applied (Option A, FB only)
 - `src/futures_basis_decomp.py` `index_nights()`: prior date and prior close are now taken from the raw VN30 series BEFORE `decompose()` drops row 0. This is the `futures_roll_gap_repair.index_nights_fixed()` pattern; the two DataFrames are `.equals()`.
 - `src/futures_roll_gap_repair.py`: `index_nights_legacy()` pinned (a frozen pre-fix copy, verified equal to the function at HEAD 0c3c8f4). The "before (as reported)" variant now calls it. The script was not rerun; its `main()` writes `data/raw/VN30F1M_repaired.csv` and the twins.

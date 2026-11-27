@@ -126,8 +126,10 @@ def fm(x, f="{:.2f}"): return "" if pd.isna(x) else f.format(x)
 
 # ------------------------------------------------------------------ VNINDEX helpers
 def vci_vnindex():
-    d = decompose(pd.read_csv(RAW_DIR / "VNINDEX.csv", parse_dates=["date"]))
-    d = d[d.date.diff().dt.days == 1].set_index("date")
+    # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0 (VNINDEX: 2011-04-29)
+    raw = pd.read_csv(RAW_DIR / "VNINDEX.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True); raw["gap"] = raw["date"].diff().dt.days
+    d = decompose(raw)
+    d = d[d.gap == 1].set_index("date")
     return pd.DataFrame({"ON": d.r_overnight, "ID": d.r_intraday, "C2C": d.r_cc, "flat": d.open_suspicious.astype(bool)})
 
 

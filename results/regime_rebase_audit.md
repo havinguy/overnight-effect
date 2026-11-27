@@ -16,7 +16,7 @@ Per quarter, one-day nights, common dates (KBS, VCI with flagged opens kept, CW 
 
 ```
                       period   n sd_bas_bp sd_kbs_bp sd_vci_bp ratio_kbs ratio_vci r2_kbs_on_bas r2_vci_on_bas kbs_flat vci_flat corr_kbs_vci  kbs_tracks_vci_not
-                      2018Q4  22      69.1       7.3      51.0     0.106     0.738         0.094         0.628    0.045    0.000        0.318               False
+                      2018Q4  23      70.6      12.7      54.5     0.180     0.772         0.167         0.659    0.043    0.000        0.499               False
                       2019Q1  46      26.8       5.6      22.0     0.208     0.821         0.145         0.635    0.283    0.109        0.403               False
                       2019Q2  48      31.8      11.4      48.4     0.360     1.523         0.506         0.402    0.125    0.042        0.490               False
                       2019Q3  51      38.3      12.2      22.5     0.318     0.587         0.451         0.576    0.255    0.137        0.753               False
@@ -60,7 +60,7 @@ VNINDEX (KBS and VCI) vs the same CW VN30 basket. Not a replica pair (VNINDEX is
 
 ```
                       period   n sd_bas_bp sd_kbs_bp sd_vci_bp ratio_kbs ratio_vci r2_kbs_on_bas r2_vci_on_bas kbs_flat vci_flat corr_kbs_vci  kbs_tracks_vci_not  vci_tracks_kbs_not
-                      2018Q4  22      69.1      64.6      58.5     0.935     0.847         0.971         0.690    0.000    0.136        0.893               False               False
+                      2018Q4  23      70.6      65.8      60.6     0.932     0.858         0.973         0.717    0.000    0.130        0.902               False               False
                       2019Q1  46      26.8      29.6      28.8     1.104     1.077         0.888         0.846    0.000    0.022        0.958               False               False
                       2019Q2  48      31.8      28.7      41.5     0.904     1.307         0.743         0.526    0.021    0.062        0.773               False               False
                       2019Q3  51      38.3      36.6      36.5     0.953     0.953         0.947         0.950    0.020    0.059        0.995               False               False
@@ -122,7 +122,7 @@ POOLED verified 2022-11-03.. 795      64.6      49.2      58.5     0.761     0.9
 
 ```
                  period cw_n cw_mean_bp cw_nw_t ew_n ew_mean_bp ew_nw_t fut_n fut_mean_bp fut_nw_t flat_share_cw flat_share_ew
-                   2018   22     -15.55   -1.08   22     -17.57   -1.29    22       -3.79    -0.31         0.245         0.261
+                   2018   23     -19.88   -1.52   23     -22.48   -1.80    23       -6.25    -0.53         0.240         0.252
                    2019  198       0.14    0.07  198      -3.04   -1.52   198        3.38     1.63         0.350         0.351
                    2020  197      -4.78   -0.56  197      -5.65   -0.63   197        7.98     1.28         0.273         0.270
                    2021  196       7.43    1.41  196       7.78    1.36   196        7.78     2.21         0.239         0.235
@@ -131,10 +131,10 @@ POOLED verified 2022-11-03.. 795      64.6      49.2      58.5     0.761     0.9
                    2024  196      11.66    4.93  196      13.71    6.10   196        4.03     2.02         0.300         0.302
                    2025  197      18.01    2.71  197      15.53    2.38   197        7.94     2.37         0.226         0.239
                    2026  171      14.42    2.97  171      14.98    3.59   171        9.27     2.07         0.245         0.244
-         pre 2022-08-25  739      -0.67   -0.23  739      -1.94   -0.62   739        5.50     2.62         0.274         0.273
+         pre 2022-08-25  740      -0.82   -0.28  740      -2.11   -0.68   740        5.41     2.57         0.274         0.273
         post 2022-08-25  820      13.46    5.70  820      13.94    6.03   820        7.05     4.53         0.262         0.261
-pre excl. 2020Q1-2021Q2  450       1.06    0.51  450      -0.76   -0.34   450        3.98     2.65         0.286         0.285
-                    all 1559       6.77    3.55 1559       6.41    3.25  1559        6.32     4.90         0.268         0.267
+pre excl. 2020Q1-2021Q2  451       0.81    0.39  451      -1.05   -0.47   451        3.84     2.54         0.285         0.284
+                    all 1560       6.69    3.50 1560       6.32    3.21  1560        6.28     4.86         0.268         0.267
 ```
 
 Futures on all its own one-day nights from 2018-11-21 (not restricted to basket dates):
@@ -154,7 +154,7 @@ Futures on all its own one-day nights from 2018-11-21 (not restricted to basket 
 post 2022-08-25 820     7.05  4.53
 ```
 
-- Pre-cutover: CW -0.67 bp (t -0.23), EW -1.94 bp (t -0.62), futures 5.50 bp (t 2.62), n 739. Post: CW 13.46 (t 5.70), EW 13.94 (t 6.03), futures 7.05 (t 4.53), n 820.
+- Pre-cutover: CW -0.82 bp (t -0.28), EW -2.11 bp (t -0.68), futures 5.41 bp (t 2.57), n 740. Post: CW 13.46 (t 5.70), EW 13.94 (t 6.03), futures 7.05 (t 4.53), n 820.
 - Near zero pre-cutover (|NW t| < 2): CW True, EW True, futures False.
 - Reference only, quoted not recomputed: published VCI VN30 index overnight pre 0.89 bp (t 0.70), post 9.99 bp (t 6.42), all nights (open_audit_summary.md).
 
@@ -162,9 +162,9 @@ Post minus pre (ADDED AFTER THE FIRST RUN; NW SE combined across the two indepen
 
 ```
    series  pre_bp  post_bp  post_minus_pre_bp  nw_se    t
-CW basket   -0.67    13.46              14.13   3.75 3.77
-EW basket   -1.94    13.94              15.88   3.87 4.10
-  futures    5.50     7.05               1.55   2.62 0.59
+CW basket   -0.82    13.46              14.28   3.75 3.81
+EW basket   -2.11    13.94              16.05   3.87 4.15
+  futures    5.41     7.05               1.64   2.61 0.63
 ```
 
 Impossible stock gaps (ADDED AFTER THE FIRST RUN): stock-days in the baskets with |open/prior close - 1| > 7.5% (beyond the +/-7% limit; usually unadjusted corporate actions or bad prints), and their contribution to the basket means (basket minus the same basket with those returns set to 0, denominators unchanged):
@@ -185,7 +185,7 @@ Flag = |index ON| < 10 bp and |CW basket ON| > 50 bp, one-day nights, common dat
 
 ```
 quarter  n  basket_big  flag_vci  flag_vci_not_flat  flag_kbs  rate_vci_given_big
- 2018Q4 22           6         2                  2         6                0.33
+ 2018Q4 23           7         2                  2         6                0.29
  2019Q1 46           2         1                  1         2                0.50
  2019Q2 48           8         0                  0         4                0.00
  2019Q3 51           4         0                  0         1                0.00
@@ -222,7 +222,7 @@ quarter  n  basket_big  flag_vci  flag_vci_not_flat  flag_kbs  rate_vci_given_bi
 
 ```
                period   n  basket_big  flag_vci  flag_vci_not_flat  flag_kbs  flag_vci_per_100  flag_vci_share_of_big
-  2018-11..2022-11-02 778         186        73                 62        99              9.38                   0.39
+  2018-11..2022-11-02 779         187        73                 62        99              9.37                   0.39
 verified 2022-11-03.. 795         166        10                 10        15              1.26                   0.06
         2020Q1-2021Q2 290          93        63                 53        78             21.72                   0.68
 ```
@@ -233,7 +233,7 @@ No memory file exists for this project (the Claude memory directory is empty and
 
 | Claim (source) | A | B (observed) | C |
 |---|---|---|---|
-| 'Regime 1: published VN30 overnight ~0 before 2022-08-25 (0.89 bp, t 0.70); positive after' (open_audit_summary.md) | keep, re-source to stocks+futures | reword: 'stock overnight ~0 pre-cutover (CW -0.67 bp, t -0.23); futures overnight positive (5.50 bp, t 2.62); the index number is index-open-dependent; the claim is now carried by stock-only evidence' | reword: regime-1 zero is an index artifact |
+| 'Regime 1: published VN30 overnight ~0 before 2022-08-25 (0.89 bp, t 0.70); positive after' (open_audit_summary.md) | keep, re-source to stocks+futures | reword: 'stock overnight ~0 pre-cutover (CW -0.82 bp, t -0.28); futures overnight positive (5.41 bp, t 2.57); the index number is index-open-dependent; the claim is now carried by stock-only evidence' | reword: regime-1 zero is an index artifact |
 | 'Level A full-sample positive overnight comes from outside 2018-11..2022-08' (open_audit_summary.md) | keep | keep for stocks; not true for futures | drop |
 | 'Levels A/B unfiltered overnight positive after, not before (Level A VN30 0.89 bp; Level B 1.95 bp, t 0.79)' (open_audit_summary.md) | keep | keep for Level B (stocks); Level A VN30 pre value flagged as index-open-dependent | reword both |
 | 'Index positive, stocks ~0 hypothesis rejected: basket minus index regime 1 = -3.63 bp' (open_audit_summary.md) | keep, caveat index | keep conclusion (stocks ~0 confirmed without the index); the -3.63 bp gap itself is index-open-dependent | reword |
@@ -246,16 +246,16 @@ No memory file exists for this project (the Claude memory directory is empty and
 
 **KBS.** KBS VN30 is not an independent open: identical to VCI from 2021Q3 (corr ~1.00) and worse before (flat opens 69% pooled 2020Q1-2021Q2 vs VCI 14%; SD ratio 0.08 vs VCI 0.37). Under the pre-registered rule no quarter has KBS VN30 tracking the basket while VCI does not. On the COVID nights KBS VN30 registered the move on 0/10. VNINDEX is different: both vendors' VNINDEX opens track the VN30 basket through 2019-2021Q2 (pooled 2020Q1-2021Q2 ratio KBS 0.83, VCI 0.85; R^2 0.91 / 0.92; verified 0.76 / 0.90), and register the COVID moves (e.g. 2020-03-30: VNINDEX -473 bp both vendors, VN30 -5 bp both vendors). KBS VNINDEX tracks where VCI VNINDEX does not only in 2021Q3-Q4 (VCI's known 2021 VNINDEX fill). So the 2020-21Q2 degradation is specific to the VN30 index open: both vendors' VN30 opens are degraded (in different forms - KBS mostly exact-flat, VCI mostly near-flat; KBS-VCI corr 0.02-0.74 in several quarters), while both vendors' VNINDEX opens and the constituent opens are normal. Whether it originates in the exchange's VN30 calculation or in common vendor processing cannot be determined from these data.
 
-**Re-based regime (stocks and futures only).** Pre-cutover, both baskets are near zero (CW -0.67 bp, t -0.23; EW -1.94, t -0.62; n 739) and strongly positive after (CW 13.46, t 5.70). The near-zero pre-cutover overnight is therefore NOT only an index artifact for stocks. It does not hold for futures: 5.50 bp, t 2.62 pre vs 7.05, t 4.53 post. Excluding 2020Q1-2021Q2 changes nothing material (CW 1.06, futures 3.98 bp, t 2.65). Flat-open share is similar pre and post (cw 0.274 vs 0.262), so differential constituent anchoring does not explain the stock pre/post gap. Caveats: the futures window (prior 14:45 close -> 08:45/09:00 open) differs from the stock window (prior close -> stock ATO); pre-2022-06 futures opens are unverified (open-definition and stability audits); one-day nights only (Mondays and holidays excluded).
+**Re-based regime (stocks and futures only).** Pre-cutover, both baskets are near zero (CW -0.82 bp, t -0.28; EW -2.11, t -0.68; n 740) and strongly positive after (CW 13.46, t 5.70). The near-zero pre-cutover overnight is therefore NOT only an index artifact for stocks. It does not hold for futures: 5.41 bp, t 2.57 pre vs 7.05, t 4.53 post. Excluding 2020Q1-2021Q2 changes nothing material (CW 0.81, futures 3.84 bp, t 2.54). Flat-open share is similar pre and post (cw 0.274 vs 0.262), so differential constituent anchoring does not explain the stock pre/post gap. Caveats: the futures window (prior 14:45 close -> 08:45/09:00 open) differs from the stock window (prior close -> stock ATO); pre-2022-06 futures opens are unverified (open-definition and stability audits); one-day nights only (Mondays and holidays excluded).
 
 **Flag (report only).** 73 VCI-VN30 nights flagged in 2018-11..2022-11-02 (9.4 per 100 one-day nights; 62 not already VCI-flagged), 63 of them in 2020Q1-2021Q2 (68% of large-basket nights); verified window 10 (1.3 per 100, 6% of large-basket nights) - that is the flag's floor on good opens. KBS VN30: 99 vs 15.
 
 ## Summary (5 lines)
 
 1. KBS: VN30 history exists (2018-01+) but is not independent - identical to VCI from 2021Q3 and more degraded before (flat 69% in 2020Q1-2021Q2); no quarter where KBS VN30 tracks the basket and VCI does not; VNINDEX (both vendors) tracks the basket normally in 2019-2021Q2, so the degradation is specific to the VN30 index open (both vendors, different forms; exchange vs vendor origin not determinable).
-2. Pre-cutover weakness survives in stocks (CW -0.67 bp, t -0.23; EW -1.94, t -0.62) but not in futures (5.50 bp, t 2.62); post-cutover all three positive (CW 13.5, futures 7.1 bp); the break is in stocks only (post minus pre CW 14.1 bp, t 3.8; futures 1.6 bp, t 0.6); impossible stock gaps contribute 0 (none on PIT members).
+2. Pre-cutover weakness survives in stocks (CW -0.82 bp, t -0.28; EW -2.11, t -0.68) but not in futures (5.41 bp, t 2.57); post-cutover all three positive (CW 13.5, futures 7.1 bp); the break is in stocks only (post minus pre CW 14.3 bp, t 3.8; futures 1.6 bp, t 0.6); impossible stock gaps contribute 0 (none on PIT members).
 3. Flag counts (|index ON| < 10 bp, |basket ON| > 50 bp): VCI VN30 73 nights 2018-11..2022 (63 in 2020Q1-2021Q2) vs 10 in the verified window (9.4 vs 1.3 per 100 nights); not applied anywhere.
 4. Reword (outcome B): the regime-1 claim and any 'change at the cutover' claim must name stocks only (stock overnight ~0 pre holds without the index; futures were positive pre and show no break); Level A VN30 pre value and the -3.63 bp basket-minus-index gap flagged as index-open-dependent; R1 82% Monday basis share and pre-cutover dbasis tests caveated (computed against a degraded index open). No memory file exists; claims taken from results summaries.
 5. Open question: why were futures overnight returns positive pre-cutover while stocks were ~0 - the timing difference (08:45 futures open vs stock ATO), basis convergence (the earlier decomposition put the pre-cutover excess in dbasis), or unverified pre-2022-06 futures opens? Next run (not done): pre-cutover futures close-to-close minus basket close-to-close - an excess at a similar daily rate points to carry/convergence, an excess confined to the overnight points to the open.
 
-Integrity: md5 of every file in data/raw/ and results/ (excluding this audit's and the degradation audit's outputs) identical before and after: True (155 files).
+Integrity: md5 of every file in data/raw/ and results/ (excluding this audit's and the degradation audit's outputs) identical before and after: True (248 files).

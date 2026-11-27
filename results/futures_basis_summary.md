@@ -278,7 +278,7 @@ reference: futures-only Option B full 2017-26 451      10.42   3.87          NaN
 D:
              period   n  idx_ON_bp  fut_ON_bp  idx_minus_fut_bp  idx_minus_fut_t  dbasis_ON_bp  dbasis_t  basket_minus_fut_bp  basket_minus_fut_t  basket_minus_idx_bp  basket_minus_idx_t
 full (index sample) 297       8.05       5.02              3.03             1.19         -3.03     -1.19                 4.79                2.04                 1.76                0.70
-     pre 2022-08-25 138       4.77       4.22              0.55             0.13         -0.55     -0.13                 0.09                0.03                -0.45               -0.09
+     pre 2022-08-25 138       4.77       4.22              0.55             0.13         -0.55     -0.13                 0.10                0.03                -0.45               -0.09
     post 2022-08-25 159      10.89       5.70              5.19             1.68         -5.19     -1.68                 8.87                2.72                 3.68                2.30
           2026 only  32       6.27      -5.32             11.60             3.25        -11.60     -3.25                11.54                3.17                -0.06               -0.04
 

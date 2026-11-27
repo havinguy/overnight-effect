@@ -21,8 +21,10 @@ syms = (RAW_DIR.parent / "universe_vn30.txt").read_text().split()
 def load(filtered=True):
     out = []
     for s in syms:
-        d = decompose(pd.read_csv(RAW_DIR / f"{s}.csv", parse_dates=["date"]))
-        d["gap_days"] = d["date"].diff().dt.days
+        # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+        raw = pd.read_csv(RAW_DIR / f"{s}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
+        raw["gap_days"] = raw["date"].diff().dt.days
+        d = decompose(raw)
         d["entry_wd"] = (d["date"].dt.weekday - d["gap_days"]) % 7
         d = d[d["gap_days"] == 1].copy()
         d["ticker"] = s

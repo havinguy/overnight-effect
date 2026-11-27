@@ -92,3 +92,74 @@ Tests on scratch copies of data/raw (repo data untouched):
 Open:
 - The guard blocks splicing, not incremental stock refresh as such: an unchanged overlap still appends.
 - The full-re-pull path itself is not built: stocks still route to vnstock, which now caps 1D history at 8 years. A direct-VCI stock re-pull into a dated snapshot is still to do.
+
+## 2026-11-27 | 2018-11-21 first-night bug: FULL fix across all remaining carriers (approved) -- both gates PASS, uncommitted
+Fixed (gap and prior close taken from the RAW series before decompose() drops row 0): pit_dayofweek_2x2 (RET gap + PC prior close), level_b_dayofweek, composition_diagnostic, open_filter_audit (ret_panel + index_on), pit_residual_split (VN30 idx + sens_rep), regime_legs_audit, regime_changepoint_audit (VNINDEX 2011-04-29), regime_market_state_audit. The inheritors have no pattern line of their own and were regenerated: pit_vs_futures, index_open_degradation_audit, option_c_t2_equity, regime_changepoint_repaired, regime_rebase_audit, level_b_rebuild (only its old-vs-O table), futures_basis_decomp (pit_basket; code untouched). level_b_rebuild and futures_basis_decomp code untouched; futures_roll_gap_repair not run.
+Regenerated: the whole import closure of the carriers (22 scripts) in the repo. 36 CSV/PKL changed and 11 md.
+GATE (a): an unpatched copy of the tree (476e99c) reproduces all 152 committed CSV/PKL byte-for-byte; mds differ only in integrity file counts. PASS.
+GATE (b): PASS on both levels.
+- Table level: control tree M (the fixed code plus one line per fix site re-blanking only the first decomposed row; 10 lines in 8 files) reproduces all 152 committed CSV/PKL byte-for-byte, so every diff is caused solely by the first-night rows.
+- Series level, 16 exported panels (2x2 RET/PC, OA ret_panel x4 / index_on x4, RL ON/ID/CC, RC vci_vnindex, LBD load x2): 0 existing cells changed; every new cell is on its own series' first night (52 stock series; 42 under the flag/7% filter; VN30 and VNINDEX 1 each).
+- The repo regeneration equals the patched tree byte-for-byte.
+Registered figures updated (marker "(2026-11-27: 2018-11-21 first-night fix)"):
+- C4 CW ON pre -0.7 -> -0.8; C5 CW ID pre 10.75 -> 10.96; C13 futures ON pre 5.5 -> 5.4, break 1.55 -> 1.64; C6 ON interval 2021-04-09..2024-08-20 -> 2021-06-18..2024-10-01; C7 CW ON t 3.77->4.13 -> 3.81->4.19.
+- Edited in CLAIMS_REGISTER (5) and FINAL_REPORT (3; C6 and C13 appear there only at a precision that does not move).
+FLAGGED, NOT EDITED (these move too but were not on the approved list):
+- Register: C4 t -0.2 -> -0.3; C5 C2C t 0.19 -> 0.18 (break +1.0 unchanged at 1 dp); C6 repaired interval 2021-03-10..2024-08-21 -> 2021-06-30..2024-10-29; C7 CW ID spec-A t -1.59 -> -1.65; C13 break CI -3.6..6.7 -> -3.5..6.8.
+- FINAL_REPORT line 12: ON break +14.1 -> +14.3 (CI 6.8..21.5 -> 6.9..21.6); ID break -13.1 -> -13.3 (CI -22.9..-3.3 -> -23.1..-3.5).
+- Line 18: '739/820' -> 740/820 and '13.8 vs 14.1' -> 14.3. Line 19: ID t -1.59 -> -1.65. Line 20: Holm p CW ID 0.168 -> 0.166, EW ID 0.018 -> 0.015. Line 40: futures break CI -3.6..6.7 -> -3.5..6.8, paired break t 5.0 -> 5.1.
+Verdicts:
+- No verdict, status or detection label changed: md verdict keywords identical; LS dates and Holm 'detected' flags identical; SURVIVES / ATTENUATED N.S. unchanged.
+- Unchanged figures: C8 (episodes file identical), C15 (48%, Fieller -88..138%), C23-C26 (option_c holds/legs/grid identical), C27 (flags identical; 11.7 bp, t -5.77).
+- Exception, descriptive and uncited: in the legacy level_b_dayofweek_by_stock.csv the per-stock 'top night' label flips for BID, LPB (Tue->Wed -> Wed->Thu) and SSB, and STB's Mon/Tue-top-2 flag flips. Its stdout breadth count goes 19/30 (binomial p 0.100) -> 17/30 (p 0.292); it is in no results file or document.
+Stale text: level_b_rebuild.md's hard-coded sentence 'Legacy-vs-O differences (e.g. Tue->Wed n 394 vs 395) come from the 2018-11-21 fix' no longer applies; legacy now equals O. Left unedited.
+Cell-level change log: results/fix20181121_fullfix_changes.csv (2,442 cells in 33 tables, plus per-series summaries for the 2 scan tables, which gain 1 candidate date per series).
+Deleted the 9 superseded twins results/*_fix20181121.csv (recoverable: git show 6ab59cf:<path>). 7 were byte-identical to their primaries. futures_basis_wednesday and futures_basis_robustness now differ from their twins by <= 0.002 bp, because pit_basket inherits the stock-side fix. Kept futures_roll_gap_fix20181121_changes.csv (change log) and index_nights_legacy().
+Integrity: data/raw, frozen_20261117, raw_intraday, track_forward.py, level_c_futures.py, futures_basis_decomp.py, level_b_rebuild.py and the track_forward results are hash-identical before/after.
+
+## 2026-11-27 | 2018-11-21 first-night fix: doc sweep (no figure that moved may sit next to a stale one) -- doc edits only, uncommitted
+Approved by Harry: every figure that moved under the full fix is updated wherever it is cited, with the marker "(2026-11-27: 2018-11-21 first-night fix)". No code, data or results table was regenerated in this pass.
+CLAIMS_REGISTER (8 edits):
+- C4: pre t -0.2 -> -0.3; CI column: pre CI [calc] -6.4..5.1 -> -6.5..4.9; break +14.1 bp, CI 6.8..21.5 -> +14.3, CI 6.9..21.6.
+- C5: C2C break t 0.19 -> 0.18 (the +1.0 bp is unchanged at 1 dp); CI column: ID break -13.1, CI -22.9..-3.3 -> -13.3, CI -23.1..-3.5.
+- C6: repaired ON interval 2021-03-10..2024-08-21 -> 2021-06-30..2024-10-29.
+- C7: CW ID t with all four controls -1.59 -> -1.65.
+- C13: break CI -3.6..6.7 -> -3.5..6.8.
+- C22: the pre-2022 CI [calc] -6.4..5.1 -> -6.5..4.9. This is the same interval as C4 and was not on the flagged list.
+FINAL_REPORT (8 edits):
+- Line 9: CI about -6.4..5.1 -> -6.5..4.9. This is C22 and was not on the flagged list.
+- Line 12: ON break +14.1 (CI 6.8..21.5) -> +14.3 (6.9..21.6); ID break -13.1 (CI -22.9..-3.3) -> -13.3 (-23.1..-3.5).
+- Line 18: 739/820 -> 740/820; '13.8 vs 14.1' -> '13.8 vs 14.3'.
+- Line 19: t -1.59 -> -1.65.
+- Line 20: Holm p 0.168 -> 0.166 (CW ID, not detected) and 0.018 -> 0.015 (EW ID, detected).
+- Line 40: futures break CI -3.6..6.7 -> -3.5..6.8; paired break t 5.0 -> 5.1 (5.018 -> 5.050; the +12.6 bp is unchanged).
+Note on the old [calc] CI: mean +/- 1.96*mean/t on the old file gives -6.381..5.048. The registered '5.1' was a double rounding of 5.048; the new interval is -6.530..4.887.
+Sweep of the other publish-bound docs:
+- README.md: no figure moved. All its figures come from unmodified sources (Level A, the post-2022 basket level, Option C holds) or are unchanged at the precision shown.
+- docs/medium-writeup.md: one figure moved. In the relocation table (line 76) the intraday pre level +10.8 -> +11.0 (10.75 -> 10.96). Every other figure in it is unchanged at its precision.
+- Two figures in that same row are FLAGGED, NOT EDITED. Neither was caused by the fix:
+  - 't -2.8' does not match the source the row uses. regime_legs ID break t is -2.62 old / -2.66 new, which displays as -2.6 / -2.7. -2.80 is the one-day-night (C31 / level_b_rebuild P) ID break t, which is unchanged.
+  - '-2.4' is a double rounding of -2.3496 (post-2022, unchanged by the fix; -2.3 at 1 dp).
+results/level_b_rebuild.md: rewrote the false sentence 'Legacy-vs-O differences (e.g. Tue->Wed n 394 vs 395) come from the 2018-11-21 fix'.
+- The new text says legacy and O now agree on every row. All 5 rows of level_b_rebuild_old_vs_O.csv are equal in n and mean, and t agrees to 1e-15.
+- It also says the old 394-vs-395 gap was the first-night bug in the legacy 2x2.
+- This is a doc edit only; level_b_rebuild.py is untouched. That script hard-codes the old sentence, so any rerun will write it back.
+Uncited breadth change, for the record: legacy per-stock day-of-week table results/level_b_dayofweek_by_stock.csv (src/level_b_dayofweek.py).
+- Stocks whose top overnight night is Mon->Tue or Tue->Wed (sum of column top_is_mon_or_tue): 19/30 (one-sided binomial p 0.100) -> 17/30 (p 0.292). The count is in the CSV; the p-value is printed to stdout only.
+- Flips: BID and LPB top night Tue->Wed -> Wed->Thu; SSB Thu->Fri -> Wed->Thu; STB rank_monTue_top2 True -> False (column total 12 -> 11).
+- Not cited in CLAIMS_REGISTER, FINAL_REPORT, README or the Medium draft. C12 cites level_b_rebuild_dayofweek.csv, which is unmodified.
+Verdicts: no verdict label, status, break date or detected/not-detected flag changed.
+- LS dates: CW/EW ON 2022-11-25, CW/EW ID 2022-08-26, paired 2022-12-07, FUT ON 2020-03-17. Original and repaired runs both.
+- Holm p values stay on the same side of 0.05:
+  - CW ON 0.012; CW ID 0.166 (not detected); EW ON 0.012; EW ID 0.015 (detected); FUT ON 0.262 (not detected); paired 0.012.
+  - Repaired set: CW ID 0.106, FUT ON 0.327 (both not detected); the rest are <= 0.012 (detected).
+- Spec-A labels: SURVIVES / ATTENUATED N.S. unchanged.
+- Provenance check: every number on every touched row (C4, C5, C6, C7, C13, C22; FINAL_REPORT lines 9, 12, 18, 19, 20, 40; Medium lines 75-76) was re-derived from the regenerated table at the precision shown and matches. The only exceptions are the two flagged Medium figures.
+- The q1_flat_open_regime, regime_nightlength, level_b_rebuild_dayofweek, level_a_robustness, futures_basis_followup_summary and level_c sources behind the other numbers on those rows are unmodified.
+Label/date/flag column sweep. Covers every bool, object and date column of the 36 changed CSV/PKL files, HEAD vs working tree: row by row where the row count is unchanged, old-rows-subset-of-new where rows were added. Only the following differ:
+- the level_b_dayofweek_by_stock flips above;
+- the change-point date intervals (ci_lo/ci_hi/ci_orig/ci_rep), already reported;
+- +1 row per _pit_cells.pkl series and +1 candidate date per series in the two scan tables (old rows are a strict subset of the new);
+- 2 of the 10 'random' placebo dates per series in regime_changepoint_placebo.csv and ..._repaired_placebo.csv: 2019-11-14 -> 2019-11-13 and 2020-05-26 -> 2020-05-22.
+The placebo dates are fixed-seed draws of positions in the night list, so adding one night shifts the draws. The placebo result line in both audit mds is identical: random dates above the 08-25 |t| are CW ON 3/10, CW ID 0/10, EW ON 3/10, EW ID 0/10, FUT ON 7/10 (repaired 10/10), paired 4/10. These dates are cited nowhere; C8 rests on the regime_market_state episodes, which are unchanged.
+Correction to the previous entry: it said the 19/30 -> 17/30 breadth count 'is in no results file or document'. The count is the column sum of top_is_mon_or_tue in results/level_b_dayofweek_by_stock.csv; only the binomial p-value is stdout-only. Neither is cited in a publish-bound document.

@@ -1,41 +1,41 @@
 variant,effect,night,n,diff_bp,paired_t
 A,"composition (PIT - current30 Level B), equal-weight",Mon->Tue,390,-2.867446967903665,-3.3131061064763068
-A,"composition (PIT - current30 Level B), equal-weight",Tue->Wed,392,-1.7592782705826426,-2.094311535223131
-A,"composition (PIT - current30 Level B), equal-weight",Wed->Thu,390,-2.2581123997147095,-2.687186474811609
+A,"composition (PIT - current30 Level B), equal-weight",Tue->Wed,393,-1.82558232940578,-2.175702537947305
+A,"composition (PIT - current30 Level B), equal-weight",Wed->Thu,390,-2.324558994119369,-2.7508484951619807
 A,"composition (PIT - current30 Level B), equal-weight",Thu->Fri,396,-1.8126705281945608,-2.4506263067317557
 A,"composition (PIT - current30), cap-weight",Mon->Tue,390,-2.442752777302329,-4.325509909534807
-A,"composition (PIT - current30), cap-weight",Tue->Wed,392,-0.7227782945917778,-1.32814218346812
-A,"composition (PIT - current30), cap-weight",Wed->Thu,390,-1.8785771698918041,-3.400337188167886
+A,"composition (PIT - current30), cap-weight",Tue->Wed,393,-0.740509360936541,-1.3634723820048302
+A,"composition (PIT - current30), cap-weight",Wed->Thu,390,-1.8678884027827227,-3.388857075510337
 A,"composition (PIT - current30), cap-weight",Thu->Fri,396,-1.5176024502045913,-2.913681909859776
 A,"weighting (cap - EW), current30",Mon->Tue,390,-0.7690789002037544,-1.0203567706068881
-A,"weighting (cap - EW), current30",Tue->Wed,392,-2.039921143477947,-2.7929503782167564
+A,"weighting (cap - EW), current30",Tue->Wed,393,-2.006822993979636,-2.751813910765473
 A,"weighting (cap - EW), current30",Wed->Thu,390,-2.2143508556399487,-3.3328049699679068
 A,"weighting (cap - EW), current30",Thu->Fri,396,-1.474779383308504,-2.210316756199863
 A,"weighting (cap - EW), PIT",Mon->Tue,390,-0.2583126019548789,-0.3151850010615015
-A,"weighting (cap - EW), PIT",Tue->Wed,394,-0.8892839595498055,-1.1352438452589593
-A,"weighting (cap - EW), PIT",Wed->Thu,391,-1.6077186027305512,-2.3263085128483243
+A,"weighting (cap - EW), PIT",Tue->Wed,395,-0.8671655171653453,-1.1093766812915982
+A,"weighting (cap - EW), PIT",Wed->Thu,391,-1.6072102224731994,-2.325621893960494
 A,"weighting (cap - EW), PIT",Thu->Fri,397,-1.1093377096213475,-1.5213581950049435
 A,total (PIT cap - current30 Level B EW),Mon->Tue,390,-3.1257595698585434,-3.1052422893794116
-A,total (PIT cap - current30 Level B EW),Tue->Wed,392,-2.691940286870599,-2.887848351817429
-A,total (PIT cap - current30 Level B EW),Wed->Thu,390,-3.8537152242017525,-4.334124732168913
+A,total (PIT cap - current30 Level B EW),Tue->Wed,393,-2.7359029645268156,-2.9437793664162113
+A,total (PIT cap - current30 Level B EW),Wed->Thu,390,-3.9196521348099393,-4.382485696457664
 A,total (PIT cap - current30 Level B EW),Thu->Fri,396,-2.9401884636817677,-3.369796071004817
 B,"composition (PIT - current30 Level B), equal-weight",Mon->Tue,390,-2.867446967903665,-3.3131061064763068
-B,"composition (PIT - current30 Level B), equal-weight",Tue->Wed,392,-1.7592782705826426,-2.094311535223131
-B,"composition (PIT - current30 Level B), equal-weight",Wed->Thu,390,-2.2581123997147095,-2.687186474811609
+B,"composition (PIT - current30 Level B), equal-weight",Tue->Wed,393,-1.82558232940578,-2.175702537947305
+B,"composition (PIT - current30 Level B), equal-weight",Wed->Thu,390,-2.324558994119369,-2.7508484951619807
 B,"composition (PIT - current30 Level B), equal-weight",Thu->Fri,396,-1.8126705281945608,-2.4506263067317557
 B,"composition (PIT - current30), cap-weight",Mon->Tue,390,-1.6280862430185754,-3.756827201502428
-B,"composition (PIT - current30), cap-weight",Tue->Wed,392,-0.6827478346532728,-1.5120248498943412
-B,"composition (PIT - current30), cap-weight",Wed->Thu,390,-1.3777126280078054,-3.197080439833502
+B,"composition (PIT - current30), cap-weight",Tue->Wed,393,-0.6882957944699435,-1.5280890510538552
+B,"composition (PIT - current30), cap-weight",Wed->Thu,390,-1.3726770008465599,-3.192042151896353
 B,"composition (PIT - current30), cap-weight",Thu->Fri,396,-0.9463489104718735,-2.276843397426173
 B,"weighting (cap - EW), current30",Mon->Tue,390,0.22340377737065886,0.2765587492238759
-B,"weighting (cap - EW), current30",Tue->Wed,392,-1.2809892508435148,-1.7205700691897827
+B,"weighting (cap - EW), current30",Tue->Wed,393,-1.246192644514894,-1.6762690377744973
 B,"weighting (cap - EW), current30",Wed->Thu,390,-2.3762967414815535,-3.575834532155155
 B,"weighting (cap - EW), current30",Thu->Fri,396,-1.3180422326583308,-1.9243309124034085
 B,"weighting (cap - EW), PIT",Mon->Tue,390,1.5488366099032882,1.7454995733353613
-B,"weighting (cap - EW), PIT",Tue->Wed,394,-0.08439039486819286,-0.10060778829391348
-B,"weighting (cap - EW), PIT",Wed->Thu,391,-1.2493608440833792,-1.7581951772658044
+B,"weighting (cap - EW), PIT",Tue->Wed,395,-0.048475691248939856,-0.057884878124477464
+B,"weighting (cap - EW), PIT",Wed->Thu,391,-1.2544911456154293,-1.7650053766921097
 B,"weighting (cap - EW), PIT",Thu->Fri,397,-0.3930916498313364,-0.5217248977700725
 B,total (PIT cap - current30 Level B EW),Mon->Tue,390,-1.3186103580003763,-1.3374685416930345
-B,total (PIT cap - current30 Level B EW),Tue->Wed,392,-1.8929779342976618,-2.0949371598539153
-B,total (PIT cap - current30 Level B EW),Wed->Thu,390,-3.5147965681593605,-4.130991347691149
+B,total (PIT cap - current30 Level B EW),Tue->Wed,393,-1.9230590485954766,-2.1320758280594267
+B,total (PIT cap - current30 Level B EW),Wed->Thu,390,-3.586386618715382,-4.178938466416961
 B,total (PIT cap - current30 Level B EW),Thu->Fri,396,-2.212197773298877,-2.6709541895718907

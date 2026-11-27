@@ -6,22 +6,22 @@ Script `src/regime_changepoint_repaired.py` executes `src/regime_changepoint_aud
 
 ```
                                               test  t_repaired  t_original
-                                         basket ON       3.670       3.766
-                                         basket ID      -2.738      -2.619
-                                        futures ON       0.446       0.594
-paired: break of (basket ON - futures ON) per date       5.018       5.018
+                                         basket ON       3.714       3.810
+                                         basket ID      -2.782      -2.663
+                                        futures ON       0.480       0.628
+paired: break of (basket ON - futures ON) per date       5.051       5.050
 ```
 
 ## 1. Change-point scan
 
 ```
           series  n_orig  n_rep ls_date_orig ls_date_rep                ci_orig                 ci_rep  sup_t_orig  sup_t_rep  p_holm_orig  p_holm_rep  mc_se_p_rep  t_cut_orig  t_cut_rep  detected_orig  detected_rep  cut_inside_orig  cut_inside_rep  changes
-           CW ON    1559   1572   2022-11-25  2022-11-25 2021-04-09..2024-08-20 2021-03-10..2024-08-21       4.544      4.480        0.012       0.012        0.002       3.766      3.670           True          True             True            True interval
-           CW ID    1559   1572   2022-08-26  2022-08-26 2020-06-04..2025-06-18 2020-05-22..2025-06-20       2.658      2.776        0.168       0.108        0.007      -2.619     -2.738          False         False             True            True interval
-           EW ON    1559   1572   2022-11-25  2022-11-25 2021-09-01..2024-03-20 2021-10-19..2024-04-17       4.915      4.862        0.012       0.010        0.001       4.099      4.007           True          True             True            True interval
-           EW ID    1559   1572   2022-08-26  2022-08-26 2020-12-30..2024-11-20 2020-08-26..2024-08-30       3.560      3.675        0.018       0.018        0.002      -3.517     -3.632           True          True             True            True interval
-          FUT ON    1559   1572   2020-03-17  2020-03-17 2020-02-06..2025-06-03 2020-02-11..2025-04-25       2.136      2.074        0.309       0.345        0.015       0.594      0.446          False         False             True            True interval
-PAIRED CW-FUT ON    1559   1572   2022-12-07  2022-12-07 2022-03-25..2024-05-29 2021-11-25..2023-12-29       5.770      5.792        0.012       0.006        0.001       5.018      5.018           True          True             True            True interval
+           CW ON    1560   1573   2022-11-25  2022-11-25 2021-06-18..2024-10-01 2021-06-30..2024-10-29       4.586      4.522        0.012       0.012        0.002       3.810      3.714           True          True             True            True interval
+           CW ID    1560   1573   2022-08-26  2022-08-26 2020-05-28..2025-05-29 2020-05-21..2025-03-19       2.702      2.820        0.166       0.106        0.007      -2.663     -2.782          False         False             True            True interval
+           EW ON    1560   1573   2022-11-25  2022-11-25 2021-08-10..2024-02-20 2021-11-10..2024-03-19       4.960      4.907        0.012       0.006        0.001       4.145      4.053           True          True             True            True interval
+           EW ID    1560   1573   2022-08-26  2022-08-26 2021-01-12..2024-08-21 2020-11-17..2024-08-28       3.610      3.725        0.015       0.012        0.002      -3.567     -3.683           True          True             True            True interval
+          FUT ON    1560   1573   2020-03-17  2020-03-17 2020-02-05..2025-04-17 2020-02-07..2025-04-24       2.195      2.134        0.262       0.327        0.015       0.628      0.480          False         False             True            True interval
+PAIRED CW-FUT ON    1560   1573   2022-12-07  2022-12-07 2022-03-31..2024-02-29 2021-12-08..2023-12-19       5.802      5.824        0.012       0.006        0.001       5.050      5.051           True          True             True            True interval
 ```
 
 ## 2. Placebo ranking (random dates with |t_window| above 08-25)
@@ -40,17 +40,17 @@ PAIRED CW-FUT ON                  4                 4              1.453        
 
 ```
           series  dAIC_orig  dAIC_rep        verdict_orig         verdict_rep
-           CW ON     -0.231    -0.214 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
-           EW ON     -0.354    -0.336 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
-PAIRED CW-FUT ON      1.138     1.138 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
+           CW ON     -0.237    -0.221 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
+           EW ON     -0.363    -0.344 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
+PAIRED CW-FUT ON      1.139     1.139 NOT DISTINGUISHABLE NOT DISTINGUISHABLE
 ```
 
 ## 5. Monday rows: numerically identical: True (the repaired rows are all after 2022-08-25, outside both Monday windows).
 
 ## Summary (5 lines)
 
-1. Sample: n 1559 -> 1572 one-day nights (repaired post-expiry days enter as futures/basket common dates); plain-split t at 08-25 CW ON 3.77 -> 3.67, paired 5.02 -> 5.02.
-2. Changes (LS date / interval / detected / Holm crossing 0.05 / cutover inside): CW ON: interval (LS 2022-11-25 -> 2022-11-25; CI 2021-04-09..2024-08-20 -> 2021-03-10..2024-08-21; Holm 0.012 -> 0.012); CW ID: interval (LS 2022-08-26 -> 2022-08-26; CI 2020-06-04..2025-06-18 -> 2020-05-22..2025-06-20; Holm 0.168 -> 0.108); EW ON: interval (LS 2022-11-25 -> 2022-11-25; CI 2021-09-01..2024-03-20 -> 2021-10-19..2024-04-17; Holm 0.012 -> 0.010); EW ID: interval (LS 2022-08-26 -> 2022-08-26; CI 2020-12-30..2024-11-20 -> 2020-08-26..2024-08-30; Holm 0.018 -> 0.018); FUT ON: interval (LS 2020-03-17 -> 2020-03-17; CI 2020-02-06..2025-06-03 -> 2020-02-11..2025-04-25; Holm 0.309 -> 0.345); PAIRED CW-FUT ON: interval (LS 2022-12-07 -> 2022-12-07; CI 2022-03-25..2024-05-29 -> 2021-11-25..2023-12-29; Holm 0.012 -> 0.006).
+1. Sample: n 1560 -> 1573 one-day nights (repaired post-expiry days enter as futures/basket common dates); plain-split t at 08-25 CW ON 3.81 -> 3.71, paired 5.05 -> 5.05.
+2. Changes (LS date / interval / detected / Holm crossing 0.05 / cutover inside): CW ON: interval (LS 2022-11-25 -> 2022-11-25; CI 2021-06-18..2024-10-01 -> 2021-06-30..2024-10-29; Holm 0.012 -> 0.012); CW ID: interval (LS 2022-08-26 -> 2022-08-26; CI 2020-05-28..2025-05-29 -> 2020-05-21..2025-03-19; Holm 0.166 -> 0.106); EW ON: interval (LS 2022-11-25 -> 2022-11-25; CI 2021-08-10..2024-02-20 -> 2021-11-10..2024-03-19; Holm 0.012 -> 0.006); EW ID: interval (LS 2022-08-26 -> 2022-08-26; CI 2021-01-12..2024-08-21 -> 2020-11-17..2024-08-28; Holm 0.015 -> 0.012); FUT ON: interval (LS 2020-03-17 -> 2020-03-17; CI 2020-02-05..2025-04-17 -> 2020-02-07..2025-04-24; Holm 0.262 -> 0.327); PAIRED CW-FUT ON: interval (LS 2022-12-07 -> 2022-12-07; CI 2022-03-31..2024-02-29 -> 2021-12-08..2023-12-19; Holm 0.012 -> 0.006).
 3. Unchanged series: none; detected set original CW ON, EW ON, EW ID, PAIRED CW-FUT ON vs repaired CW ON, EW ON, EW ID, PAIRED CW-FUT ON.
-4. Placebo: CW ON 3->3/10, CW ID 0->0/10, EW ON 3->3/10, EW ID 0->0/10, FUT ON 7->10/10, PAIRED CW-FUT ON 4->4/10; ramp CW ON dAIC -0.23 -> -0.21 (NOT DISTINGUISHABLE -> NOT DISTINGUISHABLE).
+4. Placebo: CW ON 3->3/10, CW ID 0->0/10, EW ON 3->3/10, EW ID 0->0/10, FUT ON 7->10/10, PAIRED CW-FUT ON 4->4/10; ramp CW ON dAIC -0.24 -> -0.22 (NOT DISTINGUISHABLE -> NOT DISTINGUISHABLE).
 5. Monday rows identical: True. Report only; differences are not reinterpreted in this run.

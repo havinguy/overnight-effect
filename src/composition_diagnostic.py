@@ -34,8 +34,10 @@ ten.to_csv(OUT_DIR / "composition_tenure.csv", index=False)
 # ---------- diagnostic 2 ----------
 frames = []
 for s in syms:
-    d = decompose(pd.read_csv(RAW_DIR / f"{s}.csv", parse_dates=["date"]))
-    d["gap"] = d["date"].diff().dt.days
+    # 2018-11-21 first-night fix (2026-11-27): gap / prior close taken from the RAW series BEFORE decompose() drops row 0
+    raw = pd.read_csv(RAW_DIR / f"{s}.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
+    raw["gap"] = raw["date"].diff().dt.days
+    d = decompose(raw)
     d["wd"] = (d["date"].dt.weekday - d["gap"]) % 7
     d = d[d.gap == 1]
     d = d[~(d["open_suspicious"].astype(bool) | (d["r_overnight"].abs() > 0.07))]
